@@ -1,0 +1,96 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:elearningapp_demo/views/accountSummaryView.dart';
+import 'package:elearningapp_demo/views/homescrrenView.dart';
+import 'package:elearningapp_demo/views/profilescreen_View.dart';
+import 'package:elearningapp_demo/views/searchscreen_View.dart';
+import 'package:elearningapp_demo/views/wishlistScreen_View.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final iconList = <IconData>[
+    Icons.home,
+    Icons.search,
+    Icons.favorite_border_outlined,
+    Icons.person,
+  ];
+  final List<Widget> _pages = [
+    Homescreen(),
+    SearchscreenView(),
+    WishlistscreenView(),
+    AccountSummaryView(),
+    // ProfilescreenView()
+
+  ];
+  var _bottomNavIndex = 0;
+  int selectedIndex = 0;
+  final GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) {
+    final screenW = MediaQuery.of(context).size.width;
+    return Scaffold(
+      key: _scaffoldKey,
+      drawer:ProfilescreenView(context: context,),
+      //Drawer
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.menu,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            _scaffoldKey.currentState?.openDrawer();
+          },
+        ),
+        centerTitle: true,
+        title: const Text("Welcome  Vaishnavi",style: TextStyle(color: Colors.black),),
+        backgroundColor: Colors.transparent,
+        actions: <Widget>[
+
+
+      Stack(children: [
+
+
+        CircleAvatar(radius: 20.0,),
+      Positioned(top: 10,
+        left: 10.0,
+        child: Icon(Icons.notifications,
+          color: Colors.yellow,),
+      )])
+        ],
+       // backgroundColor: Colors.white,
+        elevation: 0.00,
+
+      ),
+      backgroundColor: const Color(0xFFDAFFF2),
+      body:_pages[_bottomNavIndex],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        icons: iconList,
+        activeIndex: _bottomNavIndex,
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.verySmoothEdge,
+        leftCornerRadius: 32,
+        rightCornerRadius: 32,
+        onTap: (index) => setState(() => _bottomNavIndex = index),
+        //other params
+      ),
+    );
+  }
+}
+
+
+
+
