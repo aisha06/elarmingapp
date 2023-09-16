@@ -16,7 +16,7 @@ class TextfiledConatiner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-      margin: const EdgeInsets.only(left: 30.0, right: 20.0),
+      margin: const EdgeInsets.only(left: 10.0, right: 10.0),
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 0),
         child: TextFormField(

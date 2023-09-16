@@ -64,12 +64,12 @@ class ForgetView extends StatelessWidget{
                       children: [
 
                         Container(
-                            margin: EdgeInsets.only(left: 80.0),
+                            margin: EdgeInsets.only(left: 60.0),
                             child: Text("We will send you on ")),
                         const SizedBox(height: 40.0,),
 
                         Padding(
-                            padding: const EdgeInsets.only(left:1.0),
+                            padding: const EdgeInsets.only(left:2.0),
                             child: InkWell(
                               onTap: (){
 
@@ -78,7 +78,7 @@ class ForgetView extends StatelessWidget{
                                 //   MaterialPageRoute(builder: (context) => SignupView()),
                                 // );
                               },
-                              child: Text('one time Password ',
+                              child: Text('one time password ',
                                   style: TextStyle(fontSize: 18, color: Colors.green,)),
                             ),
 
@@ -89,7 +89,7 @@ class ForgetView extends StatelessWidget{
                   )
               ),
               Container(
-                  margin: EdgeInsets.only(left: 80.0),
+                  margin: EdgeInsets.only(left: 6.0),
                   child: Text("On this mobile number")),
               const SizedBox(height: 40.0,),
 

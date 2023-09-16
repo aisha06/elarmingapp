@@ -34,7 +34,9 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(margin: const EdgeInsets.only(left: 40.0,top: 80.0),
+              Container(
+                margin:
+              const EdgeInsets.only(left: 20.0,top: 80.0),
                 child:const  Align(alignment: Alignment.centerLeft,
                   child: Text("Login",
                     style: TextStyle(
@@ -64,6 +66,33 @@ class LoginView extends StatelessWidget {
                             );
               },),
 
+
+              const  SizedBox(height: 20.0,),
+
+              Container(
+              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+                // width: MediaQuery.of(context).size.width,
+                child: ElevatedButton(
+                    onPressed: (){
+
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignupView()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        primary:  Color(0xFF5BA084)
+                        ,
+                        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+                        textStyle: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                    child: Text(
+                      "Register",
+                      style: TextStyle(fontSize: 18.0),
+                    )),
+              ),
               const  SizedBox(height: 40.0,),
               GestureDetector(onTap: (){
                 Navigator.push(
@@ -75,34 +104,6 @@ class LoginView extends StatelessWidget {
                   style: TextStyle(color: Colors.green,
                       fontWeight: FontWeight.bold,fontSize: 16.0),),
               ),
-              const  SizedBox(height: 20.0,),
-              Container(
-                  child: Center(
-                    child: Row(
-                      children: [
-
-                        Container(
-                            margin:const  EdgeInsets.only(left: 80.0),
-                            child:const  Text("Don't have a account ? ")),
-                        const SizedBox(height: 40.0,),
-
-                        Padding(
-                            padding: const EdgeInsets.only(left:1.0),
-                            child: InkWell(
-                              onTap: (){
-
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => SignupView()),
-                                );
-                              },
-                              child:const  Text('Signup',
-                                  style: TextStyle(fontSize: 18, color: Colors.green,)),
-                            )
-                        ) ],
-                    ),
-                  )
-              )
 
             ],
           ),

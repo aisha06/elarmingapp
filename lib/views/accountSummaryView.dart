@@ -22,11 +22,13 @@ class AccountSummaryView extends StatelessWidget{
            return Padding(
              padding: const EdgeInsets.all(8.0),
              child: Container(
+
                width: MediaQuery.of(context).size.width/2,
                child: Row(
                  children: [
                    Image.asset("assets/images/livepic.png",fit:BoxFit.fitWidth,),
                    Container(
+                     height: 90,
 
                      color:const Color(0xFFD9D9D9),
                      child: Row(

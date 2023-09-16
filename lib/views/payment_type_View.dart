@@ -1,7 +1,14 @@
+import 'package:elearningapp_demo/views/payment_pay_view.dart';
 import 'package:flutter/material.dart';
 
-class PaymentypeView extends StatelessWidget{
+class PaymentypeView extends StatefulWidget{
+  @override
+  State<PaymentypeView> createState() => _PaymentypeViewState();
+}
+
+class _PaymentypeViewState extends State<PaymentypeView> {
   bool value = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,34 +39,38 @@ class PaymentypeView extends StatelessWidget{
           margin:const  EdgeInsets.only(bottom: 40.0),
           child: Card(
             child: ElevatedButton(onPressed: (){
-              showGeneralDialog(
-                  barrierColor: Colors.black.withOpacity(0.5),
-                  transitionBuilder: (context, a1, a2, widget) {
-                    return Transform.scale(
-                      scale: a1.value,
-                      child: Opacity(
-                        opacity: a1.value,
-                        child: AlertDialog(
-                          shape: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(16.0)),
-                          title:Image.asset("assets/images/paymentdone.png",
-                            colorBlendMode: BlendMode.dstATop,
-                              scale:0.6,
-                              // color: Color.fromARGB(255, 15, 147, 59),
-
-                        ),
-                          content: Text('Thanks For Your\n Payment Sucessfully',style:TextStyle(fontWeight: FontWeight.bold),),
-                        ),
-                      ),
-                    );
-                  },
-                  transitionDuration: Duration(milliseconds: 200),
-                  barrierDismissible: true,
-                  barrierLabel: '',
-                  context: context,
-                  pageBuilder: (context, animation1, animation2) {
-                    return Text("aisha");
-                  });
+              // showGeneralDialog(
+              //     barrierColor: Colors.black.withOpacity(0.5),
+              //     transitionBuilder: (context, a1, a2, widget) {
+              //       return Transform.scale(
+              //         scale: a1.value,
+              //         child: Opacity(
+              //           opacity: a1.value,
+              //           child: AlertDialog(
+              //             shape: OutlineInputBorder(
+              //                 borderRadius: BorderRadius.circular(16.0)),
+              //             title:Image.asset("assets/images/paymentdone.png",
+              //               colorBlendMode: BlendMode.dstATop,
+              //                 scale:0.6,
+              //                 // color: Color.fromARGB(255, 15, 147, 59),
+              //
+              //           ),
+              //             content: Text('Thanks For Your\n Payment Sucessfully',style:TextStyle(fontWeight: FontWeight.bold),),
+              //           ),
+              //         ),
+              //       );
+              //     },
+              //     transitionDuration: Duration(milliseconds: 200),
+              //     barrierDismissible: true,
+              //     barrierLabel: '',
+              //     context: context,
+              //     pageBuilder: (context, animation1, animation2) {
+              //       return Text("aisha");
+              //     });
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaymentpayScreen()),
+              );
 
             },
                 style: ElevatedButton.styleFrom(
@@ -77,7 +88,6 @@ class PaymentypeView extends StatelessWidget{
     ),
     );
   }
-
 }
 Payment_list2(BuildContext
 buildContext) {
@@ -106,9 +116,9 @@ buildContext) {
             // trailing: Checkbox(
             //   value:null,
             //   onChanged: () {
-            //     // setState(() {
-            //     //  value = value2;
-            //     // });
+            //     setState(() {
+            //      value = value2;
+            //     });
             //   },
             // ),
 

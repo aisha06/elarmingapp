@@ -198,7 +198,7 @@ class Homescreen extends StatelessWidget {Homescreen({
                         padding: const EdgeInsets.all(5.0),
                         color:const  Color(0xFF91E8B2),
 
-                        child:const Text("View more",
+                        child:const Text("View More",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -241,7 +241,7 @@ class Homescreen extends StatelessWidget {Homescreen({
                         padding: const EdgeInsets.all(5.0),
                         color:const  Color(0xFF91E8B2),
 
-                        child:const Text("View more",
+                        child:const Text("View More",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -284,7 +284,7 @@ class Homescreen extends StatelessWidget {Homescreen({
                         padding: const EdgeInsets.all(5.0),
                         color:const  Color(0xFF91E8B2),
 
-                        child:const Text("View more",
+                        child:const Text("View More",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),

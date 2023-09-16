@@ -27,7 +27,7 @@ class listprogramView extends StatelessWidget {
                       height: 85,
                       child: ClipRect(
                           child: Image.asset('assets/images/livepic.png',
-                            fit: BoxFit.fill,)
+                            fit: BoxFit.fill,filterQuality: FilterQuality.high,)
                       )
                   ),
                   Card(elevation: 6,
@@ -42,22 +42,38 @@ class listprogramView extends StatelessWidget {
                   const SizedBox(height: 5.0,),
                   const Text("krish Naik"),
                   const SizedBox(height: 5.0,),
-                  Row(
-                    children: [
-                      Text(
-                        "60,000",
-                        style: TextStyle(fontSize: 16),
-                      ),
+                  Container(
 
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color:Colors.green,
+                              shape: BoxShape.circle,
+                            ),
+                            padding: const EdgeInsets.all(4),
+                            // color:Colors.green,
+                            child: Text("Rs",style: TextStyle(fontWeight: FontWeight.bold),),
+                          ),
+                        ),
 
-                      Container(
-                          padding: const EdgeInsets.all(5.0),
-                          color:Colors.grey[400],
+                        Text(
+                          "60,000",
+                          style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
+                        ),
 
-                          child:const Text("Live",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ))
-                    ],
+                       const  SizedBox(width:80.0 ,),
+                        Container(
+                            padding: const EdgeInsets.all(5.0),
+                            color:Colors.grey[400],
+
+                            child:const Text("Live",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ))
+                      ],
+                    ),
                   ),
                 ],
               ),

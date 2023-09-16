@@ -103,18 +103,22 @@ class Grridviewpage extends StatelessWidget{
                Text("krish Naik",
                style: TextStyle(fontWeight: FontWeight.bold),),
                const SizedBox(height: 5,),
-               Row(
-                 children: [
-                   Text(
-                     "60,000",
-                     style: TextStyle(fontSize: 16),
-                   ),
+               Container(
+                 margin: EdgeInsets.symmetric(horizontal: 10.0),
+                 child: Row(
+                   children: [
+                     Text(
+                       "60,000",
+                       style: TextStyle(fontSize: 16,color: Colors.black),
+                     ),
+                  Spacer(),
 
-                Container(margin: const EdgeInsets.only(left: 10.0),
+                  Container(
 
-                    color: Colors.grey,
-                    child:const  Text("Live"))
-                 ],
+                      color: Colors.grey,
+                      child:const  Text("Live"))
+                   ],
+                 ),
                ),
              ],
            ),

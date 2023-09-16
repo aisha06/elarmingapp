@@ -6,20 +6,18 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      
+      theme: ThemeData(
+        primaryColor:  Color(0xFF5BA084), // Set the primary color here
+      ),
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false ,
       title: 'Flutter Demo',
-
-
-      home:Splashscreen(),
+      home:const Splashscreen(),
     );
   }
 }
@@ -29,7 +27,6 @@ class Splashscreen extends StatefulWidget {
   @override
   State<Splashscreen> createState() => _SplashscreenState();
 }
-
 class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
@@ -38,12 +35,11 @@ class _SplashscreenState extends State<Splashscreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                    OnboardscreenView()
+                 const    OnboardscreenView()
             )
         )
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +66,6 @@ class _SplashscreenState extends State<Splashscreen> {
             Container(
               height: 18.0,
               child: Image.asset('assets/images/E-education.png',
-
                 height: MediaQuery.of(context).size.height,
                 fit: BoxFit.fill,
               ),

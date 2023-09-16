@@ -38,8 +38,10 @@ class OtpverifyView extends StatelessWidget{
                   ),
                 ),
               ),
-              Container(margin: EdgeInsets.only(left: 40.0,top: 80.0),
-                child: Align(alignment: Alignment.centerLeft,
+              Container(margin:
+              EdgeInsets.only(left: 20.0,top: 80.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
                   child: Text("OTP Verification",
                     style: TextStyle(
                         fontSize: 25.0,fontWeight: FontWeight.bold),),
@@ -97,7 +99,7 @@ class OtpverifyView extends StatelessWidget{
                               //   MaterialPageRoute(builder: (context) => SignupView()),
                               // );
                             },
-                            child: Text('resend OTP ',
+                            child: Text('Resend OTP ',
                                 style: TextStyle(fontSize: 18, color: Colors.green,)),
                           ),
 

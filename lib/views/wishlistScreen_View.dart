@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:flutter/material.dart';
 
 class WishlistscreenView extends StatelessWidget{
@@ -16,7 +12,6 @@ class WishlistscreenView extends StatelessWidget{
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-
                 // height: MediaQuery.of(context).size.height/2,
                 width: MediaQuery.of(context).size.width/2,
                   child: Row(
@@ -45,17 +40,17 @@ class WishlistscreenView extends StatelessWidget{
                          const SizedBox(height: 8.0,),
                           Row(
                             children: [
-                              CircleAvatar(
+                             const  CircleAvatar(
                                 radius: 14.0,
                                 child: Text("Rs"),
                               ),
-                              Text("60000"),
+                              const Text("60000"),
                              const SizedBox(width: 30.0,),
                               Container(color: Colors.grey[500],
                                 child: const Padding(
                                   padding: EdgeInsets.all(6.0),
                                   child: Text("Live",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)
-                                    ,),
+                                    ),
                                 ),)
 
                             ],

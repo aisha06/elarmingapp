@@ -51,20 +51,24 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
         centerTitle: true,
-        title: const Text("Welcome  Vaishnavi",style: TextStyle(color: Colors.black),),
+        title: const Text("Welcome  Vaishnavi",
+          style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.transparent,
         actions: <Widget>[
 
 
-      Stack(children: [
-
-
-        CircleAvatar(radius: 20.0,),
-      Positioned(top: 10,
-        left: 10.0,
+       Stack(children: [
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: CircleAvatar(radius: 15.0,backgroundColor:  Color(0xFF5BA084),),
+        ),
+      Positioned(top: 14,
+        left: 14.0,
         child: Icon(Icons.notifications,
           color: Colors.yellow,),
-      )])
+      )
+      ]
+      )
         ],
        // backgroundColor: Colors.white,
         elevation: 0.00,

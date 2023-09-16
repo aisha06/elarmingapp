@@ -138,7 +138,7 @@ buildContext) {
     padding: const EdgeInsets.all(8),
     itemCount:4,
     itemBuilder: (BuildContext context, int index) {
-      List itemlist2 =["Dwnload Option","Video Play back Option","Account Summary","About E-education"];
+      List itemlist2 =["Download Option","Video Play back Option","Account Summary","About E-education"];
       List Iconlist2=[Icons.download,Icons.video_call,Icons.account_balance,Icons.share
       ];
 
