@@ -23,11 +23,8 @@ class Homescreen extends StatelessWidget {Homescreen({
                 // color: Colors.white,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(
-                      color: Colors.black, // Border color
-                      width: 1.0 // Border width
-                  ),
+                  color: const  Color(0xFFD9D9D9),
+
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: TextField(
@@ -36,84 +33,90 @@ class Homescreen extends StatelessWidget {Homescreen({
                     border: InputBorder.none,
                     hintText: 'Search for anything',
                     // Add a clear button to the search bar
-                    suffixIcon: IconButton(
-                      icon: const Icon(
-                        Icons.mic,
-                      ),
-                      onPressed: () {},
-                      // onPressed: () => _searchController.clear(),
-                    ),
+                    suffixIcon:Image.asset("assets/images/microphone.png"),
                     // Add a search icon or button to the search bar
-                    prefixIcon: IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {
-                        // Perform the search here
-                      },
-                    ),
+                    prefixIcon:Image.asset("assets/images/search.png")
                   ),
                 ),
               ),
             ),
           ),
 
-          Row(
-            children: [
-              Container(
-                margin:const  EdgeInsets.only(left: 10.0),
-                width: 180,
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF58605C), Color(0xFF5BA084)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child:const Column(
-                  children:  [
-                    Text("A Scale as big as your dreams",
-                      style: TextStyle(color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0),),
-                    Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        style: TextStyle(color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12.0)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: 180,
+                    padding: const EdgeInsets.all(10.0),
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF58605C), Color(0xFF5BA084)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                     ),
-                  ],
-                ),
-
-              ),
-              const  SizedBox(width: 5.0,),
-              Container(
-                width: 210,
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF58605C), Color(0xFF5BA084)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Text("A Sale as big as your Dreams",
-                      style: TextStyle(color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0),),
-                    Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                        style: TextStyle(color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 10.0)
+                    child:const Column(
+                      children:  [
+                        Text("A Scale as big as your dreams",
+                          style: TextStyle(color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0),),
+                        Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                            style: TextStyle(color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12.0)
+                        ),
+                      ],
                     ),
 
-                  ],
+                  ),
                 ),
-              ),
 
-            ],
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF58605C), Color(0xFF5BA084)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.3,
+                          child: const Column(
+                            children: [
+                              Text("A Sale as big as your Dreams",
+                                style: TextStyle(color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0),),
+                              Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                  style: TextStyle(color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10.0)
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        Image.asset('assets/images/globe.png', scale: 4,)
+                      ],
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
           ),
           const SizedBox(height: 10.0,),
           Container(
@@ -153,7 +156,7 @@ class Homescreen extends StatelessWidget {Homescreen({
                                 "Enrolled Students",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18.0,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.bold),
                               ),
                               const SizedBox(

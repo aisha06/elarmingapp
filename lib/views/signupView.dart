@@ -6,10 +6,14 @@ import 'package:elearningapp_demo/views/loginView.dart';
 import 'package:flutter/material.dart';
 
 class SignupView extends StatelessWidget {
-  final TextEditingController _repasswordController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _adressController = TextEditingController();
+  final TextEditingController _lasttnameController = TextEditingController();
+  final TextEditingController _repasswordController = TextEditingController();
+  final TextEditingController _fnameController = TextEditingController();
+  final TextEditingController _numberController = TextEditingController();
+ final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,52 +54,51 @@ class SignupView extends StatelessWidget {
             Textform(text:'First Name:'),
         const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController,
                 labeltext: 'First Name ',
-                hinttext: 'Enter your First Name',),
+                hinttext: 'Enter your First Name', Controllerctr: _fnameController,),
               const SizedBox(
                 height: 20.0,
               ),
               Textform(text:'Last Name:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController,
-                labeltext: 'Last Name', hinttext: 'Enter your last Name ',),
+                labeltext: 'Last Name',
+                hinttext: 'Enter your last Name ',
+                Controllerctr: _lasttnameController,),
               const SizedBox(
                 height: 20.0,
               ),
               Textform(text:'Address:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController, labeltext: 'Address', hinttext: 'Enter your Adress',),
+                labeltext: 'Address',
+                hinttext: 'Enter your Adress',
+                Controllerctr: _adressController,),
               const SizedBox(
                 height: 20.0,
               ),
               Textform(text:'Email ID:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                  repasswordController: _repasswordController,
-                  passwordController: _passwordController, hinttext: 'Email', labeltext: 'Enter your Email',),
+                  hinttext: 'Email',
+                labeltext: 'Enter your Email', Controllerctr: _emailController,),
               const SizedBox(
                 height: 20.0,
               ),
               Textform(text:'Mobile NO.:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController, labeltext: 'Mobile No.', hinttext: 'Enter your Mobile No.',),
+                labeltext: 'Mobile No.',
+                hinttext: 'Enter your Mobile No.', Controllerctr: _numberController,),
               const SizedBox(
                 height: 20.0,
               ),
               Textform(text:'Password:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController,
-                hinttext: 'Password', labeltext: 'Enter your Password',),
+                hinttext: 'Password', 
+                labeltext: 'Enter your Password', 
+                Controllerctr: _passwordController,),
               const SizedBox(
                 height: 20.0,
               ),
@@ -105,9 +108,8 @@ class SignupView extends StatelessWidget {
                 height: 10.0,
               ),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController,
-                hinttext: 'rePassword', labeltext: 'Enter your rePassword',),
+                hinttext: 'rePassword',
+                labeltext: 'Enter your rePassword', Controllerctr: _repasswordController,),
               const SizedBox(
                 height: 20.0,
               ),

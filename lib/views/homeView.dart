@@ -41,15 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer:ProfilescreenView(context: context,),
       //Drawer
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.black,
-          ),
-          onPressed: () {
+        leading: GestureDetector(
+          onTap: (){
             _scaffoldKey.currentState?.openDrawer();
           },
-        ),
+            child:Image.asset("assets/images/drawer.png")),
         centerTitle: true,
         title: const Text("Welcome  Vaishnavi",
           style: TextStyle(color: Colors.black),),
@@ -64,8 +60,15 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       Positioned(top: 14,
         left: 14.0,
-        child: Icon(Icons.notifications,
-          color: Colors.yellow,),
+        child: Badge(
+          textColor: Colors.red, // Set the badge background color to red
+          label: Text(
+            '5', // Replace with the number you want to display
+            style: TextStyle(color: Colors.white), // Set the text color to white
+          ),
+          child: Icon(Icons.notifications,
+            color: Colors.yellow,),
+        ),
       )
       ]
       )
@@ -76,11 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       backgroundColor: const Color(0xFFDAFFF2),
       body:_pages[_bottomNavIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
 
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
         activeIndex: _bottomNavIndex,

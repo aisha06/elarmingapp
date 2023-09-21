@@ -2,6 +2,8 @@ import 'package:elearningapp_demo/views/liveCousreView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Grridviewpage extends StatelessWidget{
+  const Grridviewpage({super.key});
+
   @override
   Widget build(BuildContext context) {
     // return  GridView.builder(
@@ -67,6 +69,7 @@ class Grridviewpage extends StatelessWidget{
     // );
 
    return GridView.count(
+     physics: BouncingScrollPhysics(),
      padding: EdgeInsets.symmetric(horizontal: 10),
      crossAxisCount: 2,
      crossAxisSpacing: 10.0,

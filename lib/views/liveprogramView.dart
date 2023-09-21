@@ -9,6 +9,7 @@ class LiveprogramView extends StatelessWidget{
   return Scaffold(
     backgroundColor: const Color(0xFFDAFFF2),
    body: SingleChildScrollView(
+     // physics: NeverScrollableScrollPhysics(),
      child: Column(
        children: [
          Container(
@@ -19,13 +20,12 @@ class LiveprogramView extends StatelessWidget{
                icon:const Icon(Icons.arrow_back,
                  size: 30.0,),
                onPressed: () {
-                 // Navigate back when the back button is pressed
                  Navigator.of(context).pop();
                },
              ),
            ),
          ),
-         
+
          Align(alignment: Alignment.topLeft,
            child: Container(
              margin:const  EdgeInsets.only(top: 20.0,left: 20.0),

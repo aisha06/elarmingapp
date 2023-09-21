@@ -9,6 +9,7 @@ class AffordableprogramView extends StatelessWidget{
     return Scaffold(
       backgroundColor: const Color(0xFFDAFFF2),
       body: SingleChildScrollView(
+        // physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
             Container(

@@ -9,8 +9,6 @@ class LoginView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _repasswordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,15 +45,17 @@ class LoginView extends StatelessWidget {
               Textform(text:'Email ID.:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController, labeltext: 'Email', hinttext: 'Enter yur email ID',),
+               labeltext: 'Email',
+                hinttext: 'Enter yur email ID',
+                Controllerctr: _emailController,),
 
               const SizedBox(height: 10.0,),
               Textform(text:'Password:'),
               const SizedBox(height: 10.0,),
               TextfiledConatiner(
-                repasswordController: _repasswordController,
-                passwordController: _passwordController, labeltext: 'Password', hinttext: 'Enter your password',),
+                labeltext: 'Password',
+                hinttext: 'Enter your password',
+                Controllerctr: _passwordController,),
 
               const SizedBox(height:20.0,),
 
