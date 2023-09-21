@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888823876979",
+    "project_id": "skilful-reserve-363512",
+    "storage_bucket": "skilful-reserve-363512.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888823876979:android:bde3264e00ea9cda96c906",
+        "android_client_info": {
+          "package_name": "com.example.elearningapp_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwSGgXRtelz6SAt9-eVWt4-ByCt1OdxEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
