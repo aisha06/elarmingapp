@@ -7,9 +7,8 @@ import 'package:flutter/material.dart';
 
 class ForgetView extends StatelessWidget{
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  @override
+  final TextEditingController _phoneController = TextEditingController();
+    @override
   Widget build(BuildContext context) {
 
     return Scaffold(
@@ -43,9 +42,15 @@ class ForgetView extends StatelessWidget{
               const SizedBox(height:40.0,),
               Textform(text:'Enter Mobile No.:'),
               const SizedBox(height: 20.0,),
-              TextfiledConatiner(
-                repasswordController: _passwordController,
-                passwordController: _passwordController, labeltext: 'Phone No.', hinttext: 'Enter your Phone Number',),
+              TextfiledConatiner( keybordtype: TextInputType.number,
+
+                 labeltext: 'Phone No.', hinttext: 'Enter your Phone Number', Controllerctr: _phoneController,
+                valiDator: (value) {
+                  if (value!.isEmpty  ) {
+                    return 'Name cannot be empty';
+                  }
+                  return null; // Return null if the input is valid
+                },),
 
               const SizedBox(height:20.0,),
 
@@ -89,7 +94,7 @@ class ForgetView extends StatelessWidget{
                   )
               ),
               Container(
-                  margin: EdgeInsets.only(left: 6.0),
+                  margin: const EdgeInsets.only(left: 6.0),
                   child: Text("On this mobile number")),
               const SizedBox(height: 40.0,),
 

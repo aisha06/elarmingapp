@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:elearningapp_demo/views/accountSummaryView.dart';
 import 'package:elearningapp_demo/views/homescrrenView.dart';
+import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/profilescreen_View.dart';
 import 'package:elearningapp_demo/views/searchscreen_View.dart';
 import 'package:elearningapp_demo/views/wishlistScreen_View.dart';
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey =  GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final screenW = MediaQuery.of(context).size.width;
+    // final screenW = MediaQuery.of(context).size.width;
     return Scaffold(
       key: _scaffoldKey,
       drawer:ProfilescreenView(context: context,),
@@ -53,25 +54,33 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
 
 
-       Stack(children: [
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: CircleAvatar(radius: 15.0,backgroundColor:  Color(0xFF5BA084),),
-        ),
-      Positioned(top: 14,
-        left: 14.0,
-        child: Badge(
-          textColor: Colors.red, // Set the badge background color to red
-          label: Text(
-            '5', // Replace with the number you want to display
-            style: TextStyle(color: Colors.white), // Set the text color to white
+       GestureDetector(
+         onTap: (){
+           Navigator.push(
+               context, MaterialPageRoute(builder: (context) => NotificationscreenView()));
+
+
+         },
+         child: Stack(children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: CircleAvatar(radius: 15.0,backgroundColor:  Color(0xFF5BA084),),
           ),
-          child: Icon(Icons.notifications,
-            color: Colors.yellow,),
-        ),
+      Positioned(top: 14,
+          left: 14.0,
+          child: Badge(
+            textColor: Colors.red, // Set the badge background color to red
+            label: Text(
+              '5', // Replace with the number you want to display
+              style: TextStyle(color: Colors.white), // Set the text color to white
+            ),
+            child: Icon(Icons.notifications,
+              color: Colors.yellow,),
+          ),
       )
       ]
-      )
+      ),
+       )
         ],
        // backgroundColor: Colors.white,
         elevation: 0.00,
@@ -84,10 +93,10 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
         activeIndex: _bottomNavIndex,
-        gapLocation: GapLocation.center,
+        // gapLocation: GapLocation.center,
         notchSmoothness: NotchSmoothness.verySmoothEdge,
-        leftCornerRadius: 32,
-        rightCornerRadius: 32,
+        leftCornerRadius: 0,
+        rightCornerRadius: 0,
         onTap: (index) => setState(() => _bottomNavIndex = index),
         //other params
       ),

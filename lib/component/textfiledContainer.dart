@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 class TextfiledConatiner extends StatelessWidget {
   String labeltext;
   String hinttext;
+  TextInputType keybordtype;
+  final String? Function(String?)? valiDator;
   TextEditingController Controllerctr;
   TextfiledConatiner({
-    super.key,required this.labeltext,required this.hinttext,
-    required this.Controllerctr,
+    super.key,
+    required this.labeltext,
+    required this.hinttext,
+    required this.valiDator,
+    required this.Controllerctr,required this.keybordtype
   });
 
 
@@ -18,8 +23,9 @@ class TextfiledConatiner extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 0),
         child: TextFormField(
+          keyboardType: keybordtype,
           controller: Controllerctr,
-          obscureText: true,
+          // obscureText: true,
           decoration:  InputDecoration(
               border: OutlineInputBorder(borderSide: BorderSide(width: 4.0),
                 borderRadius: BorderRadius.circular(10), // Set the BorderRadius here
@@ -27,23 +33,8 @@ class TextfiledConatiner extends StatelessWidget {
 
               labelText: labeltext,
               hintText: hinttext),
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Please re-enter password';
-            }
-
-            // if (_passwordController.text != _repasswordController.text) {
-            //   print("saved");
-            //   return "Password does not match";
-            // }
-            return null;
-          },
-
-          onSaved: (value) {
-            // _repasswordController.text = value!;
-          },
-          //validatePassword,
-          //validatePassword,        //Function to check validation
+          validator: valiDator,
+          //Function to check validation
         ),
       ),
     );

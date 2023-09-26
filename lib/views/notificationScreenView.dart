@@ -9,6 +9,7 @@ class NotificationscreenView extends StatelessWidget{
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(
+       iconTheme: IconThemeData(color: Colors.black),
 
         actions:[ FlutterSwitch(
           activeColor: Colors.green,

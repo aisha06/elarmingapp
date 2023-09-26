@@ -9,10 +9,10 @@ class Textform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 20.0),
+      margin: const  EdgeInsets.only(left: 30.0),
       child: Align(alignment: Alignment.topLeft,
           child: Text(text,
-            style: TextStyle(fontWeight:FontWeight.bold),)),
+            style:const  TextStyle(fontWeight:FontWeight.bold),)),
     );
   }
 }

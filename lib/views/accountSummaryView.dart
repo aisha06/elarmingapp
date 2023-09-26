@@ -21,54 +21,58 @@ class AccountSummaryView extends StatelessWidget{
          itemBuilder: (BuildContext context, int index) {
            return Padding(
              padding: const EdgeInsets.all(8.0),
-             child: Container(
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.start,
 
-               width: MediaQuery.of(context).size.width/2,
-               child: Row(
-                 children: [
-                   Image.asset("assets/images/livepic.png",fit:BoxFit.fitWidth,),
-                   Container(
-                     height: 90,
+               children: [
+                 Image.asset(
 
-                     color:const Color(0xFFD9D9D9),
-                     child: Row(
-                       children: [
-                         Column(
-                           children: [
-                             Card(elevation: 8,
-                               child: Container(
-                                 padding: const EdgeInsets.all(5.0),
-                                 color:const Color(0xFF91E8B2),
-                                 child: Text("Machine learning Bootcamp",
-                                   style: const TextStyle(fontWeight: FontWeight.bold),),
+                   "assets/images/livepic.png",
+                   fit:BoxFit.fitWidth, ),
+                 Container(
+                   width: MediaQuery.of(context).size.width*0.5,
+                   height: MediaQuery.of(context).size.height*0.1,
+                   color:const Color(0xFFD9D9D9),
+                   child: Row(
+                     children: [
+                       Column(
+                         children: [
+                           Card(elevation: 8,
+                             child: Container(
+                               padding: const EdgeInsets.all(5.0),
+                               color:const Color(0xFF91E8B2),
+                               child: Text("Machine learning Bootcamp",
+                                 style: const TextStyle(fontWeight: FontWeight.bold),),
+                             ),
+                           ),
+                           const SizedBox(height: 15.0,),
+                           Row(
+                             children: [
+                               const SizedBox(width: 8.0,),
+                               Text("Payment sucessfully",
+                                 style: TextStyle(fontWeight: FontWeight.bold,
+                                     color: Colors.black),),
+                               SizedBox(width: 10.0,),
+                               CircleAvatar(
+                                 radius: 10.0,
+                                 backgroundColor: const Color(0xFF91E8B2),
+                                 child: Text("Rs",style: TextStyle(fontSize: 10.0,fontWeight: FontWeight.bold,color: Colors.black),),
                                ),
-                             ),
-                             const SizedBox(height: 8.0,),
-                             Row(
-                               children: [
-                                 const SizedBox(width: 8.0,),
-                                 Text("Payment sucessfully",
-                                   style: TextStyle(fontWeight: FontWeight.bold,
-                                       color: Colors.black),),
-                                 SizedBox(width: 10.0,),
-                                 CircleAvatar(
-                                   radius: 14.0,
-                                   child: Text("Rs"),
-                                 ),
-                                 Text("60000"),
-                               ],
-                             ),
+                               SizedBox(width: 5,),
+                               Text("60,000"),
+                             ],
+                           ),
 
 
 
-                           ],
-                         ),
-                       ],
-                     ),
+                         ],
+                       ),
+                     ],
                    ),
+                 ),
 
-                 ],
-               ), ),
+               ],
+             ),
            );
          },
        )

@@ -3,6 +3,7 @@ import 'package:elearningapp_demo/views/aboutEducationView.dart';
 import 'package:elearningapp_demo/views/accountSummaryView.dart';
 import 'package:elearningapp_demo/views/downloadscreenView.dart';
 import 'package:elearningapp_demo/views/editProfileView.dart';
+import 'package:elearningapp_demo/views/myprofileView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/sharelistView.dart';
 import 'package:elearningapp_demo/views/videoplayView.dart';
@@ -143,7 +144,7 @@ class ProfilescreenView extends StatelessWidget {
 }
 
 profile_list(BuildContext buildContext) {
-  List list = [WishlistscreenView(), NotificationscreenView(), SharelistView()];
+  List list = [MyprofileView(),WishlistscreenView(), NotificationscreenView(), SharelistView()];
 
   return ListView.builder(
     padding: const EdgeInsets.all(8),

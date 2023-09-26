@@ -7,7 +7,7 @@ class SharelistView extends StatelessWidget{
    return  Scaffold(
        appBar: AppBar(
 
-
+         iconTheme: IconThemeData(color: Colors.black),
          backgroundColor: Colors.transparent,
          centerTitle: true,
          elevation: 0.0,

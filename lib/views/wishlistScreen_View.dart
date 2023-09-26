@@ -12,13 +12,15 @@ class WishlistscreenView extends StatelessWidget{
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                // height: MediaQuery.of(context).size.height/2,
-                width: MediaQuery.of(context).size.width/2,
+               height:80,
+
                   child: Row(
                     children: [
                       Image.asset("assets/images/livepic.png",fit:BoxFit.fitWidth,),
 
                 Container(
+                  // width:MediaQuery.of(context).size.width*4,
+                   height:MediaQuery.of(context).size.height*0.1,
 
                   color:const  Color(0xFFD9D9D9),
                   child: Row(
@@ -39,34 +41,50 @@ class WishlistscreenView extends StatelessWidget{
                                               color: Colors.black),),
                          const SizedBox(height: 8.0,),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                              const  CircleAvatar(
-                                radius: 14.0,
-                                child: Text("Rs"),
+                               backgroundColor: Color(0xFF91E8B2),
+                                radius: 10.0,
+                                child: Text("Rs",style: TextStyle(fontSize: 10.0,fontWeight: FontWeight.bold,color: Colors.black),),
                               ),
-                              const Text("60000"),
-                             const SizedBox(width: 30.0,),
-                              Container(color: Colors.grey[500],
-                                child: const Padding(
-                                  padding: EdgeInsets.all(6.0),
-                                  child: Text("Live",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold)
-                                    ),
-                                ),)
+                              Container(
+                                margin: const EdgeInsets.only(left: 5.0),
+                                  child: const Text("60000")),
+
 
                             ],
                           ),
-                          const  SizedBox(width: 5.0,),
 
 
                         ],
                       ),
-                      IconButton(
-                            onPressed: () {},
-                        constraints: BoxConstraints(),
-                        padding: EdgeInsets.zero,
-                            icon: const Icon(Icons.favorite_border_outlined),
-                            color: Colors.red,
-                          )
+
+                      Column(
+                        children: [
+                          Container(
+                            margin:const  EdgeInsets.only(left: 10.0,bottom: 20.0,top: 10),
+                            child: IconButton(
+                                  onPressed: () {},
+                              constraints: BoxConstraints(),
+                              padding: EdgeInsets.zero,
+                                  icon: const Icon(Icons.favorite_border_outlined),
+                                  color: Colors.red,
+                                ),
+                          ),
+                          Container(
+                            color: Colors.grey[500],
+                            child: const Padding(
+                              padding: EdgeInsets.all(4.0),
+                              child: Text("Live",
+                                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 10.0)
+                              ),
+                            ),)
+                        ],
+                      ),
+
+
+
                         ],
                   ),
                 ),
