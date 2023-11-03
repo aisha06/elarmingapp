@@ -2,7 +2,7 @@ import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
-import 'package:elearningapp_demo/views/homeView.dart';
+import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -10,19 +10,22 @@ import 'package:flutter/material.dart';
 class LoginView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  User?user;
+  User? user;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  Future<User?> login(String email,String pass,context) async {
+
+  LoginView({super.key});
+  Future<User?> login(String email, String pass, context) async {
     if (_formKey.currentState!.validate()) {
       try {
         UserCredential userCredential = await _auth.signInWithEmailAndPassword(
           email: email,
           password: pass,
         );
-        user= userCredential.user;
+        user = userCredential.user;
         print("aisha");
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> MyHomePage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => MyNavigationBar()));
 
         print('login');
 
@@ -89,8 +92,9 @@ class LoginView extends StatelessWidget {
                 hinttext: 'Enter yur email ID',
                 Controllerctr: _emailController,
                 valiDator: (value) {
-                  if (value!.isEmpty || RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                      .hasMatch(_emailController.text)) {
+                  if (value!.isEmpty ||
+                      RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(_emailController.text)) {
                     return '*Required';
                   }
                   return null; // Return null if the input is valid
@@ -109,7 +113,7 @@ class LoginView extends StatelessWidget {
                 hinttext: 'Enter your password',
                 Controllerctr: _passwordController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Password  cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -121,8 +125,8 @@ class LoginView extends StatelessWidget {
               Button(
                 text: 'Login',
                 function: () {
-                  login(_emailController.text,_passwordController.text,context);
-
+                  login(
+                      _emailController.text, _passwordController.text, context);
                 },
               ),
               const SizedBox(
@@ -150,7 +154,7 @@ class LoginView extends StatelessWidget {
                     )),
               ),
               const SizedBox(
-                height: 40.0,
+                height: 20.0,
               ),
               GestureDetector(
                 onTap: () {

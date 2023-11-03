@@ -1,6 +1,8 @@
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
+import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
+import 'package:elearningapp_demo/views/home_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -59,11 +61,12 @@ class ChangepassworsView extends StatelessWidget {
                 hinttext: 'Enter yur email ID',
                 Controllerctr: _newpasswordController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
-                }, keybordtype: TextInputType.name,
+                },
+                keybordtype: TextInputType.name,
               ),
               const SizedBox(
                 height: 10.0,
@@ -78,7 +81,7 @@ class ChangepassworsView extends StatelessWidget {
                 hinttext: 'Enter your password',
                 Controllerctr: _comfirmpasswordController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -90,10 +93,10 @@ class ChangepassworsView extends StatelessWidget {
               Button(
                 text: 'Set Password',
                 function: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MyHomePage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyNavigationBar()),
+                  );
                 },
               ),
             ],

@@ -11,7 +11,6 @@ class EditProfile extends StatelessWidget {
   final TextEditingController _contactontroller = TextEditingController();
   final TextEditingController _renameController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +48,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur name',
                 Controllerctr: _nameController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -64,7 +63,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur Enrolment No.',
                 Controllerctr: _enrollmentController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -79,7 +78,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur E-mail',
                 Controllerctr: _emailController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -94,7 +93,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur adress',
                 Controllerctr: _adressController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -109,7 +108,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur Contact',
                 Controllerctr: _contactontroller,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -124,7 +123,7 @@ class EditProfile extends StatelessWidget {
                 hinttext: 'Enter yur rename',
                 Controllerctr: _renameController,
                 valiDator: (value) {
-                  if (value!.isEmpty  ) {
+                  if (value!.isEmpty) {
                     return 'Name cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -136,6 +135,9 @@ class EditProfile extends StatelessWidget {
               Button(
                 text: 'Profile Edit ',
                 function: () {},
+              ),
+              const SizedBox(
+                height: 20.0,
               ),
             ],
           ),

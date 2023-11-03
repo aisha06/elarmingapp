@@ -12,16 +12,14 @@ class Button extends StatelessWidget {
       // width: MediaQuery.of(context).size.width,
       child: ElevatedButton(
           onPressed: function,
-        style: ElevatedButton.styleFrom(
-            primary:  Color(0xFF575756)
-            ,
-            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10),
-            textStyle: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold)),
+          style: ElevatedButton.styleFrom(
+              primary: const Color(0xFF575756),
+              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+              textStyle:
+                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           child: Text(
             text,
-            style: TextStyle(fontSize: 18.0),
+            style: const TextStyle(fontSize: 18.0),
           )),
     );
   }

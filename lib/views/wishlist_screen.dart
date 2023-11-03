@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class VedioPlayView extends StatefulWidget {
-  const VedioPlayView({super.key});
+class WishlistScreen extends StatefulWidget {
+  const WishlistScreen({super.key});
 
   @override
-  State<VedioPlayView> createState() => _WishlistScreenState();
+  State<WishlistScreen> createState() => _WishlistScreenState();
 }
 
-class _WishlistScreenState extends State<VedioPlayView> {
+class _WishlistScreenState extends State<WishlistScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
           centerTitle: true,
           elevation: 0.0,
           title: Text(
-            "Video",
+            "Wishlist",
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -29,7 +29,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
             return Padding(
               padding: EdgeInsets.all(8.0),
               child: Container(
-                height: 88,
+                height: 89,
                 //width: 68,
                 //height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width / 2,
@@ -108,7 +108,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                 onPressed: () {},
                                 constraints: BoxConstraints(),
                                 padding: EdgeInsets.zero,
-                                icon: Icon(Icons.play_circle),
+                                icon: Icon(Icons.favorite_border_outlined),
                                 color: Colors.red,
                               ),
                               Column(
@@ -117,9 +117,9 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                   Container(
                                     margin: EdgeInsets.only(
                                         left: 10.0,
+                                        right: 5,
                                         bottom: 20.0,
-                                        top: 20.0,
-                                        right: 5.0),
+                                        top: 40.0),
                                     color: Colors.grey[500],
                                     child: Text("Live",
                                         style: TextStyle(

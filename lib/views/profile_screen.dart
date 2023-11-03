@@ -1,50 +1,50 @@
-import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/views/aboutEducationView.dart';
-import 'package:elearningapp_demo/views/accountSummaryView.dart';
+import 'package:elearningapp_demo/views/account_summary.dart';
 import 'package:elearningapp_demo/views/downloadscreenView.dart';
 import 'package:elearningapp_demo/views/editProfileView.dart';
 import 'package:elearningapp_demo/views/myprofileView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/sharelistView.dart';
 import 'package:elearningapp_demo/views/videoplayView.dart';
-import 'package:elearningapp_demo/views/wishlistScreen_View.dart';
+import 'package:elearningapp_demo/views/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 
-class ProfilescreenView extends StatelessWidget {
-  BuildContext context;
-
-  ProfilescreenView({super.key, required this.context});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  Widget build(context) {
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           Card(
             elevation: 10,
-            margin: const EdgeInsets.only(left: 20.0, right: 10.0, top: 60.0),
-            color: const Color(0xFFEFEFEF),
+            margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 80.0),
+            color: Color(0xFFEFEFEF),
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
               child: Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    margin: EdgeInsets.only(left: 20.0, right: 20.0),
                     child: Stack(children: [
-                      const CircleAvatar(
+                      CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage("assets/images/aisha.jpg"),
                       ),
                       Align(
                         widthFactor: 2,
-                        heightFactor:4,
+                        heightFactor: 3,
                         alignment: Alignment.bottomCenter,
                         child: Container(
-
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color(0xFF5BA084),
-
+                            color: Color(0xFF5BA084),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(6.0),
@@ -60,7 +60,8 @@ class ProfilescreenView extends StatelessWidget {
                                       // Get.to(EditProfile());
                                     },
                                     child: Padding(
-                                      padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+                                      padding: const EdgeInsets.only(
+                                          left: 10.0, right: 10.0),
                                       child: const Text(
                                         "Edit",
                                         style: TextStyle(color: Colors.white),
@@ -71,24 +72,24 @@ class ProfilescreenView extends StatelessWidget {
                       )
                     ]),
                   ),
-
-
                   Column(
                     children: [
                       Text(
                         "Vaishnavi Bansal",
-                        style:
-                            TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0,
+                            color: Colors.black),
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
                       Text(
                         "Enrollment No:12343334",
-                        style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15.0,
+                            color: Colors.black),
                       ),
                     ],
                   )
@@ -144,18 +145,40 @@ class ProfilescreenView extends StatelessWidget {
 }
 
 profile_list(BuildContext buildContext) {
-  List list = [MyprofileView(),WishlistscreenView(), NotificationscreenView(), SharelistView()];
+  List list = [
+    MyprofileView(),
+    WishlistScreen(),
+    NotificationscreenView(),
+    SharelistView(),
+    DownloadScreenView(),
+    VedioPlayView(),
+    AccountSummaryView(),
+    Abouteducationview(),
+  ];
 
   return ListView.builder(
     padding: const EdgeInsets.all(8),
-    itemCount: 4,
+    itemCount: 8,
     itemBuilder: (BuildContext context, int index) {
-      List itemlist = ["Your Profile", "Wishlist", "Notification", "Share"];
+      List itemlist = [
+        "Your Profile",
+        "Wishlist",
+        "Notification",
+        "Share",
+        "Download Option",
+        "Video Play Back Option",
+        "Account Summary",
+        "About E-Education"
+      ];
       List Iconlist = [
         "assets/images/person1.png",
         "assets/images/favroute.png",
         "assets/images/notification.png",
         "assets/images/share.png",
+        "assets/images/download.png",
+        "assets/images/movie.png",
+        "assets/images/document.png",
+        "assets/images/logo.png",
       ];
 
       return GestureDetector(
@@ -166,7 +189,10 @@ profile_list(BuildContext buildContext) {
         child: ListTile(
           title: Text(
             itemlist[index],
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color(0xFF0000000),
+            ),
           ),
           leading: CircleAvatar(
             radius: 20.0,
@@ -182,48 +208,51 @@ profile_list(BuildContext buildContext) {
   );
 }
 
-profile_list2(BuildContext buildContext) {
-  List list = [
-    DownloadScreenView(),
-    VedioPlayView(),
-    AccountSummaryView(),
-    Abouteducationview()
-  ];
+// profile_list2(BuildContext buildContext) {
+//   List list = [
+//     DownloadScreenView(),
+//     VedioPlayView(),
+//     AccountSummaryView(),
+//     Abouteducationview()
+//   ];
 
-  return ListView.builder(
-    padding: const EdgeInsets.all(8),
-    itemCount: 4,
-    itemBuilder: (BuildContext context, int index) {
-      List itemlist2 = [
-        "Download Option",
-        "Video Play Back Option",
-        "Account Summary",
-        "About E-Education"
-      ];
-      List Iconlist2 = [
-        "assets/images/download.png",
-        "assets/images/movie.png",
-        "assets/images/document.png",
-        "assets/images/logo.png",
-      ];
+//   return ListView.builder(
+//     padding: const EdgeInsets.all(8),
+//     itemCount: 4,
+//     itemBuilder: (BuildContext context, int index) {
+//       List itemlist2 = [
+//         "Download Option",
+//         "Video Play Back Option",
+//         "Account Summary",
+//         "About E-Education"
+//       ];
+//       List Iconlist2 = [
+//         "assets/images/download.png",
+//         "assets/images/movie.png",
+//         "assets/images/document.png",
+//         "assets/images/logo.png",
+//       ];
 
-      return GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => list[index]));
-        },
-        child: ListTile(
-          title: Text(
-            itemlist2[index],
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          leading: CircleAvatar(
-            radius: 20.0,
-            backgroundColor: Colors.grey[400],
-            child: Image.asset(Iconlist2[index]),
-          ),
-        ),
-      );
-    },
-  );
-}
+//       return GestureDetector(
+//         onTap: () {
+//           Navigator.push(
+//               context, MaterialPageRoute(builder: (context) => list[index]));
+//         },
+//         child: ListTile(
+//           title: Text(
+//             itemlist2[index],
+//             style: const TextStyle(
+//               fontWeight: FontWeight.bold,
+//               color: Color(0xFF0000000),
+//             ),
+//           ),
+//           leading: CircleAvatar(
+//             radius: 20.0,
+//             backgroundColor: Colors.grey[400],
+//             child: Image.asset(Iconlist2[index]),
+//           ),
+//         ),
+//       );
+//     },
+//   );
+// }

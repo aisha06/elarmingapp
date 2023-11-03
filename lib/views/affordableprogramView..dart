@@ -1,9 +1,7 @@
-
-
 import 'package:elearningapp_demo/component/gridvirepage.dart';
 import 'package:flutter/material.dart';
 
-class AffordableprogramView extends StatelessWidget{
+class AffordableprogramView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,12 +11,15 @@ class AffordableprogramView extends StatelessWidget{
         child: Column(
           children: [
             Container(
-              margin:const  EdgeInsets.only(top: 50.0),
+              margin: const EdgeInsets.only(top: 50.0),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: IconButton(
-                  icon:const Icon(Icons.arrow_back,
-                    size: 30.0,),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                    size: 30.0,
+                  ),
                   onPressed: () {
                     // Navigate back when the back button is pressed
                     Navigator.of(context).pop();
@@ -26,14 +27,17 @@ class AffordableprogramView extends StatelessWidget{
                 ),
               ),
             ),
-            Align(alignment: Alignment.topLeft,
+            Align(
+              alignment: Alignment.topLeft,
               child: Container(
-                  margin:const  EdgeInsets.only(top: 20.0,left: 20.0),
-                  child: Text("Affordable Program ",
+                  margin: const EdgeInsets.only(top: 20.0, left: 20.0),
+                  child: Text(
+                    "Affordable Program ",
                     style: TextStyle(
                         fontSize: 25.0,
-                        fontWeight: FontWeight.bold
-                    ),)),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  )),
             ),
             Container(
               margin: const EdgeInsets.only(left: 20.0),
@@ -41,16 +45,20 @@ class AffordableprogramView extends StatelessWidget{
                   alignment: Alignment.topLeft,
                   child: Text(
                     "Get your program with live'Instructor lead'learning",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.0,
+                      color: Color(0xFF0000000),
+                    ),
                   )),
             ),
-            const SizedBox(height: 20.0,),
+            const SizedBox(
+              height: 20.0,
+            ),
             Grridviewpage()
           ],
         ),
       ),
     );
-
   }
-  
 }

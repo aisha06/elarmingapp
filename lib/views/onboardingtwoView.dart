@@ -18,38 +18,42 @@ class OnboardingtwoView extends StatelessWidget {
               children: [
                 Container(
                   margin: const EdgeInsets.only(left: 40.0),
-                  height: 150,
+                  height: 160,
                   child: Image.asset(
                     'assets/images/Group 8.png',
-                    height: MediaQuery.of(context).size.height,
-                    fit: BoxFit.fill,
+                    height: 130, width: 136,
+                    // height: MediaQuery.of(context).size.height,
+                    // fit: BoxFit.fill,
                   ),
                 ),
                 const Spacer(),
                 Container(
                   margin: const EdgeInsets.only(right: 20.0),
-                  height: 90.0,
+                  height: 150.0,
                   child: Image.asset(
                     'assets/images/onboardingpic.png',
-                    height: MediaQuery.of(context).size.height,
-                    fit: BoxFit.fill,
+                    height: 76, width: 134,
+                    // height: MediaQuery.of(context).size.height,
+                    // fit: BoxFit.fill,
                   ),
                 ),
               ],
             ),
-             const SizedBox(height: 20.0,),
+            const SizedBox(
+              height: 20.0,
+            ),
             Stack(
               children: [
                 Container(
-                  width: 250,
+                    width: 250,
                     height: 180.0,
                     margin: EdgeInsets.only(bottom: 5),
                     child: const CircleAvatar(
-                        radius: 80.0,
+                        radius: 70.0,
                         backgroundImage:
                             AssetImage("assets/images/aisha.jpg"))),
                 Positioned(
-                  bottom: 80.0,
+                  bottom: 90.0,
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5.0),
@@ -61,7 +65,7 @@ class OnboardingtwoView extends StatelessWidget {
                         child: Text(
                       "Hi",
                       style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     )),
                   ),
                 ),
@@ -71,10 +75,13 @@ class OnboardingtwoView extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),
-                    child:  Text(
+                    child: Text(
                       "vaishnavi\nBansal",
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF0000000),
+                      ),
                     ),
                     color: Colors.grey[300],
                   ),
@@ -86,38 +93,49 @@ class OnboardingtwoView extends StatelessWidget {
             ),
             Text(
               "    Empower your\nLearning Experience ",
-              style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF0000000),
+              ),
             ),
             Container(
                 margin:
                     const EdgeInsets.only(left: 40.0, right: 40.0, top: 20.0),
                 child: Text(
                   "Online learning refers to instruction that is delivered electronically through various multimedia and Internet platforms and applications. It is used interchangeably with other terms such as web-based learning, e-learning, computer-assisted instruction, and Internet-based learning.",
-                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 10.0),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10.0,
+                    color: Color(0xFF0000000),
+                  ),
                 )),
             const SizedBox(
               height: 50.0,
             ),
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
-              rightDotColor:Colors.grey,
+              rightDotColor: Colors.grey,
               size: 40,
             ),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
-                  );
-                },
-                child: const Text("Next"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginView()),
+                );
+              },
+              child: const Text("Next"),
               style: ElevatedButton.styleFrom(
-                  primary:const   Color(0xFF575756)
-                  ,
-                  padding:const  EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+                  primary: const Color(0xFF575756),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
                   textStyle: TextStyle(
                       fontSize: 20,
-                      fontWeight: FontWeight.bold)),)
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black)),
+            ),
+            SizedBox(height: 20.0),
           ],
         ),
       ),

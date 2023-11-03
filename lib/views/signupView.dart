@@ -3,7 +3,7 @@ import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/controller/userController.dart';
-import 'package:elearningapp_demo/views/homeView.dart';
+import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/loginView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class SignupView extends StatelessWidget {
         });
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MyHomePage()),
+          MaterialPageRoute(builder: (context) => MyNavigationBar()),
         );
 
         // You can handle the successful signup here, e.g., navigate to the home page.
@@ -62,6 +62,38 @@ class SignupView extends StatelessWidget {
     }
   }
 
+  // void _signup(String email, String pass) async {
+  //   print(email);
+  //   print(pass);
+  //   if (_formKey.currentState!.validate()) {
+  //     try {
+  //       UserCredential userCredential =
+  //       await _auth.createUserWithEmailAndPassword(
+  //         email: email,
+  //         password: pass,
+  //       );
+  //       UserProfile user = UserProfile(
+  //         displayName: userCredential.user!.uid, // Set user's display name here
+  //       );
+  //
+  //       await _firestore.collection('users').doc(userCredential.user?.uid).set({
+  //         'name': _nameController.text,
+  //       });
+  //
+  //       // You can handle the successful signup here, e.g., navigate to the home page.
+  //     } on FirebaseAuthException catch (e) {
+  //       if (e.code == 'weak-password') {
+  //         print('The password provided is too weak.');
+  //       } else if (e.code == 'email-already-in-use') {
+  //         print('The account already exists for that email.');
+  //       } else {
+  //         print('Error: ${e.message}');
+  //       }
+  //     } catch (e) {
+  //       print('Error: $e');
+  //     }
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,7 +201,7 @@ class SignupView extends StatelessWidget {
                 valiDator: (value) {
                   if (value!.isEmpty ||
                       RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                      .hasMatch(_emailController.text)) {
+                          .hasMatch(_emailController.text)) {
                     return 'Email cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -189,7 +221,6 @@ class SignupView extends StatelessWidget {
                 Controllerctr: _numberController,
                 valiDator: (value) {
                   if (value!.isEmpty || (value.length > 11)) {
-
                     return 'mobile number  cannot be empty';
                   }
                   return null; // Return null if the input is valid
@@ -213,7 +244,7 @@ class SignupView extends StatelessWidget {
                         return "* Required";
                       } else if (value.length < 6) {
                         return "Password should be atleast 6 characters";
-                      } else if (value.length > 10) {
+                      } else if (value.length > 8) {
                         return "Password should not be greater than 10 characters";
                       } else
                         return null;
@@ -228,11 +259,12 @@ class SignupView extends StatelessWidget {
               ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
-                 hinttext: 're enter Password',
+                hinttext: 're enter Password',
                 labeltext: 'Enter your Password for confirmation',
                 Controllerctr: _repasswordController,
                 valiDator: (value) {
-                  if (value!.isEmpty|| _repasswordController.text == _passwordController.text) {
+                  if (value!.isEmpty ||
+                      _repasswordController.text == _passwordController.text) {
                     return 'Please confirm your password';
                   }
                   return null; // Return null if the input is valid
