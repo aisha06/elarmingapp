@@ -44,36 +44,36 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/images/home.png'),
-                color: Color(0xFF3A5A98),
+                color: Color(0xFF000000),
               ),
               label: "home",
-              backgroundColor: Colors.grey,
+              backgroundColor: Color(0xFFDAFFF2),
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/images/ico.png'),
-                color: Color(0xFF3A5A98),
+                color: Color(0xFF000000),
               ),
               label: "Search",
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/images/features.png'),
-                color: Color(0xFF3A5A98),
+                color: Color(0xFF000000),
               ),
               label: "Feature",
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/images/love.png'),
-                color: Color(0xFF3A5A98),
+                color: Color(0xFF000000),
               ),
               label: "Wishlist",
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/images/Man.png'),
-                color: Color(0xFF3A5A98),
+                color: Color(0xFF000000),
               ),
               label: "Account",
             ),
