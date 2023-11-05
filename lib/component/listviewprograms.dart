@@ -19,18 +19,17 @@ class listprogramView extends StatelessWidget {
         },
         child: ListView.builder(
           physics: NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.only(left: 10),
           scrollDirection: Axis.horizontal,
-          itemCount: 2,
+          itemCount: 1,
           itemBuilder: (context, position) {
             return Container(
-              margin: EdgeInsets.only(right: 10.0),
+              margin: EdgeInsets.only(right: 5),
               width: MediaQuery.of(context).size.width / 2.15,
               color: const Color(0xFFD9D9D9),
               child: Column(
                 children: [
                   SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.15,
+                      width: MediaQuery.of(context).size.width,
                       height: 85,
                       child: ClipRect(
                           child: Image.asset(
@@ -102,7 +101,8 @@ class listprogramView extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
-                            ))
+                            )),
+                        Spacer(),
                       ],
                     ),
                   ),
