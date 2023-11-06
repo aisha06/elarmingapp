@@ -68,12 +68,12 @@ class _SearchScreenState extends State<SearchScreen> {
                       fontSize: 16,
                       color: Colors.black),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     borderSide:
                         const BorderSide(color: Colors.black, width: 2.5),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(10),
                     borderSide:
                         const BorderSide(color: Colors.black, width: 1.5),
                   ),

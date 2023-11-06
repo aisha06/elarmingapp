@@ -83,13 +83,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Color(0xffDCDCDC))),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Color(0xffDCDCDC))),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(
                               color: Color.fromARGB(255, 188, 63, 63)))),
                 ),
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Color(0xff5BA084),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Row(
                         children: [
@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       decoration: BoxDecoration(
                         color: Color(0xff58605C),
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: height * 0.02),
                 Container(
-                  height: 140,
+                  height: 120,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 3,
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Card(
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(4.0),
                             gradient: LinearGradient(
                               colors: [Color(0xFF58605C), Color(0xFF5BA084)],
                               begin: Alignment.topLeft,
@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(
-                                left: 5.0, bottom: 5.0, right: 5.0),
+                                left: 6.0, bottom: 5.0, right: 6.0),
                             child: Column(
                               children: [
                                 Image.asset(
@@ -212,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.white,
                                 ),
                                 SizedBox(
-                                  height: 20.0,
+                                  height: 10.0,
                                 ),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -220,15 +220,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       "Enrolled Students",
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 14.0,
+                                          color: Colors.white,
+                                          fontSize: 12.0,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(height: height * 0.02),
+                                    SizedBox(height: height * 0.01),
                                     Text("8000+",
                                         style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 18.0,
+                                            color: Colors.white,
+                                            fontSize: 14.0,
                                             fontWeight: FontWeight.bold))
                                   ],
                                 )
@@ -286,6 +286,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400,
+                                  color: Colors.black,
                                 ))),
                       ),
                     ),
@@ -308,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -405,6 +406,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -433,7 +435,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -444,7 +446,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -468,7 +470,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -497,7 +499,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -594,6 +596,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -622,7 +625,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -633,7 +636,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -657,7 +660,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -680,7 +683,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Affordable Programs ",
+                          "Affordable Program ",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25.0,
@@ -691,7 +694,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Get your program with live instructor led learning.",
+                            "Get your program with live'Instructor lead'learning",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 12.0,
@@ -707,7 +710,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LiveprogramView()),
+                              builder: (context) => AffordableprogramView()),
                         );
                       },
                       child: Card(
@@ -719,6 +722,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400,
+                                  color: Colors.black,
                                 ))),
                       ),
                     ),
@@ -741,7 +745,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -838,6 +842,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -866,7 +871,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -877,7 +882,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -901,7 +906,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -930,7 +935,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -1027,6 +1032,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -1055,7 +1061,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -1066,7 +1072,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -1090,7 +1096,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -1113,7 +1119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Community Programs",
+                          "Community Program ",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25.0,
@@ -1124,7 +1130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Align(
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Get your program with live instructor led learning.",
+                            "Get your program with live'Instructor lead'learning",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 12.0,
@@ -1140,7 +1146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => LiveprogramView()),
+                              builder: (context) => CommunityprogramView()),
                         );
                       },
                       child: Card(
@@ -1152,6 +1158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400,
+                                  color: Colors.black,
                                 ))),
                       ),
                     ),
@@ -1174,7 +1181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -1271,6 +1278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -1299,7 +1307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -1310,7 +1318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -1334,7 +1342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),
@@ -1363,7 +1371,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 1,
                                   color: const Color(0xFFD9D9D9),
                                 ),
-                                borderRadius: BorderRadius.circular(5),
+                                borderRadius: BorderRadius.circular(2),
                               ),
                               child: Column(
                                 children: [
@@ -1395,7 +1403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   color:
                                                       const Color(0xFFD9D9D9),
                                                   border: Border.all(
-                                                    width: 1,
+                                                    width: 0.01,
                                                     color:
                                                         const Color(0xFFD9D9D9),
                                                   ),
@@ -1460,6 +1468,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600,
+                                              color: Colors.black,
                                             )),
                                       ),
                                     ),
@@ -1488,7 +1497,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Text(
                                           "Rs",
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight: FontWeight.w400,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -1499,7 +1508,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         "60,000",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black),
                                       ),
                                       Spacer(),
@@ -1523,440 +1532,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           "Live",
                                           style: TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              )),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Affordable Programs ",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0,
-                            color: Color(0xFF0000000),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            "Get your program with live instructor led learning.",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0,
-                              color: Color(0xFF0000000),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LiveprogramView()),
-                        );
-                      },
-                      child: Card(
-                        elevation: 10.0,
-                        child: Container(
-                            padding: EdgeInsets.all(5.0),
-                            color: Color(0xFF91E8B2),
-                            child: Text("View More",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                ))),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 15),
-                Container(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            // _showBottomSheetDeposit(context);
-                          },
-                          child: Container(
-                              height: 200,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFD9D9D9),
-                                border: Border.all(
-                                  width: 1,
-                                  color: const Color(0xFFD9D9D9),
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                children: [
-                                  Stack(
-                                    children: [
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        height: 90,
-                                        child: ClipRect(
-                                          child: Image.asset(
-                                            'assets/images/livepic.png',
-                                            fit: BoxFit.fill,
-                                            filterQuality: FilterQuality.high,
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                          child: Row(
-                                        children: [
-                                          Spacer(),
-                                          Column(
-                                            children: [
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
-                                                  'assets/images/heart.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
-                                              ),
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          )
-                                        ],
-                                      )),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Container(
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(2),
-                                        color: Color(0xff91e8b2),
-                                      ),
-                                      child: Center(
-                                        child: Text("Machine Learning Bootcamp",
-                                            style: TextStyle(
-                                              fontSize: 11,
-                                              fontWeight: FontWeight.w600,
-                                            )),
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    "Krish Naik",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        padding: const EdgeInsets.all(4),
-                                        // color:Colors.green,
-                                        child: Text(
-                                          "Rs",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        "60,000",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black),
-                                      ),
-                                      Spacer(),
-                                      Container(
-                                        padding: const EdgeInsets.all(5.0),
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff575756),
-                                              Color(0xff91e8b2)
-                                            ], // Replace with your desired colors
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [
-                                              0.9,
-                                              0.5
-                                            ], // This splits the gradient in half
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          "Live",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              )),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () {
-                            // _showBottomSheetDeposit(context);
-                          },
-                          child: Container(
-                              height: 200,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFD9D9D9),
-                                border: Border.all(
-                                  width: 1,
-                                  color: const Color(0xFFD9D9D9),
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Column(
-                                children: [
-                                  Stack(
-                                    children: [
-                                      SizedBox(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        height: 90,
-                                        child: ClipRect(
-                                          child: Image.asset(
-                                            'assets/images/livepic.png',
-                                            fit: BoxFit.fill,
-                                            filterQuality: FilterQuality.high,
-                                          ),
-                                        ),
-                                      ),
-                                      Positioned(
-                                          child: Row(
-                                        children: [
-                                          Spacer(),
-                                          Column(
-                                            children: [
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
-                                                  'assets/images/heart.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
-                                              ),
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          )
-                                        ],
-                                      )),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Container(
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(2),
-                                        color: Color(0xff91e8b2),
-                                      ),
-                                      child: Center(
-                                        child: Text("Machine Learning Bootcamp",
-                                            style: TextStyle(
-                                              fontSize: 11,
-                                              fontWeight: FontWeight.w600,
-                                            )),
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    "Krish Naik",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        padding: const EdgeInsets.all(4),
-                                        // color:Colors.green,
-                                        child: Text(
-                                          "Rs",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        "60,000",
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black),
-                                      ),
-                                      Spacer(),
-                                      Container(
-                                        padding: const EdgeInsets.all(5.0),
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff575756),
-                                              Color(0xff91e8b2)
-                                            ], // Replace with your desired colors
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [
-                                              0.9,
-                                              0.5
-                                            ], // This splits the gradient in half
-                                          ),
-                                        ),
-                                        child: const Text(
-                                          "Live",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black,
+                                            color: Colors.white,
                                           ),
                                         ),
                                       ),

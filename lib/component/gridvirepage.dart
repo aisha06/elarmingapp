@@ -2,9 +2,14 @@ import 'package:elearningapp_demo/views/liveCousreView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Grridviewpage extends StatelessWidget {
+class Grridviewpage extends StatefulWidget {
   const Grridviewpage({super.key});
 
+  @override
+  State<Grridviewpage> createState() => _GrridviewpageState();
+}
+
+class _GrridviewpageState extends State<Grridviewpage> {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -17,67 +22,182 @@ class Grridviewpage extends StatelessWidget {
       children: List.generate(
         20,
         (index) {
-          return GestureDetector(
+          return Expanded(
+              child: GestureDetector(
             onTap: () {
-              // Get.to(LivecourseView());
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LivecourseView()),
-              );
+              // _showBottomSheetDeposit(context);
             },
             child: Container(
-              color: const Color(0xFFD9D9D9),
-              child: Column(
-                children: [
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width / 2,
-                      height: 85,
-                      child: ClipRect(
-                          child: Image.asset(
-                        'assets/images/livepic.png',
-                        // fit: BoxFit.fill,
-                        height: 88,
-                        width: 158,
-                      ))),
-                  Card(
-                    elevation: 6,
-                    child: Container(
-                        padding: const EdgeInsets.all(5.0),
-                        color: const Color(0xFF91E8B2),
-                        child: const Text(
-                          "Machine learning Bootcamp",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
-                        )),
+                height: 200,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFD9D9D9),
+                  border: Border.all(
+                    width: 1,
+                    color: const Color(0xFFD9D9D9),
                   ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "krish Naik",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Row(
+                  borderRadius: BorderRadius.circular(2),
+                ),
+                child: Column(
+                  children: [
+                    Stack(
                       children: [
-                        Text(
-                          "60,000",
-                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: 90,
+                          child: ClipRect(
+                            child: Image.asset(
+                              'assets/images/livepic.png',
+                              fit: BoxFit.fill,
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ),
                         ),
-                        Spacer(),
-                        Container(color: Colors.grey, child: const Text("Live"))
+                        Positioned(
+                            child: Row(
+                          children: [
+                            Spacer(),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFD9D9D9),
+                                    border: Border.all(
+                                      width: 0.01,
+                                      color: const Color(0xFFD9D9D9),
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/heart.png',
+                                    fit: BoxFit.fill,
+                                    filterQuality: FilterQuality.high,
+                                  ),
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFD9D9D9),
+                                    border: Border.all(
+                                      width: 1,
+                                      color: const Color(0xFFD9D9D9),
+                                    ),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/share.png',
+                                    fit: BoxFit.fill,
+                                    filterQuality: FilterQuality.high,
+                                  ),
+                                  width: 20,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 10,
+                            )
+                          ],
+                        )),
                       ],
                     ),
-                  ),
-                ],
-              ),
-            ),
-          );
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 20,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(2),
+                          color: Color(0xff91e8b2),
+                        ),
+                        child: Center(
+                          child: Text("Machine Learning Bootcamp",
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              )),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Krish Naik",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.black),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            shape: BoxShape.circle,
+                          ),
+                          padding: const EdgeInsets.all(4),
+                          // color:Colors.green,
+                          child: Text(
+                            "Rs",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "60,000",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black),
+                        ),
+                        Spacer(),
+                        Container(
+                          padding: const EdgeInsets.all(5.0),
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xff575756),
+                                Color(0xff91e8b2)
+                              ], // Replace with your desired colors
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              stops: [
+                                0.7,
+                                0.4
+                              ], // This splits the gradient in half
+                            ),
+                          ),
+                          child: const Text(
+                            "Live",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    )
+                  ],
+                )),
+          ));
         },
       ),
     );

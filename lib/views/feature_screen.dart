@@ -13,7 +13,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
     return Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFDAFFF2),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -54,7 +54,8 @@ class _FeatureScreenState extends State<FeatureScreen> {
                                     "Machine learning Bootcamp",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                                        fontSize: 12,
+                                        color: Colors.black),
                                   ),
                                 ),
                               ),
@@ -102,11 +103,14 @@ class _FeatureScreenState extends State<FeatureScreen> {
                             ],
                           ),
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 10.0, bottom: 20.0, top: 20.0),
+                                    left: 5.0,
+                                    right: 6,
+                                    // bottom: 20.0,
+                                    top: 60.0),
                                 color: Colors.grey[500],
                                 child: Text("Live",
                                     style: TextStyle(

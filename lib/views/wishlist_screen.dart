@@ -29,7 +29,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
             return Padding(
               padding: EdgeInsets.all(8.0),
               child: Container(
-                height: 89,
+                height: 85,
                 //width: 68,
                 //height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width / 2,
@@ -111,26 +111,21 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                 icon: Icon(Icons.favorite_border_outlined),
                                 color: Colors.red,
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        left: 10.0,
-                                        right: 5,
-                                        bottom: 20.0,
-                                        top: 40.0),
-                                    color: Colors.grey[500],
-                                    child: Text("Live",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 10.0)),
-                                  ),
-                                ],
-                              )
+                              Container(
+                                margin: EdgeInsets.only(
+                                    left: 5.0,
+                                    right: 6,
+                                    // bottom: 20.0,
+                                    top: 40.0),
+                                color: Colors.grey[500],
+                                child: Text("Live",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10.0)),
+                              ),
                             ],
-                          ),
+                          )
                         ],
                       ),
                     ),

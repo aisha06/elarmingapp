@@ -55,7 +55,7 @@ class AffordableprogramView extends StatelessWidget {
             const SizedBox(
               height: 20.0,
             ),
-            Grridviewpage()
+            Grridviewpage(),
           ],
         ),
       ),

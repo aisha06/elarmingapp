@@ -19,6 +19,7 @@ class LiveprogramView extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(
                     Icons.arrow_back,
+                    color: Colors.black,
                     size: 30.0,
                   ),
                   onPressed: () {
