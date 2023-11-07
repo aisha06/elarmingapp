@@ -456,7 +456,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -646,7 +646,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -892,7 +892,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -1082,7 +1082,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -1328,7 +1328,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
@@ -1518,7 +1518,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           gradient: LinearGradient(
                                             colors: [
                                               Color(0xff575756),
-                                              Color(0xff91e8b2)
+                                              Color(0xff575756)
                                             ], // Replace with your desired colors
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,

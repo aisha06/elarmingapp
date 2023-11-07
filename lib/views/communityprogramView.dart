@@ -16,6 +16,7 @@ class CommunityprogramView extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(
                     Icons.arrow_back,
+                    color: Colors.black,
                     size: 30.0,
                   ),
                   onPressed: () {
@@ -31,8 +32,10 @@ class CommunityprogramView extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 20.0, left: 20.0),
                   child: Text(
                     "Community Program ",
-                    style:
-                        TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   )),
             ),
             Container(
