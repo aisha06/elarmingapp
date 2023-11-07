@@ -5,7 +5,8 @@ class DownloadScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color(0xFFDAFFF2),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -15,15 +16,15 @@ class DownloadScreenView extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
-          padding: const EdgeInsets.all(8),
-          itemCount: 5,
+          padding: EdgeInsets.all(8.0),
+          itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Container(
-                // height: 80,
-                // width: 85,
-                //height: MediaQuery.of(context).size.height/2,
+                height: 85,
+                //width: 68,
+                //height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width / 2,
                 child: Row(
                   children: [
@@ -32,7 +33,7 @@ class DownloadScreenView extends StatelessWidget {
                       fit: BoxFit.fitWidth,
                     ),
                     Container(
-                      color: const Color(0xFFD9D9D9),
+                      color: Color(0xFFD9D9D9),
                       child: Row(
                         children: [
                           Column(
@@ -40,18 +41,19 @@ class DownloadScreenView extends StatelessWidget {
                               Card(
                                 elevation: 8,
                                 child: Container(
-                                  padding: const EdgeInsets.all(4.0),
-                                  color: const Color(0xFF91E8B2),
+                                  padding: EdgeInsets.all(4.0),
+                                  color: Color(0xFF91E8B2),
                                   child: Text(
                                     "Machine learning Bootcamp",
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                        fontSize: 12),
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 6.0,
+                              SizedBox(
+                                height: 4.0,
                               ),
                               Text(
                                 "Kartik naik",
@@ -59,16 +61,16 @@ class DownloadScreenView extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                               ),
-                              const SizedBox(
-                                height: 5.0,
+                              SizedBox(
+                                height: 10.0,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const CircleAvatar(
+                                  CircleAvatar(
                                     backgroundColor: Color(0xFF91E8B2),
-                                    radius: 10.0,
-                                    child: const Text(
+                                    radius: 8.0,
+                                    child: Text(
                                       "Rs",
                                       style: TextStyle(
                                           fontSize: 10.0,
@@ -78,8 +80,14 @@ class DownloadScreenView extends StatelessWidget {
                                   ),
                                   // SizedBox(height: 4.0),
                                   Container(
-                                      margin: const EdgeInsets.only(left: 4.0),
-                                      child: const Text("60000")),
+                                      margin: EdgeInsets.only(left: 4.0),
+                                      child: Text(
+                                        "60000",
+                                        style: TextStyle(
+                                            fontSize: 10.0,
+                                            fontWeight: FontWeight.w400,
+                                            color: Colors.black),
+                                      )),
                                 ],
                               ),
                               // const SizedBox(
@@ -88,31 +96,30 @@ class DownloadScreenView extends StatelessWidget {
                             ],
                           ),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                margin: const EdgeInsets.only(
-                                    left: 10.0, bottom: 20.0, top: 10.0),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  constraints: BoxConstraints(),
-                                  padding: EdgeInsets.zero,
-                                  icon: const Icon(Icons.download),
-                                  color: Colors.black,
-                                ),
+                              IconButton(
+                                onPressed: () {},
+                                constraints: BoxConstraints(),
+                                padding: EdgeInsets.zero,
+                                icon: Icon(Icons.download),
+                                color: Colors.red,
                               ),
                               Container(
+                                margin: EdgeInsets.only(
+                                    left: 5.0,
+                                    right: 6,
+                                    // bottom: 20.0,
+                                    top: 40.0),
                                 color: Colors.grey[500],
-                                child: const Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: const Text("Live",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10.0)),
-                                ),
-                              )
+                                child: Text("Live",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10.0)),
+                              ),
                             ],
-                          ),
+                          )
                         ],
                       ),
                     ),

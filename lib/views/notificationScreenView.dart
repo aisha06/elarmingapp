@@ -44,7 +44,12 @@ class NotificationscreenView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
                   subtitle: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry."),
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                    style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black),
+                  ),
                   title: Text(
                     "Machine Learning Bootcamp",
                     style: TextStyle(

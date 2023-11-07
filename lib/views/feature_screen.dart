@@ -69,7 +69,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
                                     color: Colors.black),
                               ),
                               SizedBox(
-                                height: 4.0,
+                                height: 10.0,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,

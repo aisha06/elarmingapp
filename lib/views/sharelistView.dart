@@ -13,7 +13,7 @@ class _SharelistViewState extends State<SharelistView> {
     return Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFDAFFF2),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -24,7 +24,7 @@ class _SharelistViewState extends State<SharelistView> {
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
           padding: EdgeInsets.all(8.0),
-          itemCount: 8,
+          itemCount: 6,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: EdgeInsets.all(8.0),
@@ -54,6 +54,7 @@ class _SharelistViewState extends State<SharelistView> {
                                     "Machine learning Bootcamp",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
+                                        color: Colors.black,
                                         fontSize: 12),
                                   ),
                                 ),
@@ -68,7 +69,7 @@ class _SharelistViewState extends State<SharelistView> {
                                     color: Colors.black),
                               ),
                               SizedBox(
-                                height: 4.0,
+                                height: 10.0,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -111,23 +112,21 @@ class _SharelistViewState extends State<SharelistView> {
                                 icon: Icon(Icons.share),
                                 color: Colors.red,
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        left: 12.0, bottom: 20.0, top: 20.0),
-                                    color: Colors.grey[500],
-                                    child: Text("Live",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 10.0)),
-                                  ),
-                                ],
-                              )
+                              Container(
+                                margin: EdgeInsets.only(
+                                    left: 5.0,
+                                    right: 6,
+                                    // bottom: 20.0,
+                                    top: 40.0),
+                                color: Colors.grey[500],
+                                child: Text("Live",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10.0)),
+                              ),
                             ],
-                          ),
+                          )
                         ],
                       ),
                     ),

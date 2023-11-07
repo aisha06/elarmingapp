@@ -13,7 +13,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
     return Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFDAFFF2),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -24,12 +24,12 @@ class _WishlistScreenState extends State<VedioPlayView> {
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
           padding: EdgeInsets.all(8.0),
-          itemCount: 8,
+          itemCount: 6,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: EdgeInsets.all(8.0),
               child: Container(
-                height: 88,
+                height: 85,
                 //width: 68,
                 //height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width / 2,
@@ -54,6 +54,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                     "Machine learning Bootcamp",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
+                                        color: Colors.black,
                                         fontSize: 12),
                                   ),
                                 ),
@@ -68,7 +69,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                     color: Colors.black),
                               ),
                               SizedBox(
-                                height: 4.0,
+                                height: 10.0,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,7 +80,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                     child: Text(
                                       "Rs",
                                       style: TextStyle(
-                                          fontSize: 9.0,
+                                          fontSize: 10.0,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black),
                                     ),
@@ -91,7 +92,7 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                         "60000",
                                         style: TextStyle(
                                             fontSize: 10.0,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w400,
                                             color: Colors.black),
                                       )),
                                 ],
@@ -108,29 +109,24 @@ class _WishlistScreenState extends State<VedioPlayView> {
                                 onPressed: () {},
                                 constraints: BoxConstraints(),
                                 padding: EdgeInsets.zero,
-                                icon: Icon(Icons.play_circle),
+                                icon: Icon(Icons.play_arrow_rounded),
                                 color: Colors.red,
                               ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(
-                                        left: 10.0,
-                                        bottom: 20.0,
-                                        top: 20.0,
-                                        right: 5.0),
-                                    color: Colors.grey[500],
-                                    child: Text("Live",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 10.0)),
-                                  ),
-                                ],
-                              )
+                              Container(
+                                margin: EdgeInsets.only(
+                                    left: 5.0,
+                                    right: 6,
+                                    // bottom: 20.0,
+                                    top: 40.0),
+                                color: Colors.grey[500],
+                                child: Text("Live",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10.0)),
+                              ),
                             ],
-                          ),
+                          )
                         ],
                       ),
                     ),

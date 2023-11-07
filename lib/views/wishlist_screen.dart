@@ -13,7 +13,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
     return Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFDAFFF2),
           centerTitle: true,
           elevation: 0.0,
           title: Text(
@@ -24,7 +24,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
           padding: EdgeInsets.all(8.0),
-          itemCount: 8,
+          itemCount: 6,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: EdgeInsets.all(8.0),
@@ -54,6 +54,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                     "Machine learning Bootcamp",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
+                                        color: Colors.black,
                                         fontSize: 12),
                                   ),
                                 ),
@@ -68,7 +69,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                     color: Colors.black),
                               ),
                               SizedBox(
-                                height: 4.0,
+                                height: 10.0,
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,7 +80,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                     child: Text(
                                       "Rs",
                                       style: TextStyle(
-                                          fontSize: 9.0,
+                                          fontSize: 10.0,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black),
                                     ),
@@ -91,7 +92,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                         "60000",
                                         style: TextStyle(
                                             fontSize: 10.0,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w400,
                                             color: Colors.black),
                                       )),
                                 ],

@@ -14,9 +14,9 @@ class _GrridviewpageState extends State<Grridviewpage> {
   Widget build(BuildContext context) {
     return GridView.count(
       physics: BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 10),
       crossAxisCount: 2,
       crossAxisSpacing: 10.0,
+      padding: EdgeInsets.symmetric(horizontal: 6),
       mainAxisSpacing: 10.0,
       shrinkWrap: true,
       children: List.generate(
@@ -36,6 +36,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
                         // _showBottomSheetDeposit(context);
                       },
                       child: Container(
+                          width: double.infinity,
                           height: 200,
                           decoration: BoxDecoration(
                             color: const Color(0xFFD9D9D9),
@@ -183,7 +184,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
                                       gradient: LinearGradient(
                                         colors: [
                                           Color(0xff575756),
-                                          Color(0xff91e8b2)
+                                          Color(0xff575756)
                                         ], // Replace with your desired colors
                                         begin: Alignment.topCenter,
                                         end: Alignment.bottomCenter,

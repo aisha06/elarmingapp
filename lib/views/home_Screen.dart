@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   options: CarouselOptions(
                     height: 130,
                     // enlargeCenterPage: true,
-                    // autoPlay: true,
+                    autoPlay: true,
                     aspectRatio: 10.0,
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enableInfiniteScroll: false,
@@ -172,12 +172,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 10,
                             ),
                             Text(
-                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w900,
-                                )),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -247,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Live Program ",
+                          "Live Program",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25.0,
