@@ -109,7 +109,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                 onPressed: () {},
                                 constraints: BoxConstraints(),
                                 padding: EdgeInsets.zero,
-                                icon: Icon(Icons.favorite_border_outlined),
+                                icon: Icon(Icons.favorite_outline),
                                 color: Colors.red,
                               ),
                               Container(
