@@ -2,6 +2,8 @@ import 'package:elearningapp_demo/component/listviewprograms.dart';
 import 'package:elearningapp_demo/views/affordableprogramView..dart';
 import 'package:elearningapp_demo/views/communityprogramView.dart';
 import 'package:elearningapp_demo/views/liveprogramView.dart';
+import 'package:elearningapp_demo/views/notificationScreenView.dart';
+import 'package:elearningapp_demo/views/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
@@ -39,17 +41,29 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
             ),
             Spacer(),
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/images/icon.png"),
-            )
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationscreenView(),
+                  ),
+                );
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/images/icon.png"),
+              ),
+            ),
           ],
         ),
         leading: Builder(
           builder: (BuildContext context) {
             return GestureDetector(
               onTap: () {
-                Scaffold.of(context).openDrawer();
-                MaterialLocalizations.of(context).openAppDrawerTooltip;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );
               },
               child: Image.asset("assets/images/drawer.png"),
             );
@@ -90,8 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderSide: BorderSide(color: Color(0xffDCDCDC))),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 188, 63, 63)))),
+                          borderSide: BorderSide(color: Color(0xffDCDCDC)))),
                 ),
                 SizedBox(height: height * 0.03),
                 CarouselSlider(
@@ -479,7 +492,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         width: 10,
                                       ),
                                     ],
-                                  )
+                                  ),
                                 ],
                               )),
                         ),

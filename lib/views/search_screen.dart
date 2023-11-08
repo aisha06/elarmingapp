@@ -57,25 +57,30 @@ class _SearchScreenState extends State<SearchScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 20,
+                  horizontal: 20,
+                  vertical: 15,
                 ),
                 child: TextField(
                     decoration: InputDecoration(
-                  hintText: "Enter a Search here",
+                  hintText: "Enter Search here",
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                    size: 25,
+                  ),
                   hintStyle: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                       color: Colors.black),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(2),
                     borderSide:
-                        const BorderSide(color: Colors.black, width: 2.5),
+                        const BorderSide(color: Colors.black, width: 1.2),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(2),
                     borderSide:
-                        const BorderSide(color: Colors.black, width: 1.5),
+                        const BorderSide(color: Colors.black, width: 1.2),
                   ),
                 )),
               ),

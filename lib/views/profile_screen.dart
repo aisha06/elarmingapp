@@ -20,6 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDAFFF2),
       body: Column(
         children: [
           Card(
@@ -39,15 +40,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       Align(
                         widthFactor: 2,
-                        heightFactor: 3,
+                        heightFactor: 4,
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(2),
                             color: Color(0xFF5BA084),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(6.0),
+                            padding: const EdgeInsets.all(5.0),
                             child: GestureDetector(
                                 child: GestureDetector(
                                     onTap: () {
@@ -61,7 +62,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     },
                                     child: Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10.0, right: 10.0),
+                                        left: 10.0,
+                                        right: 10.0,
+                                      ),
                                       child: const Text(
                                         "Edit",
                                         style: TextStyle(color: Colors.white),
@@ -73,12 +76,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ]),
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         "Vaishnavi Bansal",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
                             color: Colors.black),
                       ),
                       SizedBox(
@@ -87,8 +91,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         "Enrollment No:12343334",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10.0,
                             color: Colors.black),
                       ),
                     ],
@@ -105,16 +109,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: const Color(0xFFEFEFEF),
                 child: Container(
                   child: profile_list(context),
-                )),
-          ),
-          Expanded(
-            child: Card(
-                elevation: 10,
-                margin: const EdgeInsets.only(
-                    left: 20.0, right: 20.0, top: 20.0, bottom: 40.0),
-                color: const Color(0xFFEFEFEF),
-                child: Container(
-                  child: profile_list2(context),
                 )),
           ),
           Container(
@@ -207,52 +201,3 @@ profile_list(BuildContext buildContext) {
     },
   );
 }
-
-// profile_list2(BuildContext buildContext) {
-//   List list = [
-//     DownloadScreenView(),
-//     VedioPlayView(),
-//     AccountSummaryView(),
-//     Abouteducationview()
-//   ];
-
-//   return ListView.builder(
-//     padding: const EdgeInsets.all(8),
-//     itemCount: 4,
-//     itemBuilder: (BuildContext context, int index) {
-//       List itemlist2 = [
-//         "Download Option",
-//         "Video Play Back Option",
-//         "Account Summary",
-//         "About E-Education"
-//       ];
-//       List Iconlist2 = [
-//         "assets/images/download.png",
-//         "assets/images/movie.png",
-//         "assets/images/document.png",
-//         "assets/images/logo.png",
-//       ];
-
-//       return GestureDetector(
-//         onTap: () {
-//           Navigator.push(
-//               context, MaterialPageRoute(builder: (context) => list[index]));
-//         },
-//         child: ListTile(
-//           title: Text(
-//             itemlist2[index],
-//             style: const TextStyle(
-//               fontWeight: FontWeight.bold,
-//               color: Color(0xFF0000000),
-//             ),
-//           ),
-//           leading: CircleAvatar(
-//             radius: 20.0,
-//             backgroundColor: Colors.grey[400],
-//             child: Image.asset(Iconlist2[index]),
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }
