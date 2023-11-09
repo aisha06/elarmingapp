@@ -2,9 +2,14 @@ import 'package:elearningapp_demo/views/payment_View.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LivecourseView extends StatelessWidget {
-  const LivecourseView({super.key});
+class LiveScreen extends StatefulWidget {
+  const LiveScreen({super.key});
 
+  @override
+  State<LiveScreen> createState() => _LiveScreenState();
+}
+
+class _LiveScreenState extends State<LiveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

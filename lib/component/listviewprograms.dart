@@ -1,4 +1,4 @@
-import 'package:elearningapp_demo/views/liveCousreView.dart';
+import 'package:elearningapp_demo/views/live_Screen.dart';
 import 'package:flutter/material.dart';
 
 class listprogramView extends StatelessWidget {
@@ -14,7 +14,7 @@ class listprogramView extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LivecourseView()),
+            MaterialPageRoute(builder: (context) => LiveScreen()),
           );
         },
         child: ListView.builder(

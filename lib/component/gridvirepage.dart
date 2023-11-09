@@ -1,4 +1,4 @@
-import 'package:elearningapp_demo/views/liveCousreView.dart';
+import 'package:elearningapp_demo/views/live_Screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -194,11 +194,21 @@ class _GrridviewpageState extends State<Grridviewpage> {
                                         ], // This splits the gradient in half
                                       ),
                                     ),
-                                    child: const Text(
-                                      "Live",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LiveScreen()),
+                                        );
+                                      },
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),

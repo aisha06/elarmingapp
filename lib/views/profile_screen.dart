@@ -2,6 +2,7 @@ import 'package:elearningapp_demo/views/aboutEducationView.dart';
 import 'package:elearningapp_demo/views/account_summary.dart';
 import 'package:elearningapp_demo/views/downloadscreenView.dart';
 import 'package:elearningapp_demo/views/editProfileView.dart';
+import 'package:elearningapp_demo/views/loginView.dart';
 import 'package:elearningapp_demo/views/myprofileView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/sharelistView.dart';
@@ -92,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         "Enrollment No:12343334",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            fontSize: 10.0,
+                            fontSize: 12.0,
                             color: Colors.black),
                       ),
                     ],
@@ -116,7 +117,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const EdgeInsets.only(left: 40.0, right: 40.0, bottom: 20.0),
             // width: MediaQuery.of(context).size.width,
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginView()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     primary: const Color(0xFF575756),
                     shape: RoundedRectangleBorder(

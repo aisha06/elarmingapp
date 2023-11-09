@@ -4,6 +4,8 @@ import 'package:elearningapp_demo/views/communityprogramView.dart';
 import 'package:elearningapp_demo/views/liveprogramView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/profile_screen.dart';
+import 'package:elearningapp_demo/views/search_screen.dart';
+import 'package:elearningapp_demo/views/sharelistView.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
@@ -97,13 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                       contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(6),
                           borderSide: BorderSide(color: Color(0xffDCDCDC))),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(6),
                           borderSide: BorderSide(color: Color(0xffDCDCDC))),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(6),
                           borderSide: BorderSide(color: Color(0xffDCDCDC)))),
                 ),
                 SizedBox(height: height * 0.03),
@@ -374,26 +376,37 @@ class _HomeScreenState extends State<HomeScreen> {
                                               SizedBox(
                                                 height: 10,
                                               ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
+                                              GestureDetector(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            SharelistView()),
+                                                  );
+                                                },
+                                                child: Container(
+                                                  decoration: BoxDecoration(
                                                     color:
                                                         const Color(0xFFD9D9D9),
+                                                    border: Border.all(
+                                                      width: 1,
+                                                      color: const Color(
+                                                          0xFFD9D9D9),
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
+                                                  child: Image.asset(
+                                                    'assets/images/share.png',
+                                                    fit: BoxFit.fill,
+                                                    filterQuality:
+                                                        FilterQuality.high,
+                                                  ),
+                                                  width: 20,
+                                                  height: 20,
                                                 ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
                                               ),
                                             ],
                                           ),
