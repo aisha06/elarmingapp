@@ -89,13 +89,13 @@ class OnboardingtwoView extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              height: 80.0,
+              height: 60.0,
             ),
             Text(
-              "    Empower your\nLearning Experience ",
+              "  Empower your\nLearning Experience ",
               style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
                 color: Color(0xFF0000000),
               ),
             ),
@@ -110,13 +110,13 @@ class OnboardingtwoView extends StatelessWidget {
                     color: Color(0xFF0000000),
                   ),
                 )),
-            const SizedBox(
-              height: 50.0,
-            ),
+            // const SizedBox(
+            //   height: 10.0,
+            // ),
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
               rightDotColor: Colors.grey,
-              size: 40,
+              size: 30,
             ),
             ElevatedButton(
               onPressed: () {
@@ -135,7 +135,7 @@ class OnboardingtwoView extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 50.0),
           ],
         ),
       ),

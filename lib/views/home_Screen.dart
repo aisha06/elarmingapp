@@ -761,9 +761,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: GestureDetector(
-                          onTap: () {
-                            // _showBottomSheetDeposit(context);
-                          },
+                          onTap: () {},
                           child: Container(
                               height: 200,
                               decoration: BoxDecoration(
@@ -920,7 +918,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             colors: [
                                               Color(0xff575756),
                                               Color(0xff575756)
-                                            ], // Replace with your desired colors
+                                            ],
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
                                             stops: [
