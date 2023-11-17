@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class NotificationscreenView extends StatelessWidget {
   NotificationscreenView({super.key});
@@ -11,22 +12,25 @@ class NotificationscreenView extends StatelessWidget {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         actions: [
-          FlutterSwitch(
-            activeColor: Colors.green,
-            width: 70.0,
-            height: 30.0,
-            valueFontSize: 15.0,
-            toggleSize: 20.0,
-            value: status,
-            borderRadius: 20.0,
-            padding: 8.0,
-            showOnOff: true,
-            onToggle: (val) {
-              // setState(() {
-              //   status = val;
-              // });
+          ToggleSwitch(
+            minHeight: 20.0,
+            minWidth: 45.0,
+            cornerRadius: 28.0,
+            activeBgColors: [
+              [Color(0xFFFF0000)!],
+              [Color(0xFF5BA084)!]
+            ],
+            activeFgColor: Colors.white,
+            inactiveBgColor: Colors.grey,
+            inactiveFgColor: Colors.white,
+            initialLabelIndex: 1,
+            totalSwitches: 2,
+            labels: ['On', 'Off'],
+            radiusStyle: true,
+            onToggle: (index) {
+              print('switched to: $index');
             },
-          )
+          ),
         ],
         backgroundColor: Colors.transparent,
         centerTitle: true,

@@ -44,6 +44,8 @@ dependencies:
   firebase_core: ^2.16.0
   firebase_auth: any
   cloud_firestore:
+  toggle_switch: ^2.1.0
+  flutter_rating_bar: ^4.0.1
 
 
 

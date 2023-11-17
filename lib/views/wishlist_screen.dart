@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class WishlistScreen extends StatefulWidget {
   const WishlistScreen({super.key});
@@ -105,12 +106,24 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IconButton(
-                                onPressed: () {},
-                                constraints: BoxConstraints(),
-                                padding: EdgeInsets.zero,
-                                icon: Icon(Icons.favorite_outline),
-                                color: Colors.red,
+                              RatingBar.builder(
+                                initialRating: 1,
+                                minRating: 1,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 1,
+                                itemSize: 23,
+                                itemPadding:
+                                    EdgeInsets.symmetric(horizontal: 2.0),
+                                itemBuilder: (context, _) => Image.asset(
+                                  'assets/images/heart.png',
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                  color: Colors.redAccent,
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
                               ),
                               Container(
                                 margin: EdgeInsets.only(
