@@ -1,6 +1,7 @@
 import 'package:elearningapp_demo/component/listviewprograms.dart';
 import 'package:elearningapp_demo/views/affordableprogramView..dart';
 import 'package:elearningapp_demo/views/communityprogramView.dart';
+import 'package:elearningapp_demo/views/live_Screen.dart';
 import 'package:elearningapp_demo/views/liveprogramView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/profile_screen.dart';
@@ -495,27 +496,36 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black),
                                   ),
                                   Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(5.0),
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff575756),
-                                          Color(0xff575756)
-                                        ], // Replace with your desired colors
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        stops: [
-                                          0.9,
-                                          0.5
-                                        ], // This splits the gradient in half
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LiveScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
+                                        ),
                                       ),
-                                    ),
-                                    child: const Text(
-                                      "Live",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -766,27 +776,36 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black),
                                   ),
                                   Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(5.0),
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff575756),
-                                          Color(0xff575756)
-                                        ], // Replace with your desired colors
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        stops: [
-                                          0.9,
-                                          0.5
-                                        ], // This splits the gradient in half
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LiveScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
+                                        ),
                                       ),
-                                    ),
-                                    child: const Text(
-                                      "Live",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -1037,27 +1056,36 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black),
                                   ),
                                   Spacer(),
-                                  Container(
-                                    padding: const EdgeInsets.all(5.0),
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff575756),
-                                          Color(0xff575756)
-                                        ], // Replace with your desired colors
-                                        begin: Alignment.topCenter,
-                                        end: Alignment.bottomCenter,
-                                        stops: [
-                                          0.9,
-                                          0.5
-                                        ], // This splits the gradient in half
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LiveScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
+                                        ),
                                       ),
-                                    ),
-                                    child: const Text(
-                                      "Live",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
