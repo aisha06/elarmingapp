@@ -321,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     childAspectRatio: .6,
                     crossAxisSpacing: 12.0,
                     mainAxisSpacing: 12.0,
-                    mainAxisExtent: 255,
+                    mainAxisExtent: 200,
                   ),
                   itemCount: 2,
                   itemBuilder: (context, index) {
@@ -602,7 +602,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     childAspectRatio: .6,
                     crossAxisSpacing: 12.0,
                     mainAxisSpacing: 12.0,
-                    mainAxisExtent: 255,
+                    mainAxisExtent: 200,
                   ),
                   itemCount: 2,
                   itemBuilder: (context, index) {
@@ -882,7 +882,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     childAspectRatio: .6,
                     crossAxisSpacing: 12.0,
                     mainAxisSpacing: 12.0,
-                    mainAxisExtent: 255,
+                    mainAxisExtent: 200,
                   ),
                   itemCount: 2,
                   itemBuilder: (context, index) {
