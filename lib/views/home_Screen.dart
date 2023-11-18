@@ -299,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Card(
                         elevation: 10.0,
                         child: Container(
-                            padding: EdgeInsets.all(5.0),
+                            padding: EdgeInsets.all(3.0),
                             color: Color(0xFF91E8B2),
                             child: Text("View More",
                                 style: TextStyle(
@@ -312,6 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 SizedBox(height: 15),
+                //1st Gridview builder
                 GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -442,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: 20,
+                                  height: 25,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(2),
                                     color: Color(0xff91e8b2),
@@ -450,7 +451,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Center(
                                     child: Text("Machine Learning Bootcamp",
                                         style: TextStyle(
-                                          fontSize: 11,
+                                          fontSize: 10,
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black,
                                         )),
@@ -559,8 +560,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             "Get your program with live'Instructor lead'learning",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 10.0,
                               color: Color(0xFF0000000),
                             ),
                           ),
@@ -611,7 +612,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // _showBottomSheetDeposit(context);
                       },
                       child: Container(
-                          height: 200,
+                          //height: 160,
                           decoration: BoxDecoration(
                             color: const Color(0xFFD9D9D9),
                             border: Border.all(
@@ -722,7 +723,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: 20,
+                                  height: 25,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(2),
                                     color: Color(0xff91e8b2),
@@ -730,7 +731,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Center(
                                     child: Text("Machine Learning Bootcamp",
                                         style: TextStyle(
-                                          fontSize: 11,
+                                          fontSize: 10,
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black,
                                         )),
@@ -839,8 +840,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             "Get your program with live'Instructor lead'learning",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 10.0,
                               color: Color(0xFF0000000),
                             ),
                           ),
@@ -891,7 +892,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         // _showBottomSheetDeposit(context);
                       },
                       child: Container(
-                          height: 200,
+                          //height: 153,
                           decoration: BoxDecoration(
                             color: const Color(0xFFD9D9D9),
                             border: Border.all(
@@ -1002,7 +1003,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Container(
-                                  height: 20,
+                                  height: 25,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(2),
                                     color: Color(0xff91e8b2),
@@ -1010,7 +1011,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Center(
                                     child: Text("Machine Learning Bootcamp",
                                         style: TextStyle(
-                                          fontSize: 11,
+                                          fontSize: 10,
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black,
                                         )),
