@@ -72,17 +72,17 @@ class OnboardscreenView extends StatelessWidget {
                   "Online learning refers to instruction that is delivered electronically through various multimedia and Internet platforms and applications. It is used interchangeably with other terms such as web-based learning, e-learning, computer-assisted instruction, and Internet-based learning.",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
-                    fontSize: 10.0,
+                    fontSize: 12.0,
                     color: Color(0xFF0000000),
                   ),
                 )),
             SizedBox(
-              height: 8.0,
+              height: 20.0,
             ),
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
               rightDotColor: Colors.grey,
-              size: 30,
+              size: 35,
             ),
             ElevatedButton(
               onPressed: () {
