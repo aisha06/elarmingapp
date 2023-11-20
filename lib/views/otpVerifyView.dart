@@ -77,15 +77,28 @@ class OtpverifyView extends StatelessWidget {
               const SizedBox(
                 height: 30.0,
               ),
-              Button(
-                text: 'Verify & Proceed',
-                function: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ChangepassworsView()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF575756),
+                    borderRadius:
+                        BorderRadius.circular(10.0), // Set the border radius
+                    // You can add other decoration properties here, such as border, boxShadow, etc.
+                  ),
+                  width: double.infinity,
+                  height: 42, // Set the width according to your needs
+                  child: Button(
+                    text: 'Verify',
+                    function: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ChangepassworsView()),
+                      );
+                    },
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 40.0,

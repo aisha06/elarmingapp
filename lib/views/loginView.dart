@@ -125,36 +125,57 @@ class LoginView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Button(
-                text: 'Login',
-                function: () {
-                  login(
-                      _emailController.text, _passwordController.text, context);
-                },
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF575756),
+                    borderRadius:
+                        BorderRadius.circular(10.0), // Set the border radius
+                    // You can add other decoration properties here, such as border, boxShadow, etc.
+                  ),
+                  width: double.infinity,
+                  height: 42, // Set the width according to your needs
+                  child: Button(
+                    text: 'Login',
+                    function: () {
+                      login(_emailController.text, _passwordController.text,
+                          context);
+                    },
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              Container(
-                padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-                // width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupView()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF5BA084),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 80, vertical: 10),
-                        textStyle: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                    child: Text(
-                      "Register",
-                      style: TextStyle(fontSize: 18.0),
-                    )),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignupView()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Container(
+                      width: double.infinity,
+                      height: 42, // Set the height of the container
+                      decoration: BoxDecoration(
+                        color: Color(0xFF5BA084),
+                        borderRadius: BorderRadius.circular(
+                            10.0), // Set the border radius
+                        // You can add other decoration properties here, such as border, boxShadow, etc.
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            color: Colors.white, // Set the text color to white
+                          ),
+                        ),
+                      )),
+                ),
               ),
               const SizedBox(
                 height: 20.0,

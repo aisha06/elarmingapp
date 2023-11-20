@@ -58,31 +58,47 @@ class _SearchScreenState extends State<SearchScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 15,
+                  vertical: 10,
                 ),
-                child: TextField(
-                    decoration: InputDecoration(
-                  hintText: "Enter Search here",
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.black,
-                    size: 25,
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    prefixIcon: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(width: 8),
+                        Icon(Icons.search),
+                        SizedBox(width: 8),
+                        Container(
+                          height: 44, // Adjust the height as needed
+                          width: 1.5, // Width of the vertical divider
+                          color: Colors.black, // Color of the vertical divider
+                        ),
+                      ],
+                    ),
+                    filled: true,
+                    fillColor: Color(0xffD9D9D9),
+                    hintText: "     Search ",
+                    hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w300,
+                        ),
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
                   ),
-                  hintStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Colors.black),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2),
-                    borderSide:
-                        const BorderSide(color: Colors.black, width: 1.2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2),
-                    borderSide:
-                        const BorderSide(color: Colors.black, width: 1.2),
-                  ),
-                )),
+                ),
               ),
             ],
           ),

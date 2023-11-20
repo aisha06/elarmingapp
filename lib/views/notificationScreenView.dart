@@ -1,43 +1,40 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+import 'package:getwidget/components/toggle/gf_toggle.dart';
 
-class NotificationscreenView extends StatelessWidget {
-  NotificationscreenView({super.key});
+class NotificationscreenView extends StatefulWidget {
+  NotificationscreenView({Key? key}) : super(key: key);
+
+  @override
+  _NotificationscreenViewState createState() => _NotificationscreenViewState();
+}
+
+class _NotificationscreenViewState extends State<NotificationscreenView> {
   bool status = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
-        actions: [
-          ToggleSwitch(
-            minHeight: 20.0,
-            minWidth: 45.0,
-            cornerRadius: 28.0,
-            activeBgColors: [
-              [Color(0xFFFF0000)!],
-              [Color(0xFF5BA084)!]
-            ],
-            activeFgColor: Colors.white,
-            inactiveBgColor: Colors.grey,
-            inactiveFgColor: Colors.white,
-            initialLabelIndex: 1,
-            totalSwitches: 2,
-            labels: ['On', 'Off'],
-            radiusStyle: true,
-            onToggle: (index) {
-              print('switched to: $index');
-            },
-          ),
-        ],
+        actions: [],
         backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0.0,
-        title: Text(
-          "Notification",
-          style: TextStyle(color: Colors.black),
+        title: Row(
+          children: [
+            Spacer(),
+            Text(
+              "Notification",
+              style: TextStyle(color: Colors.black),
+            ),
+            Spacer(),
+            GFToggle(
+              onChanged: (val) {},
+              value: true,
+            ),
+          ],
         ),
       ),
       backgroundColor: const Color(0xFFDAFFF2),

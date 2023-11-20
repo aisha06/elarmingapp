@@ -66,14 +66,28 @@ class ForgetView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Button(
-                text: 'Get OTP',
-                function: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OtpverifyView()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFF575756),
+                    borderRadius:
+                        BorderRadius.circular(10.0), // Set the border radius
+                    // You can add other decoration properties here, such as border, boxShadow, etc.
+                  ),
+                  width: double.infinity,
+                  height: 42, // Set the width according to your needs
+                  child: Button(
+                    text: 'Get OTP',
+                    function: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => OtpverifyView()),
+                      );
+                    },
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 40.0,

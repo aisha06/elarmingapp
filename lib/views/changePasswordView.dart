@@ -90,14 +90,34 @@ class ChangepassworsView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Button(
-                text: 'Set Password',
-                function: () {
+              GestureDetector(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyNavigationBar()),
                   );
                 },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Container(
+                      width: double.infinity,
+                      height: 42, // Set the height of the container
+                      decoration: BoxDecoration(
+                        color: Color(0xFF575756),
+                        borderRadius: BorderRadius.circular(
+                            10.0), // Set the border radius
+                        // You can add other decoration properties here, such as border, boxShadow, etc.
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Set Password",
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            color: Colors.white, // Set the text color to white
+                          ),
+                        ),
+                      )),
+                ),
               ),
             ],
           ),
