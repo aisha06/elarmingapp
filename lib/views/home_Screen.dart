@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Spacer(),
             Text(
-              "  Welcome Vaishnavi",
+              "Welcome Vaishnavi",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                     color: Colors.black,
@@ -89,28 +89,55 @@ class _HomeScreenState extends State<HomeScreen> {
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                      suffixIcon: Image.asset("assets/images/microphone.png"),
-                      prefixIcon: Image.asset("assets/images/search.png"),
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: "Search here....",
-                      hintStyle:
-                          Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                fontSize: 14,
-                                color: Color(0xff9796A1),
-                                fontWeight: FontWeight.w300,
-                              ),
-                      contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6),
-                          borderSide: BorderSide(color: Color(0xffDCDCDC))),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6),
-                          borderSide: BorderSide(color: Color(0xffDCDCDC))),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6),
-                          borderSide: BorderSide(color: Color(0xffDCDCDC)))),
+                    suffixIcon: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(width: 12),
+                        Container(
+                          height: 44, // Adjust the height as needed
+                          width: 1.5, // Width of the vertical divider
+                          color: Colors.black, // Color of the vertical divider
+                        ),
+                        Image.asset("assets/images/microphone.png"),
+                      ],
+                    ),
+                    prefixIcon: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(width: 8),
+                        Image.asset("assets/images/search.png"),
+                        SizedBox(width: 12),
+                        Container(
+                          height: 44, // Adjust the height as needed
+                          width: 1.5, // Width of the vertical divider
+                          color: Colors.black, // Color of the vertical divider
+                        ),
+                      ],
+                    ),
+                    filled: true,
+                    fillColor: Color(0xffD9D9D9),
+                    hintText: "     Search ",
+                    hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 14,
+                          color: Color(0xff9796A1),
+                          fontWeight: FontWeight.w300,
+                        ),
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(6),
+                      borderSide: BorderSide(color: Color(0xffDCDCDC)),
+                    ),
+                  ),
                 ),
+
                 SizedBox(height: height * 0.03),
                 CarouselSlider(
                   options: CarouselOptions(

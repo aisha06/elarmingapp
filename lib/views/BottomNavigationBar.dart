@@ -20,7 +20,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     FeatureScreen(),
     WishlistScreen(),
     ProfileScreen(),
-    // ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -32,59 +31,59 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     //title: const Text('Flutter BottomNavigationBar Example'),
-      //     backgroundColor: Colors.blue
-      // ),
+      backgroundColor: Color(0xFFDAFFF2),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/images/home.png'),
-                color: Color(0xFF000000),
-              ),
-              label: "home",
-              backgroundColor: Color(0xFFDAFFF2),
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('assets/images/home.png'),
+              color: Color(0xFF000000),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/images/ico.png'),
-                color: Color(0xFF000000),
-              ),
-              label: "Search",
+            label: "Home",
+            backgroundColor: Color(0xFFDAFFF2),
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('assets/images/ico.png'),
+              color: Color(0xFF000000),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/images/features.png'),
-                color: Color(0xFF000000),
-              ),
-              label: "Feature",
+            label: "Search",
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('assets/images/features.png'),
+              color: Color(0xFF000000),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/images/love.png'),
-                color: Color(0xFF000000),
-              ),
-              label: "Wishlist",
+            label: "Feature",
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('assets/images/love.png'),
+              color: Color(0xFF000000),
             ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/images/Man.png'),
-                color: Color(0xFF000000),
-              ),
-              label: "Account",
+            label: "Wishlist",
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('assets/images/Man.png'),
+              color: Color(0xFF000000),
             ),
-          ],
-          type: BottomNavigationBarType.shifting,
-          // fixedColor: Colors.white,
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.white,
-          iconSize: 35,
-          onTap: _onItemTapped,
-          elevation: 5),
+            label: "Account",
+          ),
+        ],
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black.withOpacity(0.6),
+        iconSize: 35,
+        onTap: _onItemTapped,
+        elevation: 5,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+      ),
     );
   }
 }
