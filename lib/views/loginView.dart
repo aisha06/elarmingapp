@@ -75,15 +75,17 @@ class LoginView extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Login",
-                    style:
-                        TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
-              Textform(text: 'Email ID.:'),
+              Container(child: Textform(text: 'Email ID.:')),
               const SizedBox(
                 height: 10.0,
               ),

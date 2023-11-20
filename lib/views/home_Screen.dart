@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     hintText: "     Search ",
                     hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontSize: 14,
-                          color: Color(0xff9796A1),
+                          color: Colors.black,
                           fontWeight: FontWeight.w300,
                         ),
                     contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -240,7 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Card(
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4.0),
+                            borderRadius: BorderRadius.circular(5.0),
                             gradient: LinearGradient(
                               colors: [Color(0xFF58605C), Color(0xFF5BA084)],
                               begin: Alignment.topLeft,
@@ -249,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(
-                                left: 6.0, bottom: 5.0, right: 6.0),
+                                left: 5.0, bottom: 5.0, right: 5.0),
                             child: Column(
                               children: [
                                 Image.asset(
@@ -267,15 +267,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       "Enrolled Students",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12.0,
-                                          fontWeight: FontWeight.bold),
+                                          fontSize: 11.6,
+                                          fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(height: height * 0.01),
                                     Text("8000+",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 14.0,
-                                            fontWeight: FontWeight.bold))
+                                            fontSize: 13.0,
+                                            fontWeight: FontWeight.w600))
                                   ],
                                 )
                               ],
@@ -306,8 +306,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             "Get your program with live'Instructor lead'learning",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 10.0,
                               color: Color(0xFF0000000),
                             ),
                           ),
@@ -326,7 +326,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Card(
                         elevation: 10.0,
                         child: Container(
-                            padding: EdgeInsets.all(3.0),
+                            padding: EdgeInsets.all(5.0),
                             color: Color(0xFF91E8B2),
                             child: Text("View More",
                                 style: TextStyle(
