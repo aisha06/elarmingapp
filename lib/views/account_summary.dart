@@ -48,8 +48,8 @@ class AccountSummaryView extends StatelessWidget {
                                     child: Text(
                                       "Machine learning Bootcamp",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 8,
                                           color: Colors.black),
                                     ),
                                   ),
@@ -66,8 +66,8 @@ class AccountSummaryView extends StatelessWidget {
                                     Text(
                                       "Payment Sucessfully",
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 8,
                                           color: Colors.black),
                                     ),
                                     SizedBox(width: 5.0),

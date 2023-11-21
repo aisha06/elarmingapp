@@ -52,7 +52,7 @@ class ChangepassworsView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Textform(text: 'New Password .'),
+              Textform(text: 'New Password.'),
               const SizedBox(
                 height: 10.0,
               ),
@@ -112,7 +112,7 @@ class ChangepassworsView extends StatelessWidget {
                         child: Text(
                           "Set Password",
                           style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 18.0,
                             color: Colors.white, // Set the text color to white
                           ),
                         ),

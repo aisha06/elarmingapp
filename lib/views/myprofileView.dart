@@ -73,7 +73,10 @@ class MyprofileView extends StatelessWidget {
                       Text(
                         "Vaishnavi Bansal",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 24.0,color: Color(0xFF0000000),),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18.0,
+                          color: Color(0xFF0000000),
+                        ),
                       ),
                       SizedBox(
                         height: 10.0,
@@ -81,7 +84,10 @@ class MyprofileView extends StatelessWidget {
                       Text(
                         "Enrollment No:12343334",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16.0,color: Color(0xFF0000000),),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.0,
+                          color: Color(0xFF0000000),
+                        ),
                       ),
                     ],
                   )
@@ -129,11 +135,19 @@ profile_list2(BuildContext buildContext) {
         child: ListTile(
           title: Text(
             itemlist2[index],
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0,color: Color(0xFF0000000),),
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 15.0,
+              color: Color(0xFF0000000),
+            ),
           ),
           trailing: Text(
             itemlist3[index],
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0,color: Color(0xFF0000000),),
+            style: const TextStyle(
+              fontWeight: FontWeight.w300,
+              fontSize: 15.0,
+              color: Color(0xFF0000000),
+            ),
           ),
         ),
       );
