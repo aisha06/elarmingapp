@@ -1,4 +1,5 @@
 import 'package:elearningapp_demo/views/live_Screen.dart';
+import 'package:elearningapp_demo/views/live_new_ui.dart';
 import 'package:elearningapp_demo/views/sharelistView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -193,7 +194,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LiveScreen()),
+                                builder: (context) => LiveNewScreen()),
                           );
                         },
                         child: Container(

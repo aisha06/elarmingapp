@@ -2,6 +2,7 @@ import 'package:elearningapp_demo/component/listviewprograms.dart';
 import 'package:elearningapp_demo/views/affordableprogramView..dart';
 import 'package:elearningapp_demo/views/communityprogramView.dart';
 import 'package:elearningapp_demo/views/live_Screen.dart';
+import 'package:elearningapp_demo/views/live_new_ui.dart';
 import 'package:elearningapp_demo/views/liveprogramView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/profile_screen.dart';
@@ -529,7 +530,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => LiveScreen()),
+                                            builder: (context) =>
+                                                LiveNewScreen()),
                                       );
                                     },
                                     child: Container(
@@ -1090,7 +1092,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => LiveScreen()),
+                                            builder: (context) =>
+                                                LiveNewScreen()),
                                       );
                                     },
                                     child: Container(
