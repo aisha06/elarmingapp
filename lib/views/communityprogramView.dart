@@ -7,54 +7,50 @@ class CommunityprogramView extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFDAFFF2),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 50.0),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                    size: 30.0,
-                  ),
-                  onPressed: () {
-                    // Navigate back when the back button is pressed
-                    Navigator.of(context).pop();
-                  },
-                ),
+        // physics: NeverScrollableScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 10,
+            right: 10,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 40,
               ),
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                  margin: const EdgeInsets.only(top: 20.0, left: 20.0),
-                  child: Text(
-                    "Community Program ",
-                    style: TextStyle(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  )),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 20.0),
-              child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Get your program with live'Instructor lead'learning",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12.0,
-                        color: Colors.black),
-                  )),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Grridviewpage()
-          ],
+              GestureDetector(
+                child: Icon(
+                  Icons.arrow_back,
+                  size: 30,
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Community Program ",
+                style: TextStyle(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "Get your program with live'Instructor lead'learning",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0,
+                    color: Colors.black),
+              ),
+              Grridviewpage()
+            ],
+          ),
         ),
       ),
     );
