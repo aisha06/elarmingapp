@@ -16,7 +16,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
       physics: BouncingScrollPhysics(),
       crossAxisCount: 2,
       crossAxisSpacing: 10.0,
-      padding: EdgeInsets.symmetric(horizontal: 6),
+      padding: EdgeInsets.symmetric(horizontal: 5),
       mainAxisSpacing: 10.0,
       shrinkWrap: true,
       children: List.generate(
@@ -173,8 +173,8 @@ class _GrridviewpageState extends State<Grridviewpage> {
                                   Text(
                                     "60,000",
                                     style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
                                         color: Colors.black),
                                   ),
                                   Spacer(),
@@ -189,8 +189,8 @@ class _GrridviewpageState extends State<Grridviewpage> {
                                         begin: Alignment.topCenter,
                                         end: Alignment.bottomCenter,
                                         stops: [
-                                          0.9,
-                                          0.5
+                                          0.6,
+                                          0.4
                                         ], // This splits the gradient in half
                                       ),
                                     ),
