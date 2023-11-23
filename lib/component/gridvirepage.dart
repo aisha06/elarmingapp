@@ -65,33 +65,23 @@ class _GrridviewpageState extends State<Grridviewpage> {
                               SizedBox(
                                 height: 10,
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) =>
-                                  //           WishlistScreen()),
-                                  // );
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFD9D9D9),
+                                  border: Border.all(
+                                    width: 1,
                                     color: const Color(0xFFD9D9D9),
-                                    border: Border.all(
-                                      width: 1,
-                                      color: const Color(0xFFD9D9D9),
-                                    ),
-                                    borderRadius: BorderRadius.circular(5),
                                   ),
-                                  child: Image.asset(
-                                    'assets/images/heart.png',
-                                    fit: BoxFit.fill,
-                                    filterQuality: FilterQuality.high,
-                                    // color: Colors.redAccent,
-                                  ),
-                                  width: 20,
-                                  height: 20,
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
+                                child: Image.asset(
+                                  'assets/images/heart.png',
+                                  fit: BoxFit.fill,
+                                  filterQuality: FilterQuality.high,
+                                  // color: Colors.redAccent,
+                                ),
+                                width: 20,
+                                height: 20,
                               ),
                               SizedBox(
                                 height: 10,
