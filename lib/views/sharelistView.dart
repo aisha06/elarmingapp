@@ -110,7 +110,7 @@ class _SharelistViewState extends State<SharelistView> {
                                 constraints: BoxConstraints(),
                                 padding: EdgeInsets.zero,
                                 icon: Icon(Icons.share),
-                                color: Colors.red,
+                                color: Colors.green,
                               ),
                               Container(
                                 margin: EdgeInsets.only(

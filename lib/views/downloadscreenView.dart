@@ -102,8 +102,8 @@ class DownloadScreenView extends StatelessWidget {
                                 onPressed: () {},
                                 constraints: BoxConstraints(),
                                 padding: EdgeInsets.zero,
-                                icon: Icon(Icons.download),
-                                color: Colors.red,
+                                icon: Image.asset("assets/images/download.png"),
+                                // color: Colors.red,
                               ),
                               Container(
                                 margin: EdgeInsets.only(

@@ -1,3 +1,4 @@
+import 'package:elearningapp_demo/views/downloadscreenView.dart';
 import 'package:flutter/material.dart';
 
 class VedioPlayView extends StatefulWidget {
@@ -108,9 +109,8 @@ class _WishlistScreenState extends State<VedioPlayView> {
                               IconButton(
                                 onPressed: () {},
                                 constraints: BoxConstraints(),
-                                padding: EdgeInsets.zero,
-                                icon: Icon(Icons.play_arrow_rounded),
-                                color: Colors.red,
+                                padding: EdgeInsets.only(top: 4),
+                                icon: Image.asset("assets/images/film.png"),
                               ),
                               Container(
                                 margin: EdgeInsets.only(

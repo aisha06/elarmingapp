@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(
-                                left: 5.0, bottom: 5.0, right: 5.0),
+                                left: 6.0, bottom: 5.0, right: 6.0),
                             child: Column(
                               children: [
                                 Image.asset(
@@ -268,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       "Enrolled Students",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 11.6,
+                                          fontSize: 12.3,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(height: height * 0.01),

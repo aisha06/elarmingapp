@@ -133,7 +133,7 @@ class EditProfile extends StatelessWidget {
                 height: 20.0,
               ),
               Button(
-                text: 'Profile Edit ',
+                text: ' Save Profile',
                 function: () {},
               ),
               const SizedBox(
