@@ -24,7 +24,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
         mainAxisSpacing: 12.0,
         mainAxisExtent: 200,
       ),
-      itemCount: 10,
+      itemCount: 8,
       itemBuilder: (context, index) {
         return Container(
             child: GestureDetector(
