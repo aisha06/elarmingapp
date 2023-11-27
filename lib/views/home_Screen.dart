@@ -268,7 +268,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       "Enrolled Students",
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12.3,
+                                          fontSize: 11.4,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     SizedBox(height: height * 0.01),
@@ -341,244 +341,228 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: 15),
                 //1st Gridview builder
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LiveScreen()),
-                    );
-                  },
-                  child: GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: .6,
-                      crossAxisSpacing: 12.0,
-                      mainAxisSpacing: 12.0,
-                      mainAxisExtent: 200,
-                    ),
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      return Container(
-                          child: GestureDetector(
-                        onTap: () {
-                          // _showBottomSheetDeposit(context);
-                        },
-                        child: Container(
-                            height: 200,
-                            decoration: BoxDecoration(
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: .6,
+                    crossAxisSpacing: 12.0,
+                    mainAxisSpacing: 12.0,
+                    mainAxisExtent: 200,
+                  ),
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Container(
+                        child: GestureDetector(
+                      onTap: () {
+                        // _showBottomSheetDeposit(context);
+                      },
+                      child: Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFD9D9D9),
+                            border: Border.all(
+                              width: 1,
                               color: const Color(0xFFD9D9D9),
-                              border: Border.all(
-                                width: 1,
-                                color: const Color(0xFFD9D9D9),
-                              ),
-                              borderRadius: BorderRadius.circular(2),
                             ),
-                            child: Column(
-                              children: [
-                                Stack(
-                                  children: [
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 90,
-                                      child: ClipRect(
-                                        child: Image.asset(
-                                          'assets/images/livepic.png',
-                                          fit: BoxFit.fill,
-                                          filterQuality: FilterQuality.high,
-                                        ),
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 90,
+                                    child: ClipRect(
+                                      child: Image.asset(
+                                        'assets/images/livepic.png',
+                                        fit: BoxFit.fill,
+                                        filterQuality: FilterQuality.high,
                                       ),
                                     ),
-                                    Positioned(
-                                        child: Row(
-                                      children: [
-                                        Spacer(),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          WishlistScreen()),
-                                                );
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
+                                  ),
+                                  Positioned(
+                                      child: Row(
+                                    children: [
+                                      Spacer(),
+                                      Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        WishlistScreen()),
+                                              );
+                                            },
+                                            child: Container(
+                                              child: RatingBarIndicator(
+                                                rating: 2.5,
+                                                itemCount: 1,
+                                                itemSize: 25.0,
+                                                itemBuilder: (context, _) =>
+                                                    Image.asset(
                                                   'assets/images/heart.png',
                                                   fit: BoxFit.fill,
                                                   filterQuality:
                                                       FilterQuality.high,
-                                                  // color: Colors.redAccent,
+                                                  width: 20,
+                                                  height: 20,
                                                 ),
-                                                width: 20,
-                                                height: 20,
                                               ),
                                             ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          SharelistView()),
-                                                );
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SharelistView()),
+                                              );
+                                            },
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xFFD9D9D9),
+                                                border: Border.all(
+                                                  width: 1,
                                                   color:
                                                       const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
                                                 ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
+                                              child: Image.asset(
+                                                'assets/images/share.png',
+                                                fit: BoxFit.fill,
+                                                filterQuality:
+                                                    FilterQuality.high,
+                                              ),
+                                              width: 20,
+                                              height: 20,
                                             ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        )
-                                      ],
-                                    )),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 25,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(2),
-                                      color: Color(0xff91e8b2),
-                                    ),
-                                    child: Center(
-                                      child: Text("Machine Learning Bootcamp",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black,
-                                          )),
-                                    ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      )
+                                    ],
+                                  )),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(2),
+                                    color: Color(0xff91e8b2),
+                                  ),
+                                  child: Center(
+                                    child: Text("Machine Learning Bootcamp",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black,
+                                        )),
                                   ),
                                 ),
-                                Text(
-                                  "Krish Naik",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 10,
+                              ),
+                              Text(
+                                "Krish Naik",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      shape: BoxShape.circle,
                                     ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      padding: const EdgeInsets.all(4),
-                                      // color:Colors.green,
-                                      child: Text(
-                                        "Rs",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      "60,000",
+                                    padding: const EdgeInsets.all(4),
+                                    // color:Colors.green,
+                                    child: Text(
+                                      "Rs",
                                       style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w400,
                                           color: Colors.black),
                                     ),
-                                    Spacer(),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LiveNewScreen()),
-                                        );
-                                      },
-                                      child: Container(
-                                        padding: const EdgeInsets.all(5.0),
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff575756),
-                                              Color(0xff575756)
-                                            ], // Replace with your desired colors
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [
-                                              0.9,
-                                              0.5
-                                            ], // This splits the gradient in half
-                                          ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    "60,000",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black),
+                                  ),
+                                  Spacer(),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LiveNewScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
                                         ),
-                                        child: const Text(
-                                          "Live",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
+                                      ),
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )),
-                      ));
-                    },
-                  ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ));
+                  },
                 ),
 
                 SizedBox(height: 10),
@@ -635,243 +619,228 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: 15),
                 //2ns grideview builder
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LiveScreen()),
-                    );
-                  },
-                  child: GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: .6,
-                      crossAxisSpacing: 12.0,
-                      mainAxisSpacing: 12.0,
-                      mainAxisExtent: 200,
-                    ),
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      return Container(
-                          child: GestureDetector(
-                        onTap: () {
-                          // _showBottomSheetDeposit(context);
-                        },
-                        child: Container(
-                            //height: 160,
-                            decoration: BoxDecoration(
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: .6,
+                    crossAxisSpacing: 12.0,
+                    mainAxisSpacing: 12.0,
+                    mainAxisExtent: 200,
+                  ),
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Container(
+                        child: GestureDetector(
+                      onTap: () {
+                        // _showBottomSheetDeposit(context);
+                      },
+                      child: Container(
+                          //height: 160,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFD9D9D9),
+                            border: Border.all(
+                              width: 1,
                               color: const Color(0xFFD9D9D9),
-                              border: Border.all(
-                                width: 1,
-                                color: const Color(0xFFD9D9D9),
-                              ),
-                              borderRadius: BorderRadius.circular(2),
                             ),
-                            child: Column(
-                              children: [
-                                Stack(
-                                  children: [
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 90,
-                                      child: ClipRect(
-                                        child: Image.asset(
-                                          'assets/images/livepic.png',
-                                          fit: BoxFit.fill,
-                                          filterQuality: FilterQuality.high,
-                                        ),
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 90,
+                                    child: ClipRect(
+                                      child: Image.asset(
+                                        'assets/images/livepic.png',
+                                        fit: BoxFit.fill,
+                                        filterQuality: FilterQuality.high,
                                       ),
                                     ),
-                                    Positioned(
-                                        child: Row(
-                                      children: [
-                                        Spacer(),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          WishlistScreen()),
-                                                );
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
+                                  ),
+                                  Positioned(
+                                      child: Row(
+                                    children: [
+                                      Spacer(),
+                                      Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        WishlistScreen()),
+                                              );
+                                            },
+                                            child: Container(
+                                              child: RatingBarIndicator(
+                                                rating: 2.5,
+                                                itemCount: 1,
+                                                itemSize: 25.0,
+                                                itemBuilder: (context, _) =>
+                                                    Image.asset(
                                                   'assets/images/heart.png',
                                                   fit: BoxFit.fill,
                                                   filterQuality:
                                                       FilterQuality.high,
+                                                  width: 20,
+                                                  height: 20,
                                                 ),
-                                                width: 20,
-                                                height: 20,
                                               ),
                                             ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          SharelistView()),
-                                                );
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SharelistView()),
+                                              );
+                                            },
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xFFD9D9D9),
+                                                border: Border.all(
+                                                  width: 1,
                                                   color:
                                                       const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
                                                 ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                ),
-                                                width: 20,
-                                                height: 20,
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
+                                              child: Image.asset(
+                                                'assets/images/share.png',
+                                                fit: BoxFit.fill,
+                                                filterQuality:
+                                                    FilterQuality.high,
+                                              ),
+                                              width: 20,
+                                              height: 20,
                                             ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        )
-                                      ],
-                                    )),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 25,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(2),
-                                      color: Color(0xff91e8b2),
-                                    ),
-                                    child: Center(
-                                      child: Text("Machine Learning Bootcamp",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black,
-                                          )),
-                                    ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      )
+                                    ],
+                                  )),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(2),
+                                    color: Color(0xff91e8b2),
+                                  ),
+                                  child: Center(
+                                    child: Text("Machine Learning Bootcamp",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black,
+                                        )),
                                   ),
                                 ),
-                                Text(
-                                  "Krish Naik",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 10,
+                              ),
+                              Text(
+                                "Krish Naik",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      shape: BoxShape.circle,
                                     ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      padding: const EdgeInsets.all(4),
-                                      // color:Colors.green,
-                                      child: Text(
-                                        "Rs",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      "60,000",
+                                    padding: const EdgeInsets.all(4),
+                                    // color:Colors.green,
+                                    child: Text(
+                                      "Rs",
                                       style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w400,
                                           color: Colors.black),
                                     ),
-                                    Spacer(),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LiveScreen()),
-                                        );
-                                      },
-                                      child: Container(
-                                        padding: const EdgeInsets.all(5.0),
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff575756),
-                                              Color(0xff575756)
-                                            ], // Replace with your desired colors
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [
-                                              0.9,
-                                              0.5
-                                            ], // This splits the gradient in half
-                                          ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    "60,000",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black),
+                                  ),
+                                  Spacer(),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LiveNewScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
                                         ),
-                                        child: const Text(
-                                          "Live",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
+                                      ),
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )),
-                      ));
-                    },
-                  ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ));
+                  },
                 ),
                 SizedBox(height: 10),
                 Row(
@@ -927,238 +896,228 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 //3d grideview builder
                 SizedBox(height: 15),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LiveScreen()),
-                    );
-                  },
-                  child: GridView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: .6,
-                      crossAxisSpacing: 12.0,
-                      mainAxisSpacing: 12.0,
-                      mainAxisExtent: 200,
-                    ),
-                    itemCount: 2,
-                    itemBuilder: (context, index) {
-                      return Container(
-                          child: GestureDetector(
-                        onTap: () {
-                          // _showBottomSheetDeposit(context);
-                        },
-                        child: Container(
-                            //height: 153,
-                            decoration: BoxDecoration(
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: .6,
+                    crossAxisSpacing: 12.0,
+                    mainAxisSpacing: 12.0,
+                    mainAxisExtent: 200,
+                  ),
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Container(
+                        child: GestureDetector(
+                      onTap: () {
+                        // _showBottomSheetDeposit(context);
+                      },
+                      child: Container(
+                          //height: 153,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFD9D9D9),
+                            border: Border.all(
+                              width: 1,
                               color: const Color(0xFFD9D9D9),
-                              border: Border.all(
-                                width: 1,
-                                color: const Color(0xFFD9D9D9),
-                              ),
-                              borderRadius: BorderRadius.circular(2),
                             ),
-                            child: Column(
-                              children: [
-                                Stack(
-                                  children: [
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width,
-                                      height: 90,
-                                      child: ClipRect(
-                                        child: Image.asset(
-                                          'assets/images/livepic.png',
-                                          fit: BoxFit.fill,
-                                          filterQuality: FilterQuality.high,
-                                        ),
+                            borderRadius: BorderRadius.circular(2),
+                          ),
+                          child: Column(
+                            children: [
+                              Stack(
+                                children: [
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 90,
+                                    child: ClipRect(
+                                      child: Image.asset(
+                                        'assets/images/livepic.png',
+                                        fit: BoxFit.fill,
+                                        filterQuality: FilterQuality.high,
                                       ),
                                     ),
-                                    Positioned(
-                                        child: Row(
-                                      children: [
-                                        Spacer(),
-                                        Column(
-                                          children: [
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          WishlistScreen()),
-                                                );
-                                              },
-                                              child: Container(
-                                                child: RatingBarIndicator(
-                                                  rating: 2.5,
-                                                  itemCount: 1,
-                                                  itemSize: 20.0,
-                                                  itemBuilder: (context, _) =>
-                                                      Image.asset(
-                                                    'assets/images/heart.png',
-                                                    fit: BoxFit.fill,
-                                                    filterQuality:
-                                                        FilterQuality.high,
-                                                    width: 20,
-                                                    height: 20,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          SharelistView()),
-                                                );
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color:
-                                                      const Color(0xFFD9D9D9),
-                                                  border: Border.all(
-                                                    width: 1,
-                                                    color:
-                                                        const Color(0xFFD9D9D9),
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
-                                                ),
-                                                child: Image.asset(
-                                                  'assets/images/share.png',
+                                  ),
+                                  Positioned(
+                                      child: Row(
+                                    children: [
+                                      Spacer(),
+                                      Column(
+                                        children: [
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        WishlistScreen()),
+                                              );
+                                            },
+                                            child: Container(
+                                              child: RatingBarIndicator(
+                                                rating: 2.5,
+                                                itemCount: 1,
+                                                itemSize: 25.0,
+                                                itemBuilder: (context, _) =>
+                                                    Image.asset(
+                                                  'assets/images/heart.png',
                                                   fit: BoxFit.fill,
                                                   filterQuality:
                                                       FilterQuality.high,
+                                                  width: 20,
+                                                  height: 20,
                                                 ),
-                                                width: 20,
-                                                height: 20,
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        )
-                                      ],
-                                    )),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 25,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(2),
-                                      color: Color(0xff91e8b2),
-                                    ),
-                                    child: Center(
-                                      child: Text("Machine Learning Bootcamp",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.w600,
-                                            color: Colors.black,
-                                          )),
-                                    ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SharelistView()),
+                                              );
+                                            },
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                color: const Color(0xFFD9D9D9),
+                                                border: Border.all(
+                                                  width: 1,
+                                                  color:
+                                                      const Color(0xFFD9D9D9),
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
+                                              ),
+                                              child: Image.asset(
+                                                'assets/images/share.png',
+                                                fit: BoxFit.fill,
+                                                filterQuality:
+                                                    FilterQuality.high,
+                                              ),
+                                              width: 20,
+                                              height: 20,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      )
+                                    ],
+                                  )),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 25,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(2),
+                                    color: Color(0xff91e8b2),
+                                  ),
+                                  child: Center(
+                                    child: Text("Machine Learning Bootcamp",
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black,
+                                        )),
                                   ),
                                 ),
-                                Text(
-                                  "Krish Naik",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 10,
+                              ),
+                              Text(
+                                "Krish Naik",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      shape: BoxShape.circle,
                                     ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      padding: const EdgeInsets.all(4),
-                                      // color:Colors.green,
-                                      child: Text(
-                                        "Rs",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      "60,000",
+                                    padding: const EdgeInsets.all(4),
+                                    // color:Colors.green,
+                                    child: Text(
+                                      "Rs",
                                       style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w400,
                                           color: Colors.black),
                                     ),
-                                    Spacer(),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LiveNewScreen()),
-                                        );
-                                      },
-                                      child: Container(
-                                        padding: const EdgeInsets.all(5.0),
-                                        decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xff575756),
-                                              Color(0xff575756)
-                                            ], // Replace with your desired colors
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [
-                                              0.9,
-                                              0.5
-                                            ], // This splits the gradient in half
-                                          ),
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    "60,000",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.black),
+                                  ),
+                                  Spacer(),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                LiveNewScreen()),
+                                      );
+                                    },
+                                    child: Container(
+                                      padding: const EdgeInsets.all(5.0),
+                                      decoration: const BoxDecoration(
+                                        gradient: LinearGradient(
+                                          colors: [
+                                            Color(0xff575756),
+                                            Color(0xff575756)
+                                          ], // Replace with your desired colors
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [
+                                            0.9,
+                                            0.5
+                                          ], // This splits the gradient in half
                                         ),
-                                        child: const Text(
-                                          "Live",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
+                                      ),
+                                      child: const Text(
+                                        "Live",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )),
-                      ));
-                    },
-                  ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )),
+                    ));
+                  },
                 ),
               ],
             ),

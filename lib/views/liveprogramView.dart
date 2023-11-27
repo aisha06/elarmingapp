@@ -12,8 +12,8 @@ class LiveprogramView extends StatelessWidget {
         // physics: NeverScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 10,
-            right: 10,
+            left: 20,
+            right: 20,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
