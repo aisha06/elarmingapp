@@ -402,19 +402,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                               );
                                             },
                                             child: Container(
-                                              child: RatingBarIndicator(
-                                                rating: 2.5,
+                                              child: RatingBar.builder(
+                                                initialRating: 0,
+                                                minRating: 0,
+                                                updateOnDrag: false,
+                                                glow: false,
                                                 itemCount: 1,
-                                                itemSize: 25.0,
+                                                itemSize: 25,
+                                                allowHalfRating: false,
                                                 itemBuilder: (context, _) =>
-                                                    Image.asset(
-                                                  'assets/images/heart.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                  width: 20,
-                                                  height: 20,
+                                                    Icon(
+                                                  Icons.favorite,
+                                                  color: Colors.red,
                                                 ),
+                                                onRatingUpdate: (rating) {
+                                                  // Handle the rating update here
+                                                },
                                               ),
                                             ),
                                           ),
@@ -680,19 +683,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                               );
                                             },
                                             child: Container(
-                                              child: RatingBarIndicator(
-                                                rating: 2.5,
+                                              child: RatingBar.builder(
+                                                initialRating: 0,
+                                                minRating: 0,
+                                                updateOnDrag: false,
+                                                glow: false,
                                                 itemCount: 1,
-                                                itemSize: 25.0,
+                                                itemSize: 25,
+                                                allowHalfRating: false,
                                                 itemBuilder: (context, _) =>
-                                                    Image.asset(
-                                                  'assets/images/heart.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                  width: 20,
-                                                  height: 20,
+                                                    Icon(
+                                                  Icons.favorite,
+                                                  color: Colors.red,
                                                 ),
+                                                onRatingUpdate: (rating) {
+                                                  // Handle the rating update here
+                                                },
                                               ),
                                             ),
                                           ),
@@ -957,19 +963,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                               );
                                             },
                                             child: Container(
-                                              child: RatingBarIndicator(
-                                                rating: 2.5,
+                                              child: RatingBar.builder(
+                                                initialRating: 0,
+                                                minRating: 0,
+                                                updateOnDrag: false,
+                                                glow: false,
                                                 itemCount: 1,
-                                                itemSize: 25.0,
+                                                itemSize: 25,
+                                                allowHalfRating: false,
                                                 itemBuilder: (context, _) =>
-                                                    Image.asset(
-                                                  'assets/images/heart.png',
-                                                  fit: BoxFit.fill,
-                                                  filterQuality:
-                                                      FilterQuality.high,
-                                                  width: 20,
-                                                  height: 20,
+                                                    Icon(
+                                                  Icons.favorite,
+                                                  color: Colors.red,
                                                 ),
+                                                onRatingUpdate: (rating) {
+                                                  // Handle the rating update here
+                                                },
                                               ),
                                             ),
                                           ),
@@ -1119,6 +1128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ));
                   },
                 ),
+                SizedBox(height: 13),
               ],
             ),
           ),

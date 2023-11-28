@@ -22,7 +22,7 @@ class AccountSummaryView extends StatelessWidget {
           itemCount: 1,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: EdgeInsets.only(left: 5, right: 10),
+              padding: EdgeInsets.only(left: 10, right: 12),
               child: Container(
                 height: 85,
                 //width: 68,
@@ -49,7 +49,7 @@ class AccountSummaryView extends StatelessWidget {
                                     "Machine learning Bootcamp",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 12,
+                                        fontSize: 10,
                                         color: Colors.black),
                                   ),
                                 ),
@@ -83,7 +83,7 @@ class AccountSummaryView extends StatelessWidget {
                                           "Payment Sucessfully",
                                           style: TextStyle(
                                               fontWeight: FontWeight.w500,
-                                              fontSize: 11,
+                                              fontSize: 10,
                                               color: Colors.black),
                                         ),
                                       ),
@@ -96,7 +96,7 @@ class AccountSummaryView extends StatelessWidget {
                                     children: [
                                       const CircleAvatar(
                                         backgroundColor: Color(0xFF91E8B2),
-                                        radius: 12.0,
+                                        radius: 10.0,
                                         child: const Text(
                                           "Rs",
                                           style: TextStyle(
@@ -118,7 +118,7 @@ class AccountSummaryView extends StatelessWidget {
                                           child: const Text(
                                             "60000",
                                             style: TextStyle(
-                                                fontSize: 12,
+                                                fontSize: 11,
                                                 fontWeight: FontWeight.w400,
                                                 color: Colors.black),
                                           )),

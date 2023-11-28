@@ -98,31 +98,25 @@ class _WishlistScreenState extends State<WishlistScreen> {
                                       )),
                                 ],
                               ),
-                              // const SizedBox(
-                              //   width: 5.0,
-                              // ),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RatingBar.builder(
-                                initialRating: 1,
-                                minRating: 1,
-                                direction: Axis.horizontal,
-                                allowHalfRating: true,
+                                initialRating: 0,
+                                minRating: 0,
+                                updateOnDrag: false,
+                                glow: false,
                                 itemCount: 1,
-                                itemSize: 23,
-                                itemPadding:
-                                    EdgeInsets.symmetric(horizontal: 2.0),
-                                itemBuilder: (context, _) => Image.asset(
-                                  'assets/images/heart.png',
-                                  fit: BoxFit.fill,
-                                  filterQuality: FilterQuality.high,
-                                  color: Colors.redAccent,
+                                itemSize: 25,
+                                allowHalfRating: false,
+                                itemBuilder: (context, _) => Icon(
+                                  Icons.favorite,
+                                  color: Colors.red,
                                 ),
                                 onRatingUpdate: (rating) {
-                                  print(rating);
+                                  // Handle the rating update here
                                 },
                               ),
                               Container(

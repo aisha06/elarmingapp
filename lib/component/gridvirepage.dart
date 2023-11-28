@@ -84,17 +84,21 @@ class _GrridviewpageState extends State<Grridviewpage> {
                                     );
                                   },
                                   child: Container(
-                                    child: RatingBarIndicator(
-                                      rating: 2.5,
+                                    child: RatingBar.builder(
+                                      initialRating: 0,
+                                      minRating: 0,
+                                      updateOnDrag: false,
+                                      glow: false,
                                       itemCount: 1,
-                                      itemSize: 25.0,
-                                      itemBuilder: (context, _) => Image.asset(
-                                        'assets/images/heart.png',
-                                        fit: BoxFit.fill,
-                                        filterQuality: FilterQuality.high,
-                                        width: 20,
-                                        height: 20,
+                                      itemSize: 25,
+                                      allowHalfRating: false,
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.favorite,
+                                        color: Colors.red,
                                       ),
+                                      onRatingUpdate: (rating) {
+                                        // Handle the rating update here
+                                      },
                                     ),
                                   ),
                                 ),
