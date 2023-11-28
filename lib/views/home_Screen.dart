@@ -953,16 +953,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                           SizedBox(
                                             height: 10,
                                           ),
-                                          GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        WishlistScreen()),
-                                              );
-                                            },
-                                            child: Container(
+                                          Container(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          WishlistScreen()),
+                                                );
+                                              },
                                               child: RatingBar.builder(
                                                 initialRating: 0,
                                                 minRating: 0,
