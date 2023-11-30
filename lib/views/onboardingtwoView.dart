@@ -50,8 +50,7 @@ class OnboardingtwoView extends StatelessWidget {
                     margin: EdgeInsets.only(bottom: 5),
                     child: const CircleAvatar(
                         radius: 70.0,
-                        backgroundImage:
-                            AssetImage("assets/images/aisha.jpg"))),
+                        backgroundImage: AssetImage("assets/images/ani.jpg"))),
                 Positioned(
                   bottom: 90.0,
                   child: Container(
@@ -63,7 +62,7 @@ class OnboardingtwoView extends StatelessWidget {
                     height: 40.0,
                     child: const Center(
                         child: Text(
-                      "Hi",
+                      "Hii",
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     )),
@@ -76,7 +75,7 @@ class OnboardingtwoView extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),
                     child: Text(
-                      "vaishnavi\nBansal",
+                      "Jyoti\nPrajapati",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,

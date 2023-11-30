@@ -31,7 +31,7 @@ class MyprofileView extends StatelessWidget {
                     child: Stack(children: [
                       const CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage("assets/images/aisha.jpg"),
+                        backgroundImage: AssetImage("assets/images/ani.jpg"),
                       ),
                       Align(
                         widthFactor: 2,
@@ -71,7 +71,7 @@ class MyprofileView extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        "Vaishnavi Bansal",
+                        "Jyoti Prajapati",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 18.0,

@@ -37,7 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Stack(children: [
                       CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage("assets/images/aisha.jpg"),
+                        backgroundImage: AssetImage("assets/images/ani.jpg"),
                       ),
                       Align(
                         widthFactor: 2,
@@ -80,7 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Vaishnavi Bansal",
+                        "Jyoti Prajapati",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 18,

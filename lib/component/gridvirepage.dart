@@ -234,7 +234,7 @@ class _GrridviewpageState extends State<Grridviewpage> {
                           ),
                         ),
                         SizedBox(
-                          width: 10,
+                          width: 15,
                         ),
                       ],
                     ),

@@ -18,6 +18,14 @@ class SignupView extends StatelessWidget {
   final TextEditingController _repasswordController = TextEditingController();
   final TextEditingController _fnameController = TextEditingController();
   final TextEditingController _numberController = TextEditingController();
+  final TextEditingController _dobController = TextEditingController();
+  final TextEditingController _stateControll = TextEditingController();
+  final TextEditingController _districtControll = TextEditingController();
+  final TextEditingController _pincodeControll = TextEditingController();
+  final TextEditingController _postofficeControll = TextEditingController();
+  final TextEditingController _policestationControll = TextEditingController();
+  final TextEditingController _addharControll = TextEditingController();
+  final TextEditingController _genderControll = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   void signup(String email, String pass, context) async {
@@ -40,7 +48,14 @@ class SignupView extends StatelessWidget {
           'email': _emailController.text,
           'phoneNumber': _numberController.text,
           'address': _adressController.text,
-          "password": _passwordController.text
+          "password": _passwordController.text,
+          'dob': _dobController.text,
+          'addhar': _addharControll.text,
+          'state': _stateControll.text,
+          'district': _districtControll.text,
+          'pincode': _pincodeControll.text,
+          'policestation': _policestationControll.text,
+          'gender': _genderControll.text,
         });
         Navigator.push(
           context,
@@ -261,12 +276,173 @@ class SignupView extends StatelessWidget {
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: 're enter Password',
-                labeltext: 'Enter your Password for confirmation',
+                labeltext: 'Password for confirmation',
                 Controllerctr: _repasswordController,
                 valiDator: (value) {
                   if (value!.isEmpty ||
                       _repasswordController.text == _passwordController.text) {
-                    return 'Please confirm your password';
+                    return ' confirm your password';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your Addhar No :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: 'Your Addhar',
+                labeltext: ' Addhar for confirmation',
+                Controllerctr: _addharControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _addharControll.text == _addharControll.text) {
+                    return ' confirm your addhar';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your DOB :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: 'Your DOB',
+                labeltext: ' DOB for confirmation',
+                Controllerctr: _dobController,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _dobController.text == _dobController.text) {
+                    return 'your dob';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your State :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: 'Your State',
+                labeltext: 'State confirmation',
+                Controllerctr: _stateControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _stateControll.text == _stateControll.text) {
+                    return 'confirm your State';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your District :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: 'Your District',
+                labeltext: ' District for confirmation',
+                Controllerctr: _districtControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _districtControll.text == _districtControll.text) {
+                    return ' confirm your District';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your Pincode :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: ' Your Pincode',
+                labeltext: ' Pincode for confirmation',
+                Controllerctr: _pincodeControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _pincodeControll.text == _pincodeControll.text) {
+                    return ' confirm your Pincode';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Your Post Office :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: ' Your Post Office',
+                labeltext: ' Post Office for confirmation',
+                Controllerctr: _postofficeControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _postofficeControll.text == _postofficeControll.text) {
+                    return ' confirm your Post Office';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: ' Police Station :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: ' Police Sattion',
+                labeltext: ' Plice Station for confirmation',
+                Controllerctr: _policestationControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _policestationControll.text ==
+                          _policestationControll.text) {
+                    return ' confirm your Police Station';
+                  }
+                  return null; // Return null if the input is valid
+                },
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Textform(text: 'Enter Your Gender :'),
+              const SizedBox(
+                height: 10.0,
+              ),
+              TextfiledConatiner(
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: ' Gender',
+                labeltext: ' Gender for confirmation',
+                Controllerctr: _genderControll,
+                valiDator: (value) {
+                  if (value!.isEmpty ||
+                      _genderControll.text == _genderControll.text) {
+                    return 'Please confirm your Gender';
                   }
                   return null; // Return null if the input is valid
                 },
