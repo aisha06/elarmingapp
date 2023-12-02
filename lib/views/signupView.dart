@@ -430,7 +430,7 @@ class SignupView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Textform(text: 'Enter Your Gender :'),
+              Textform(text: ' Gender :'),
               const SizedBox(
                 height: 10.0,
               ),

@@ -11,14 +11,14 @@ class TextfiledConatiner extends StatelessWidget {
     required this.labeltext,
     required this.hinttext,
     required this.valiDator,
-    required this.Controllerctr,required this.keybordtype
+    required this.Controllerctr,
+    required this.keybordtype,
+    // required DOBInputField child,
   });
-
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       margin: const EdgeInsets.only(left: 10.0, right: 10.0),
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 0),
@@ -26,11 +26,12 @@ class TextfiledConatiner extends StatelessWidget {
           keyboardType: keybordtype,
           controller: Controllerctr,
           // obscureText: true,
-          decoration:  InputDecoration(
-              border: OutlineInputBorder(borderSide: BorderSide(width: 4.0),
-                borderRadius: BorderRadius.circular(10), // Set the BorderRadius here
+          decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderSide: BorderSide(width: 4.0),
+                borderRadius:
+                    BorderRadius.circular(10), // Set the BorderRadius here
               ),
-
               labelText: labeltext,
               hintText: hinttext),
           validator: valiDator,
