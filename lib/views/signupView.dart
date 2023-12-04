@@ -26,9 +26,11 @@ class SignupView extends StatelessWidget {
   final TextEditingController _policestationControll = TextEditingController();
   final TextEditingController _addharControll = TextEditingController();
   final TextEditingController _genderControll = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   void signup(String email, String pass, context) async {
+    String? state;
     print(email);
     print(pass);
     if (_formKey.currentState!.validate()) {
@@ -163,6 +165,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -182,6 +185,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -201,6 +205,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -222,6 +227,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -241,6 +247,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -250,22 +257,24 @@ class SignupView extends StatelessWidget {
                 height: 10.0,
               ),
               TextfiledConatiner(
-                  keybordtype: TextInputType.visiblePassword,
-                  hinttext: 'Password',
-                  labeltext: 'Enter your Password',
-                  Controllerctr: _passwordController,
-                  valiDator: (value) {
-                    (value) {
-                      if (value.isEmpty) {
-                        return "* Required";
-                      } else if (value.length < 6) {
-                        return "Password should be atleast 6 characters";
-                      } else if (value.length > 8) {
-                        return "Password should not be greater than 10 characters";
-                      } else
-                        return null;
-                    };
-                  }),
+                keybordtype: TextInputType.visiblePassword,
+                hinttext: 'Password',
+                labeltext: 'Enter your Password',
+                Controllerctr: _passwordController,
+                valiDator: (value) {
+                  (value) {
+                    if (value.isEmpty) {
+                      return "* Required";
+                    } else if (value.length < 6) {
+                      return "Password should be atleast 6 characters";
+                    } else if (value.length > 8) {
+                      return "Password should not be greater than 10 characters";
+                    } else
+                      return null;
+                  };
+                },
+                onStateChanged: (value) {},
+              ),
               const SizedBox(
                 height: 20.0,
               ),
@@ -285,6 +294,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -305,6 +315,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -316,15 +327,16 @@ class SignupView extends StatelessWidget {
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: 'Your DOB',
-                labeltext: ' DOB for confirmation',
-                Controllerctr: _dobController,
+                labeltext: 'DOB confirmation',
+                Controllerctr: _stateControll,
                 valiDator: (value) {
                   if (value!.isEmpty ||
-                      _dobController.text == _dobController.text) {
-                    return 'your dob';
+                      _stateControll.text == _stateControll.text) {
+                    return 'confirm your DOB';
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -345,6 +357,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -365,6 +378,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -385,6 +399,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -405,6 +420,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -426,6 +442,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
@@ -446,6 +463,7 @@ class SignupView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,

@@ -12,7 +12,7 @@ class TextfiledConatiner extends StatelessWidget {
     required this.hinttext,
     required this.valiDator,
     required this.Controllerctr,
-    required this.keybordtype,
+    required this.keybordtype, required Null Function(dynamic value) onStateChanged,
     // required DOBInputField child,
   });
 

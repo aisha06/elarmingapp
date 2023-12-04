@@ -62,6 +62,7 @@ class ForgetView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,

@@ -67,6 +67,7 @@ class ChangepassworsView extends StatelessWidget {
                   return null; // Return null if the input is valid
                 },
                 keybordtype: TextInputType.name,
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 10.0,
@@ -86,6 +87,7 @@ class ChangepassworsView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,

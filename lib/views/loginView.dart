@@ -85,14 +85,14 @@ class LoginView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Container(child: Textform(text: 'Email ID.:')),
+              Container(child: Textform(text: 'Username:')),
               const SizedBox(
                 height: 10.0,
               ),
               TextfiledConatiner(
                 keybordtype: TextInputType.emailAddress,
-                labeltext: 'Email',
-                hinttext: 'Enter yur email ID',
+                labeltext: '',
+                hinttext: 'Enter yourname',
                 Controllerctr: _emailController,
                 valiDator: (value) {
                   if (value!.isEmpty ||
@@ -102,6 +102,7 @@ class LoginView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 10.0,
@@ -121,6 +122,7 @@ class LoginView extends StatelessWidget {
                   }
                   return null; // Return null if the input is valid
                 },
+                onStateChanged: (value) {},
               ),
               const SizedBox(
                 height: 20.0,
