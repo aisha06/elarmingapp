@@ -82,7 +82,7 @@ class OnboardscreenView extends StatelessWidget {
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
               rightDotColor: Colors.grey,
-              size: 35,
+              size: 40,
             ),
             ElevatedButton(
               onPressed: () {
@@ -101,7 +101,7 @@ class OnboardscreenView extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF0000000))),
             ),
-            SizedBox(height: 60.0),
+            SizedBox(height: 30.0),
           ],
         ),
       ),

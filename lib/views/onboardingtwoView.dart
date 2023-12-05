@@ -110,12 +110,12 @@ class OnboardingtwoView extends StatelessWidget {
                   ),
                 )),
             const SizedBox(
-              height: 10.0,
+              height: 20.0,
             ),
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
               rightDotColor: Colors.grey,
-              size: 35,
+              size: 40,
             ),
             ElevatedButton(
               onPressed: () {
@@ -134,7 +134,7 @@ class OnboardingtwoView extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
-            SizedBox(height: 50.0),
+            SizedBox(height: 30.0),
           ],
         ),
       ),
