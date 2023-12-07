@@ -4,11 +4,14 @@ import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/controller/loginController.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
+import 'package:elearningapp_demo/views/otpVerifyView.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
+import 'package:http/http.dart';
 
 class LoginView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -18,19 +21,41 @@ class LoginView extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
 
   LoginView({super.key});
-  Future<User?> login(String email, String pass, context) async {}
+  // Future<User?> login(String email, String pass, context) async {}
 
   LoginController login_controller = Get.put(LoginController());
   var isLoading = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  void loginApiHit(BuildContext context, String email, String password) async {
+    try {
+      var response = await post(Uri.parse('https://reqres.in/api/login'),
+          body: {'email': email, 'password': password});
 
-  _submit() {
-    final isValid = _formKey.currentState!.validate();
-    if (!isValid) {
-      return;
+      if (response.statusCode == 200) {
+        // var data = jsonDecode(response.body.toString());
+        // print(data['token']);
+        print('Login successfully');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => OtpverifyView()),
+        );
+      } else {
+        print('failed');
+      }
+    } catch (e) {
+      print(e.toString());
     }
-    var loginApihit = login_controller;
-    _formKey.currentState!.save();
   }
+
+  // _submit() {
+  //   final isValid = _formKey.currentState!.validate();
+  //   if (!isValid) {
+  //     return;
+  //   }
+  //   var loginApihit = login_controller;
+  //   _formKey.currentState!.save();
+  // }
 
   bool passwordVisible = true;
   @override
@@ -82,7 +107,7 @@ class LoginView extends StatelessWidget {
                 keybordtype: TextInputType.emailAddress,
                 labeltext: '',
                 hinttext: 'Enter yourname',
-                Controllerctr: _userController,
+                Controllerctr: emailController,
                 valiDator: (value) {
                   if (value!.isEmpty ||
                       RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -104,7 +129,7 @@ class LoginView extends StatelessWidget {
                 keybordtype: TextInputType.visiblePassword,
                 labeltext: 'Password',
                 hinttext: 'Enter your password',
-                Controllerctr: _passwordController,
+                Controllerctr: passwordController,
                 valiDator: (value) {
                   if (value!.isEmpty) {
                     return 'Password  cannot be empty';
@@ -130,8 +155,8 @@ class LoginView extends StatelessWidget {
                   child: Button(
                     text: 'Login',
                     function: () {
-                      login(_userController.text, _passwordController.text,
-                          context);
+                      loginApiHit(context, emailController.text,
+                          passwordController.text);
                     },
                   ),
                 ),

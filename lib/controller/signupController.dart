@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class Signup_controller extends GetxController {
-  final _api = AuthRepository();
+  // final _api = AuthRepository();
 
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
@@ -18,22 +18,22 @@ class Signup_controller extends GetxController {
 
   RxBool loading = false.obs;
 
-  void signup_apihit() {
-    loading.value = true;
-    Map data = {
-      'username': usernameController.value.text,
-      'email': emailController.value.text,
-      'password': passwordController.value.text
-    };
-    _api.Signupapi(data).then((value) {
-      loading.value = false;
+  // void signup_apihit() {
+  //   loading.value = true;
+  //   Map data = {
+  //     'username': usernameController.value.text,
+  //     'email': emailController.value.text,
+  //     'password': passwordController.value.text
+  //   };
+  //   _api.Signupapi(data).then((value) {
+  //     loading.value = false;
 
-      Get.to(LoginView());
+  //     Get.to(LoginView());
 
-      Utils.snackBar('Signup', 'Signup successfully');
-    }).onError((error, stackTrace) {
-      loading.value = false;
-      Utils.snackBar('Error', error.toString());
-    });
-  }
+  //     Utils.snackBar('Signup', 'Signup successfully');
+  //   }).onError((error, stackTrace) {
+  //     loading.value = false;
+  //     Utils.snackBar('Error', error.toString());
+  //   });
+  // }
 }
