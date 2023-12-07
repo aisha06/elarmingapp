@@ -1,49 +1,38 @@
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
+import 'package:elearningapp_demo/controller/loginController.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 
 class LoginView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   User? user;
-  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _userController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   LoginView({super.key});
-  Future<User?> login(String email, String pass, context) async {
-    if (_formKey.currentState!.validate()) {
-      try {
-        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-          email: email,
-          password: pass,
-        );
-        user = userCredential.user;
-        print("aisha");
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => MyNavigationBar()));
+  Future<User?> login(String email, String pass, context) async {}
 
-        print('login');
+  LoginController login_controller = Get.put(LoginController());
+  var isLoading = false;
 
-        // You can handle the successful login here, e.g., navigate to the home page.
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'user-not-found') {
-          print('No user found for that email.');
-        } else if (e.code == 'wrong-password') {
-          print('Wrong password provided for that user.');
-        } else {
-          print('Error: ${e.message}');
-        }
-      } catch (e) {
-        print('Error: $e');
-      }
+  _submit() {
+    final isValid = _formKey.currentState!.validate();
+    if (!isValid) {
+      return;
     }
+    var loginApihit = login_controller;
+    _formKey.currentState!.save();
   }
 
+  bool passwordVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,11 +82,11 @@ class LoginView extends StatelessWidget {
                 keybordtype: TextInputType.emailAddress,
                 labeltext: '',
                 hinttext: 'Enter yourname',
-                Controllerctr: _emailController,
+                Controllerctr: _userController,
                 valiDator: (value) {
                   if (value!.isEmpty ||
                       RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                          .hasMatch(_emailController.text)) {
+                          .hasMatch(_userController.text)) {
                     return '*Required';
                   }
                   return null; // Return null if the input is valid
@@ -141,7 +130,7 @@ class LoginView extends StatelessWidget {
                   child: Button(
                     text: 'Login',
                     function: () {
-                      login(_emailController.text, _passwordController.text,
+                      login(_userController.text, _passwordController.text,
                           context);
                     },
                   ),

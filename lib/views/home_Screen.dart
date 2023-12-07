@@ -15,7 +15,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required String accesstoken});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

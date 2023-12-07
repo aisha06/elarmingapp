@@ -15,7 +15,9 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    HomeScreen(
+      accesstoken: '',
+    ),
     SearchScreen(),
     FeatureScreen(),
     WishlistScreen(),
