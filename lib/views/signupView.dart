@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
@@ -5,8 +7,10 @@ import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/controller/userController.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/loginView.dart';
+import 'package:elearningapp_demo/views/otpVerifyView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class SignupView extends StatelessWidget {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -29,88 +33,59 @@ class SignupView extends StatelessWidget {
   final TextEditingController _dateController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  void signup(String email, String pass, context) async {
-    String? state;
-    print(email);
-    print(pass);
-    if (_formKey.currentState!.validate()) {
-      try {
-        UserCredential userCredential =
-            await _auth.createUserWithEmailAndPassword(
-          email: email,
-          password: pass,
-        );
-        UserProfile user = UserProfile(
-          displayName: userCredential.user!.uid, // Set user's display name here
-        );
+  void SignupApiHit(
+    BuildContext context,
+    String firstName,
+    String lastName,
+    String email,
+    String password,
+    String mobile,
+    String dob,
+    String state,
+    String pincode,
+    String district,
+    String postOffice,
+    String policeStation,
+    String aadhar,
+    String gender,
+    String username,
+  ) async {
+    try {
+      var response = await post(
+          Uri.parse('http://192.168.1.6:8080/rest/auth/signup'),
+          body: {
+            'firstName': firstName,
+            'lastName': lastName,
+            'password': lastName,
+            'email': email,
+            'mobile': mobile,
+            'dob': dob,
+            'state': state,
+            'pincode': pincode,
+            'district': district,
+            'postOffice': postOffice,
+            'policeStation': policeStation,
+            'aadhar': aadhar,
+            'gender': gender,
+            'username': username,
+          });
 
-        await _firestore.collection('users').doc(userCredential.user?.uid).set({
-          'firstName': _fnameController.text,
-          'lastName': _lasttnameController.text,
-          'email': _emailController.text,
-          'phoneNumber': _numberController.text,
-          'address': _adressController.text,
-          "password": _passwordController.text,
-          'dob': _dobController.text,
-          'addhar': _addharControll.text,
-          'state': _stateControll.text,
-          'district': _districtControll.text,
-          'pincode': _pincodeControll.text,
-          'policestation': _policestationControll.text,
-          'gender': _genderControll.text,
-        });
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        print(data);
+        print('Account create successfully');
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MyNavigationBar()),
+          MaterialPageRoute(builder: (context) => OtpverifyView()),
         );
-
-        // You can handle the successful signup here, e.g., navigate to the home page.
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'weak-password') {
-          print('The password provided is too weak.');
-        } else if (e.code == 'email-already-in-use') {
-          print('The account already exists for that email.');
-        } else {
-          print('Error: ${e.message}');
-        }
-      } catch (e) {
-        print('Error: $e');
+      } else {
+        print('failed');
       }
+    } catch (e) {
+      print(e.toString());
     }
   }
 
-  // void _signup(String email, String pass) async {
-  //   print(email);
-  //   print(pass);
-  //   if (_formKey.currentState!.validate()) {
-  //     try {
-  //       UserCredential userCredential =
-  //       await _auth.createUserWithEmailAndPassword(
-  //         email: email,
-  //         password: pass,
-  //       );
-  //       UserProfile user = UserProfile(
-  //         displayName: userCredential.user!.uid, // Set user's display name here
-  //       );
-  //
-  //       await _firestore.collection('users').doc(userCredential.user?.uid).set({
-  //         'name': _nameController.text,
-  //       });
-  //
-  //       // You can handle the successful signup here, e.g., navigate to the home page.
-  //     } on FirebaseAuthException catch (e) {
-  //       if (e.code == 'weak-password') {
-  //         print('The password provided is too weak.');
-  //       } else if (e.code == 'email-already-in-use') {
-  //         print('The account already exists for that email.');
-  //       } else {
-  //         print('Error: ${e.message}');
-  //       }
-  //     } catch (e) {
-  //       print('Error: $e');
-  //     }
-  //   }
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -471,8 +446,8 @@ class SignupView extends StatelessWidget {
               Button(
                 text: 'Register',
                 function: () {
-                  signup(
-                      _emailController.text, _passwordController.text, context);
+                  // signup(
+                  //     _emailController.text, _passwordController.text, context);
                   // Get.to(MyHomePage());
                 },
               ),
