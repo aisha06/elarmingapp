@@ -35,7 +35,7 @@ class LoginView extends StatelessWidget {
     try {
       var response = await post(Uri.parse('https://reqres.in/api/login'),
           body: {'email': username, 'password': password});
-
+      print("response" + response.toString());
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data);

@@ -1,49 +1,20 @@
-class LoginModel {
-  LoginModel({
-    this.status,
-    this.message,
-    this.userData,
+class LoginModels {
+  LoginModels({
+    required this.password,
+    required this.username,
   });
-  String? status;
-  String? message;
-  UserData? userData;
+  late final String password;
+  late final String username;
 
-  LoginModel.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    message = json['message'];
-    userData = UserData.fromJson(json['user_data']);
+  LoginModels.fromJson(Map<String, dynamic> json) {
+    password = json['password'];
+    username = json['username'];
   }
 
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
-    _data['status'] = status;
-    _data['message'] = message;
-    _data['user_data'] = userData!.toJson();
-    return _data;
-  }
-}
-
-class UserData {
-  UserData({
-    this.ID,
-    this.Email,
-    this.Username,
-  });
-  int? ID;
-  String? Email;
-  String? Username;
-
-  UserData.fromJson(Map<String, dynamic> json) {
-    ID = json['ID'];
-    Email = json['Email'];
-    Username = json['Username'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
-    _data['ID'] = ID;
-    _data['Email'] = Email;
-    _data['Username'] = Username;
+    _data['password'] = password;
+    _data['username'] = username;
     return _data;
   }
 }

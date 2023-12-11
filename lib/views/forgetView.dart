@@ -1,13 +1,43 @@
+import 'dart:convert';
+
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/otpVerifyView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class ForgetView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
+  void forgetApiHit(
+    BuildContext context,
+    String mobile,
+  ) async {
+    try {
+      var response =
+          await post(Uri.parse('https://reqres.in/api/login'), body: {
+        'mobile': mobile,
+      });
+
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        print(data);
+        print('Verify successfully');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => OtpverifyView()),
+        );
+      } else {
+        print('failed');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  bool phoneVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

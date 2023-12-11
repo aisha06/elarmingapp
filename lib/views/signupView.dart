@@ -15,6 +15,7 @@ import 'package:http/http.dart';
 class SignupView extends StatelessWidget {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _adressController = TextEditingController();
@@ -51,24 +52,23 @@ class SignupView extends StatelessWidget {
     String username,
   ) async {
     try {
-      var response = await post(
-          Uri.parse('http://192.168.1.6:8080/rest/auth/signup'),
-          body: {
-            'firstName': firstName,
-            'lastName': lastName,
-            'password': lastName,
-            'email': email,
-            'mobile': mobile,
-            'dob': dob,
-            'state': state,
-            'pincode': pincode,
-            'district': district,
-            'postOffice': postOffice,
-            'policeStation': policeStation,
-            'aadhar': aadhar,
-            'gender': gender,
-            'username': username,
-          });
+      var response =
+          await post(Uri.parse('https://reqres.in/api/register'), body: {
+        'firstName': firstName,
+        'lastName': lastName,
+        'password': lastName,
+        'email': email,
+        'mobile': mobile,
+        'dob': dob,
+        'state': state,
+        'pincode': pincode,
+        'district': district,
+        'postOffice': postOffice,
+        'policeStation': policeStation,
+        'aadhar': aadhar,
+        'gender': gender,
+        'username': username,
+      });
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
