@@ -14,6 +14,7 @@ class LoginController {
   TextEditingController otpController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
   bool remenberMe = false;
 
   bool passwordObscure = true;
@@ -127,7 +128,7 @@ class LoginController {
 
     var userController;
     Map<String, dynamic> body = {
-      "user": userController.text,
+      "username": usernameController.text,
       "password": passwordTextController.text,
       "userType": "CUSTOMER"
     };

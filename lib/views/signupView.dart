@@ -5,11 +5,14 @@ import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/controller/userController.dart';
+import 'package:elearningapp_demo/services/singup_services.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/loginView.dart';
 import 'package:elearningapp_demo/views/otpVerifyView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart';
 
 class SignupView extends StatelessWidget {
@@ -52,23 +55,24 @@ class SignupView extends StatelessWidget {
     String username,
   ) async {
     try {
-      var response =
-          await post(Uri.parse('https://reqres.in/api/register'), body: {
-        'firstName': firstName,
-        'lastName': lastName,
-        'password': lastName,
-        'email': email,
-        'mobile': mobile,
-        'dob': dob,
-        'state': state,
-        'pincode': pincode,
-        'district': district,
-        'postOffice': postOffice,
-        'policeStation': policeStation,
-        'aadhar': aadhar,
-        'gender': gender,
-        'username': username,
-      });
+      var response = await post(
+          Uri.parse('http://192.168.18.253:8080/rest/auth/signup'),
+          body: {
+            'firstName': firstName,
+            'lastName': lastName,
+            'password': lastName,
+            'email': email,
+            'mobile': mobile,
+            'dob': dob,
+            'state': state,
+            'pincode': pincode,
+            'district': district,
+            'postOffice': postOffice,
+            'policeStation': policeStation,
+            'aadhar': aadhar,
+            'gender': gender,
+            'username': username,
+          });
 
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
@@ -76,7 +80,7 @@ class SignupView extends StatelessWidget {
         print('Account create successfully');
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => OtpverifyView()),
+          MaterialPageRoute(builder: (context) => LoginView()),
         );
       } else {
         print('failed');
@@ -446,9 +450,9 @@ class SignupView extends StatelessWidget {
               Button(
                 text: 'Register',
                 function: () {
-                  // signup(
-                  //     _emailController.text, _passwordController.text, context);
-                  // Get.to(MyHomePage());
+                  signup(
+                      _emailController.text, _passwordController.text, context);
+                  Get.to(LoginView());
                 },
               ),
               Container(

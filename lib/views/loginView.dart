@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
 import 'package:elearningapp_demo/component/button.dart';
@@ -24,31 +26,32 @@ class LoginView extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
 
   LoginView({super.key});
-  // Future<User?> login(String email, String pass, context) async {}
+  Future<User?> login(String username, String password, context) async {}
 
   LoginController login_controller = Get.put(LoginController());
   var isLoading = false;
-  TextEditingController userController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final userController = TextEditingController();
+  final passwordController = TextEditingController();
   void loginApiHit(
       BuildContext context, String username, String password) async {
     try {
-      var response = await post(Uri.parse('https://reqres.in/api/login'),
-          body: {'email': username, 'password': password});
+      var response = await post(
+          Uri.parse('http://192.168.1.9:8080/rest/auth/login'),
+          body: {'username': username, 'password': password});
       print("response" + response.toString());
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data);
-        print('Login successfully');
+        print('Login Successfully');
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => HomeScreen(
-                    accesstoken: '',
+              builder: (context) => const HomeScreen(
+                    accesstoken: 'HomeScreen',
                   )),
         );
       } else {
-        print('failed');
+        print('Failed');
       }
     } catch (e) {
       print(e.toString());
@@ -59,7 +62,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF5F5F5),
+      backgroundColor: const Color(0xffF5F5F5),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -143,7 +146,7 @@ class LoginView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color(0xFF575756),
+                    color: const Color(0xFF575756),
                     borderRadius:
                         BorderRadius.circular(10.0), // Set the border radius
                     // You can add other decoration properties here, such as border, boxShadow, etc.
@@ -175,12 +178,12 @@ class LoginView extends StatelessWidget {
                       width: double.infinity,
                       height: 42, // Set the height of the container
                       decoration: BoxDecoration(
-                        color: Color(0xFF5BA084),
+                        color: const Color(0xFF5BA084),
                         borderRadius: BorderRadius.circular(
                             10.0), // Set the border radius
                         // You can add other decoration properties here, such as border, boxShadow, etc.
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Register",
                           style: TextStyle(
