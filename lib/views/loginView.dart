@@ -1,64 +1,46 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:convert';
-
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
-import 'package:elearningapp_demo/controller/loginController.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
-import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
-import 'package:elearningapp_demo/views/home_Screen.dart';
-import 'package:elearningapp_demo/views/otpVerifyView.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/get_instance.dart';
 import 'package:http/http.dart';
 
-class LoginView extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController username = new TextEditingController();
+  final TextEditingController password = new TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  User? user;
-  final TextEditingController _userController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  LoginView({super.key});
-  Future<User?> login(String username, String password, context) async {}
-
-  LoginController login_controller = Get.put(LoginController());
-  var isLoading = false;
-  final userController = TextEditingController();
-  final passwordController = TextEditingController();
-  void loginApiHit(
-      BuildContext context, String username, String password) async {
-    try {
-      var response = await post(
-          Uri.parse('http://192.168.1.9:8080/rest/auth/login'),
-          body: {'username': username, 'password': password});
-      print("response" + response.toString());
-      if (response.statusCode == 200) {
-        var data = jsonDecode(response.body.toString());
-        print(data);
-        print('Login Successfully');
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const HomeScreen(
-                    accesstoken: 'HomeScreen',
-                  )),
-        );
-      } else {
-        print('Failed');
-      }
-    } catch (e) {
-      print(e.toString());
-    }
+  Future post() async {
+    var url = '''
+http://192.168.1.6:8080/rest/auth/login''';
+    String password = "jyoti12345";
+    String username = " username";
+    var bytes = utf8.encode("$username:$password");
+    var credentials = base64.encode(bytes);
+    var headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Basic $credentials"
+    };
+    var requestBody = jsonEncode({'username': username, 'password': password});
+    var http2;
+    var http3;
+    http2.response = await http3.post('http://192.168.1.6:8080/rest/auth/login',
+        body: requestBody, headers: headers);
+    var response;
+    var responseJson = json.decode(response.body);
+    print(Utf8Codec().decode(response.bodyBytes));
+    print("Body: " + responseJson);
   }
 
-  bool passwordVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,8 +90,9 @@ class LoginView extends StatelessWidget {
                 keybordtype: TextInputType.emailAddress,
                 labeltext: '',
                 hinttext: 'Enter yourname',
-                Controllerctr: userController,
+                Controllerctr: username,
                 valiDator: (value) {
+                  var _userController;
                   if (value!.isEmpty ||
                       RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                           .hasMatch(_userController.text)) {
@@ -130,7 +113,7 @@ class LoginView extends StatelessWidget {
                 keybordtype: TextInputType.visiblePassword,
                 labeltext: 'Password',
                 hinttext: 'Enter your password',
-                Controllerctr: passwordController,
+                Controllerctr: password,
                 valiDator: (value) {
                   if (value!.isEmpty) {
                     return 'Password  cannot be empty';
@@ -156,8 +139,7 @@ class LoginView extends StatelessWidget {
                   child: Button(
                     text: 'Login',
                     function: () {
-                      loginApiHit(context, userController.text,
-                          passwordController.text);
+                      (username.text, password.text);
                     },
                   ),
                 ),

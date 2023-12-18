@@ -80,7 +80,7 @@ class SignupView extends StatelessWidget {
         print('Account create successfully');
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LoginView()),
+          MaterialPageRoute(builder: (context) => LoginScreen()),
         );
       } else {
         print('failed');
@@ -452,7 +452,7 @@ class SignupView extends StatelessWidget {
                 function: () {
                   signup(
                       _emailController.text, _passwordController.text, context);
-                  Get.to(LoginView());
+                  Get.to(LoginScreen());
                 },
               ),
               Container(
@@ -472,7 +472,7 @@ class SignupView extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginView()),
+                                  builder: (context) => LoginScreen()),
                             );
                           },
                           child: const Text('login',

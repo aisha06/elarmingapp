@@ -75,16 +75,16 @@ class ForgetView extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 40.0,
+                height: 50.0,
               ),
-              Textform(text: 'Enter Mobile No.:'),
+              Textform(text: 'Enter Email:'),
               const SizedBox(
-                height: 20.0,
+                height: 15.0,
               ),
               TextfiledConatiner(
                 keybordtype: TextInputType.number,
-                labeltext: 'Phone No.',
-                hinttext: 'Enter your Phone Number',
+                labeltext: 'Email.',
+                hinttext: 'Enter your Email',
                 Controllerctr: _phoneController,
                 valiDator: (value) {
                   if (value!.isEmpty) {
@@ -95,7 +95,7 @@ class ForgetView extends StatelessWidget {
                 onStateChanged: (value) {},
               ),
               const SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
