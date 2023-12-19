@@ -3,6 +3,7 @@ import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
+import 'package:elearningapp_demo/views/home_Screen.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
@@ -16,29 +17,41 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController username = new TextEditingController();
-  final TextEditingController password = new TextEditingController();
+  TextEditingController username = TextEditingController();
+  TextEditingController Password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  Future post() async {
-    var url = '''
-http://192.168.1.6:8080/rest/auth/login''';
-    String password = "jyoti12345";
-    String username = " username";
-    var bytes = utf8.encode("$username:$password");
-    var credentials = base64.encode(bytes);
-    var headers = {
-      "Content-Type": "application/json",
-      "Authorization": "Basic $credentials"
-    };
-    var requestBody = jsonEncode({'username': username, 'password': password});
+  String message = '';
+
+  Future<void> changePassword() async {
+    String currentPassword = username.text;
+    String newPassword = Password.text;
+
+    var url = Uri.parse('http://192.168.1.6:8080/rest/auth/login');
     var http2;
-    var http3;
-    http2.response = await http3.post('http://192.168.1.6:8080/rest/auth/login',
-        body: requestBody, headers: headers);
-    var response;
-    var responseJson = json.decode(response.body);
-    print(Utf8Codec().decode(response.bodyBytes));
-    print("Body: " + responseJson);
+    var response = await http2.post(
+      url,
+      body: {
+        'username': username,
+        'Password': Password,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      setState(() {
+        message = 'Login successfully!';
+      });
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => HomeScreen(
+                  accesstoken: '',
+                )),
+      );
+    } else {
+      setState(() {
+        message = 'Failed Please try again.';
+      });
+    }
   }
 
   @override
@@ -113,7 +126,7 @@ http://192.168.1.6:8080/rest/auth/login''';
                 keybordtype: TextInputType.visiblePassword,
                 labeltext: 'Password',
                 hinttext: 'Enter your password',
-                Controllerctr: password,
+                Controllerctr: Password,
                 valiDator: (value) {
                   if (value!.isEmpty) {
                     return 'Password  cannot be empty';
@@ -139,7 +152,7 @@ http://192.168.1.6:8080/rest/auth/login''';
                   child: Button(
                     text: 'Login',
                     function: () {
-                      (username.text, password.text);
+                      (username.text, Password.text);
                     },
                   ),
                 ),

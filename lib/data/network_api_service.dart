@@ -1,69 +1,56 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:elearningapp_demo/data/app_exception.dart';
 import 'package:elearningapp_demo/data/network/base_api_service.dart';
-import 'package:flutter/foundation.dart';
+import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
-class NetworkApiServices extends BaseApiServices {
-  get http => null;
-
+class NetworkApiService extends BaseApiServices {
   @override
-  Future<dynamic> getApi(String url) async {
-    if (kDebugMode) {
-      print(url);
-    }
-
+  Future getGetApiResponse(String url) async {
     dynamic responseJson;
     try {
       final response =
           await http.get(Uri.parse(url)).timeout(const Duration(seconds: 10));
       responseJson = returnResponse(response);
     } on SocketException {
-      throw InternetException('');
-    } on RequestTimeOut {
-      throw RequestTimeOut('');
+      throw FetchDataException('No Internet Connection');
     }
-    print(responseJson);
+
     return responseJson;
   }
 
   @override
-  Future<dynamic> postApi(var data, String url) async {
-    if (kDebugMode) {
-      print(url);
-      print(data);
-    }
-
+  Future getPostApiResponse(String url, dynamic data) async {
     dynamic responseJson;
     try {
-      final response = await http
-          .post(Uri.parse(url), body: data)
-          .timeout(const Duration(seconds: 10));
+      Response response =
+          await post(Uri.parse(url), body: data).timeout(Duration(seconds: 10));
+
       responseJson = returnResponse(response);
     } on SocketException {
-      throw InternetException('');
-    } on RequestTimeOut {
-      throw RequestTimeOut('');
+      throw FetchDataException('No Internet Connection');
     }
-    if (kDebugMode) {
-      print(responseJson);
-    }
+
     return responseJson;
   }
 
-  dynamic returnResponse(response) async {
+  dynamic returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
         dynamic responseJson = jsonDecode(response.body);
         return responseJson;
       case 400:
-        dynamic responseJson = jsonDecode(response.body);
-        return responseJson;
-
+        var badRequestException;
+        throw badRequestException(response.body.toString());
+      case 500:
+      case 404:
+        var unauthorisedException;
+        throw unauthorisedException(response.body.toString());
       default:
         throw FetchDataException(
-            'Error accoured while communicating with server ' +
+            'Error accured while communicating with server' +
+                'with status code' +
                 response.statusCode.toString());
     }
   }

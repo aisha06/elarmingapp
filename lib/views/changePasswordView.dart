@@ -3,10 +3,45 @@ import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/home_Screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ChangepassworsView extends StatelessWidget {
+class ChangepassworsView extends StatefulWidget {
+  @override
+  State<ChangepassworsView> createState() => _ChangepassworsViewState();
+}
+
+class _ChangepassworsViewState extends State<ChangepassworsView> {
+  TextEditingController currentPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  String message = '';
+
+  Future<void> changePassword() async {
+    String currentPassword = currentPasswordController.text;
+    String newPassword = newPasswordController.text;
+
+    var url = Uri.parse('http://192.168.1.6:8080/rest/auth/resetPassword');
+    var http2;
+    var response = await http2.post(
+      url,
+      body: {
+        'currentPassword': currentPassword,
+        'newPassword': newPassword,
+      },
+    );
+
+    if (response.statusCode == 200) {
+      setState(() {
+        message = 'Password changed successfully!';
+      });
+    } else {
+      setState(() {
+        message = 'Failed to change password. Please try again.';
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();

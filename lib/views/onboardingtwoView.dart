@@ -105,7 +105,7 @@ class OnboardingtwoView extends StatelessWidget {
                   "Online learning refers to instruction that is delivered electronically through various multimedia and Internet platforms and applications. It is used interchangeably with other terms such as web-based learning, e-learning, computer-assisted instruction, and Internet-based learning.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 12.0,
+                    fontSize: 14.0,
                     color: Color(0xFF0000000),
                   ),
                 )),
@@ -115,7 +115,7 @@ class OnboardingtwoView extends StatelessWidget {
             LoadingAnimationWidget.twistingDots(
               leftDotColor: const Color(0xFF1A1A3F),
               rightDotColor: Colors.grey,
-              size: 40,
+              size: 60,
             ),
             ElevatedButton(
               onPressed: () {
@@ -134,7 +134,7 @@ class OnboardingtwoView extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black)),
             ),
-            SizedBox(height: 30.0),
+            //SizedBox(height: 30.0),
           ],
         ),
       ),

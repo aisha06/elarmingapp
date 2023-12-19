@@ -1,30 +1,27 @@
-class AppExceptions implements Exception {
+class AppException implements Exception {
   final _message;
   final _prefix;
-
-  AppExceptions([this._message, this._prefix]);
+  AppException([this._message, this._prefix]);
 
   String toString() {
     return '$_prefix$_message';
   }
 }
 
-class InternetException extends AppExceptions {
-  InternetException([String? message]) : super(message, 'No internet');
+class FetchDataException extends AppException {
+  FetchDataException([String? message])
+      : super(message, 'Error During Communication');
 }
 
-class RequestTimeOut extends AppExceptions {
-  RequestTimeOut([String? message]) : super(message, 'Request Time out');
+class BadRequestException extends AppException {
+  BadRequestException([String? message]) : super(message, 'Invalid request');
 }
 
-class ServerException extends AppExceptions {
-  ServerException([String? message]) : super(message, 'Internal server error');
+class UnauthorisedException extends AppException {
+  UnauthorisedException([String? message])
+      : super(message, 'Unauthorised request');
 }
 
-class InvalidUrlException extends AppExceptions {
-  InvalidUrlException([String? message]) : super(message, 'Invalid Url');
-}
-
-class FetchDataException extends AppExceptions {
-  FetchDataException([String? message]) : super(message, '');
+class InvalidInputException extends AppException {
+  InvalidInputException([String? message]) : super(message, 'Invalid Inpit');
 }
