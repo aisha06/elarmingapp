@@ -1,3 +1,4 @@
+// import 'dart:convert';
 import 'dart:convert';
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
@@ -14,6 +15,13 @@ class LoginScreen extends StatefulWidget {
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
+
+  // void initState() {
+  //   var fetchUsers2;
+  //   var response = fetchUsers2();
+  // }
+
+  // fromJson(e) {}
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -21,38 +29,58 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController Password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   String message = '';
-
-  Future<void> changePassword() async {
-    String currentPassword = username.text;
-    String newPassword = Password.text;
-
-    var url = Uri.parse('http://192.168.1.6:8080/rest/auth/login');
-    var http2;
-    var response = await http2.post(
-      url,
-      body: {
-        'username': username,
-        'Password': Password,
-      },
+  Future<void> loginUser(String, String password) async {
+    var http;
+    final response = await http.post(
+      'http://192.168.1.7:8080/rest/auth/login',
+      body: jsonEncode({'username': username, 'password': password}),
+      headers: {'Content-Type': 'application/json'},
     );
 
     if (response.statusCode == 200) {
-      setState(() {
-        message = 'Login successfully!';
-      });
+      // Successful login, handle the response accordingly
+      print('Login successful');
       Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => HomeScreen(
-                  accesstoken: '',
-                )),
-      );
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomeScreen(
+                    accesstoken: 'HomeScreen',
+                  )));
     } else {
-      setState(() {
-        message = 'Failed Please try again.';
-      });
+      // Handle errors, show error messages, etc.
+      print('Login failed: ${response.statusCode}');
     }
   }
+
+  // Future<void> LoginScreen(
+  //     String title, int id, String imgUrl, int quantity) async {
+  //   var http2;
+  //   var username;
+  //   final response = await http2.post(
+  //     'http://192.168.1.7:8080/rest/auth/login',
+  //     headers: <String, String>{
+  //       'Content-Type': 'application/json; charset=UTF-8',
+  //     },
+  //     body: jsonEncode(<String, String>{
+  //       'username': username,
+  //       'password': Password.toString(),
+  //     }),
+  //   );
+  //   if (response.statusCode == 200) {
+  //     setState(() {
+  //       message = 'login successfully!';
+  //     });
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => HomeScreen(
+  //                 accesstoken: 'HomeScreen',
+  //               )),
+  //     );
+  //   } else {
+  //     throw Exception('Login Failed');
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
