@@ -84,147 +84,137 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               TextFormFieldWedget(),
               const SizedBox(height: 20),
-              Container(
-                //margin: EdgeInsets.all(15),
-                margin: EdgeInsets.only(
-                  top: height / 40,
+              // Container(
+              //   //margin: EdgeInsets.all(15),
+              //   margin: EdgeInsets.only(
+              //     top: height / 40,
+              //   ),
+              //   child: CarouselSlider.builder(
+              //     itemCount: 1,
+              //     options: CarouselOptions(
+              //       enlargeCenterPage: true,
+              //       height: height / 6,
+              //       autoPlay: true,
+              //       autoPlayInterval: Duration(seconds: 3),
+              //       reverse: false,
+              //       aspectRatio: 5.0,
+              //       viewportFraction: 0.7,
+              //     ),
+              //     itemBuilder: (context, i, id) {
+              //       //for onTap to redirect to another screen
+              //       return GestureDetector(
+              //         child: Container(
+              //           width: width / 1.7,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(15),
+              //               border: Border.all(
+              //                 color: Colors.transparent,
+              //               )),
+              //           //ClipRRect for image border radius
+              //           child: ClipRRect(
+              //             borderRadius: BorderRadius.circular(10),
+              //             child: Image.asset(
+              //               "assets/images/globe.png",
+              //               height: 90,
+              //               width: 150,
+              //             ),
+              //           ),
+              //         ),
+              //         onTap: () {},
+              //       );
+              //     },
+              //   ),
+              // ),
+              CarouselSlider(
+                options: CarouselOptions(
+                  enlargeCenterPage: true,
+                  height: height / 6,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 3),
+                  reverse: false,
+                  aspectRatio: 5.0,
+                  viewportFraction: 0.7,
                 ),
-                child: CarouselSlider.builder(
-                  itemCount: 1,
-                  options: CarouselOptions(
-                    enlargeCenterPage: true,
-                    height: height / 6,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 3),
-                    reverse: false,
-                    aspectRatio: 5.0,
-                    viewportFraction: 0.7,
-                  ),
-                  itemBuilder: (context, i, id) {
-                    //for onTap to redirect to another screen
-                    return GestureDetector(
-                      child: Container(
-                        width: width / 1.7,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.transparent,
-                            )),
-                        //ClipRRect for image border radius
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/globe.png",
-                            height: 90,
-                            width: 150,
+                items: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xff5BA084),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "A Sale as big as\nyour dreams",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 9,
+                              ),
+                              Text(
+                                "Lorem Ipsum is simply dummy text\nof the printing and typesetting\nindustry.",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                      onTap: () {},
-                    );
-                  },
-                ),
-              ),
-              /* Container(
-                height: height/8,
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height / 6,
-                    enlargeCenterPage: true,
-                    autoPlay: true,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlayAnimationDuration: Duration(seconds: 2),
-                    aspectRatio: 5.0, // Ensure this value is appropriate for your design
-                    viewportFraction: 0.7,
+                        Spacer(),
+                        SizedBox(
+                            height: 100,
+                            width: 100,
+                            child: Image.asset("assets/images/globe.png")),
+                        Spacer(),
+                      ],
+                    ),
                   ),
-                  items: [
-                    Container(
-                      height: 50,
-                        width: 50,
-                        child: Image.asset("assets/images/globe.png",height: 70,width: 150,)),
-                   */
-              /* Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff5BA084),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Row(
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xff58605C),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                         */ /*
-                    */
-              /* Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "A Sale as big as\nyour dreams",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 9,
-                                ),
-                                Text(
-                                  "Lorem Ipsum is simply dummy text\nof the printing and typesetting\nindustry.",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
+                          Text(
+                            "A Sale as big as\nyour dreams",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w900,
                             ),
-                          ),*/ /**/ /*
-                          //Spacer(),
+                          ),
                           SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: Image.asset("assets/images/globe.png")),
-                          //Spacer(),
+                            height: 10,
+                          ),
+                          Text(
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ],
                       ),
-                    ),*/ /*
-                   */ /* Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff58605C),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "A Sale as big as\nyour dreams",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),*/ /*
-                  ],
-                ),
-              ),*/
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 20),
               Container(
                 height: height / 6.9,
