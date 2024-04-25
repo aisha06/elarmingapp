@@ -130,9 +130,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'First Name:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.name,
                 labeltext: 'First Name ',
@@ -150,9 +147,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Last Name:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.name,
                 labeltext: 'Last Name',
@@ -170,9 +164,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Address:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.text,
                 labeltext: 'Address',
@@ -190,9 +181,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Email ID:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.emailAddress,
                 hinttext: 'Email',
@@ -212,9 +200,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Mobile NO.:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.number,
                 labeltext: 'Mobile No.',
@@ -232,9 +217,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Password:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: 'Password',
@@ -258,9 +240,6 @@ class SignupView extends StatelessWidget {
                 height: 20.0,
               ),
               Textform(text: 'Re-Enter Password:'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: 're enter Password',
@@ -278,31 +257,7 @@ class SignupView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Textform(text: 'Your Addhar No :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: 'Your Addhar',
-                labeltext: ' Addhar for confirmation',
-                Controllerctr: _addharControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _addharControll.text == _addharControll.text) {
-                    return ' confirm your addhar';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
               Textform(text: 'Your DOB :'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: 'Your DOB',
@@ -320,116 +275,7 @@ class SignupView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Textform(text: 'Your State :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: 'Your State',
-                labeltext: 'State confirmation',
-                Controllerctr: _stateControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _stateControll.text == _stateControll.text) {
-                    return 'confirm your State';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Textform(text: 'Your District :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: 'Your District',
-                labeltext: ' District for confirmation',
-                Controllerctr: _districtControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _districtControll.text == _districtControll.text) {
-                    return ' confirm your District';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Textform(text: 'Your Pincode :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: ' Your Pincode',
-                labeltext: ' Pincode for confirmation',
-                Controllerctr: _pincodeControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _pincodeControll.text == _pincodeControll.text) {
-                    return ' confirm your Pincode';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Textform(text: 'Your Post Office :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: ' Your Post Office',
-                labeltext: ' Post Office for confirmation',
-                Controllerctr: _postofficeControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _postofficeControll.text == _postofficeControll.text) {
-                    return ' confirm your Post Office';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
-              Textform(text: ' Police Station :'),
-              const SizedBox(
-                height: 10.0,
-              ),
-              TextfiledConatiner(
-                keybordtype: TextInputType.visiblePassword,
-                hinttext: ' Police Sattion',
-                labeltext: ' Plice Station for confirmation',
-                Controllerctr: _policestationControll,
-                valiDator: (value) {
-                  if (value!.isEmpty ||
-                      _policestationControll.text ==
-                          _policestationControll.text) {
-                    return ' confirm your Police Station';
-                  }
-                  return null; // Return null if the input is valid
-                },
-                onStateChanged: (value) {},
-              ),
-              const SizedBox(
-                height: 20.0,
-              ),
               Textform(text: ' Gender :'),
-              const SizedBox(
-                height: 10.0,
-              ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
                 hinttext: ' Gender',
@@ -447,13 +293,33 @@ class SignupView extends StatelessWidget {
               const SizedBox(
                 height: 20.0,
               ),
-              Button(
-                text: 'Register',
-                function: () {
-                  signup(
-                      _emailController.text, _passwordController.text, context);
-                  Get.to(LoginScreen());
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
                 },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Container(
+                      width: double.infinity,
+                      height: 42, // Set the height of the container
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF000000),
+                        borderRadius: BorderRadius.circular(30.0),
+                        // You can add other decoration properties here, such as border, boxShadow, etc.
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white, // Set the text color to white
+                          ),
+                        ),
+                      )),
+                ),
               ),
               Container(
                   child: Center(
@@ -480,7 +346,10 @@ class SignupView extends StatelessWidget {
                                 fontSize: 18,
                                 color: Colors.green,
                               )),
-                        ))
+                        )),
+                    const SizedBox(
+                      height: 30.0,
+                    ),
                   ],
                 ),
               ))

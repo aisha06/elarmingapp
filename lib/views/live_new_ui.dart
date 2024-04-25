@@ -1,4 +1,3 @@
-import 'package:elearningapp_demo/views/live_Screen.dart';
 import 'package:elearningapp_demo/views/payment_View.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

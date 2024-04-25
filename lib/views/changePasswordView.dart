@@ -1,9 +1,6 @@
-import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
-import 'package:elearningapp_demo/views/home_Screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'package:elearningapp_demo/component/gridvirepage.dart';
+import 'package:elearningapp_demo/views/Gridview_widget/gridview-builder.dart';
 import 'package:flutter/material.dart';
 
 class AffordableprogramView extends StatelessWidget {
@@ -6,6 +6,9 @@ class AffordableprogramView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFDAFFF2),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFDAFFF2),
+      ),
       body: SingleChildScrollView(
         // physics: NeverScrollableScrollPhysics(),
         child: Padding(
@@ -16,39 +19,35 @@ class AffordableprogramView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 40,
-              ),
-              GestureDetector(
-                child: Icon(
-                  Icons.arrow_back,
-                  size: 30,
+              Text(
+                "  Affordable Program",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
+                  color: Color(0xFF0000000),
                 ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
               ),
-              SizedBox(
-                height: 30,
+              SizedBox(height: 5),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "    Get your program with live'Instructor lead'learning",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 10.0,
+                    color: Color(0xFF0000000),
+                  ),
+                ),
               ),
-              Text(
-                "Affordable Program ",
-                style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                "Get your program with live'Instructor lead'learning",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12.0,
-                    color: Colors.black),
-              ),
-              Grridviewpage()
+              //Grridviewpage()
+              GridViewPage(),
+              SizedBox(height: 20),
+              GridViewPage(),
+              SizedBox(height: 20),
+              GridViewPage(),
+              SizedBox(height: 20),
+              GridViewPage(),
+              SizedBox(height: 20),
             ],
           ),
         ),

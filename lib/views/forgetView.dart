@@ -95,7 +95,7 @@ class ForgetView extends StatelessWidget {
                 onStateChanged: (value) {},
               ),
               const SizedBox(
-                height: 30.0,
+                height: 40.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -142,9 +142,9 @@ class ForgetView extends StatelessWidget {
                           //   MaterialPageRoute(builder: (context) => SignupView()),
                           // );
                         },
-                        child: Text('one time password ',
+                        child: Text('One Time Password ',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               color: Colors.green,
                             )),
                       ),

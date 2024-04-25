@@ -83,7 +83,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         "Jyoti Prajapati",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            fontSize: 18,
+                            fontSize: 16,
                             color: Colors.black),
                       ),
                       SizedBox(
@@ -93,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         "Enrollment No:12343334",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            fontSize: 12.0,
+                            fontSize: 10.0,
                             color: Colors.black),
                       ),
                     ],
@@ -135,7 +135,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fontSize: 20, fontWeight: FontWeight.bold)),
                 child: Text(
                   "Sign-out",
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 )),
           )
         ],

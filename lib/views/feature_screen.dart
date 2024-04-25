@@ -65,14 +65,14 @@ class _FeatureScreenState extends State<FeatureScreen> {
                               Text(
                                 "Kartik naik",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.black),
                               ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
+                              // SizedBox(
+                              //   height: 10.0,
+                              // ),
                               Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CircleAvatar(
                                     backgroundColor: Color(0xFF91E8B2),
@@ -103,19 +103,19 @@ class _FeatureScreenState extends State<FeatureScreen> {
                             ],
                           ),
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 5.0,
-                                    right: 6,
+                                    left: 3.0,
+                                    right: 5,
                                     // bottom: 20.0,
                                     top: 60.0),
                                 color: Colors.grey[500],
                                 child: Text("Live",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w500,
                                         fontSize: 10.0)),
                               ),
                             ],

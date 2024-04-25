@@ -12,8 +12,8 @@ class TextfiledConatiner extends StatelessWidget {
     required this.hinttext,
     required this.valiDator,
     required this.Controllerctr,
-    required this.keybordtype, required Null Function(dynamic value) onStateChanged,
-    // required DOBInputField child,
+    required this.keybordtype,
+    required Null Function(dynamic value) onStateChanged,
   });
 
   @override
@@ -29,8 +29,7 @@ class TextfiledConatiner extends StatelessWidget {
           decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderSide: BorderSide(width: 4.0),
-                borderRadius:
-                    BorderRadius.circular(10), // Set the BorderRadius here
+                borderRadius: BorderRadius.circular(10),
               ),
               labelText: labeltext,
               hintText: hinttext),

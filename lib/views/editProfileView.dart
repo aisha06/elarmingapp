@@ -14,27 +14,16 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDAFFF2),
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        backgroundColor: Color(0xFFDAFFF2),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                margin: const EdgeInsets.only(top: 50.0),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 30.0,
-                    ),
-                    onPressed: () {
-                      // Navigate back when the back button is pressed
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ),
-              ),
               CircleAvatar(
                 radius: 70,
                 backgroundImage: AssetImage("assets/images/aisha.jpg"),

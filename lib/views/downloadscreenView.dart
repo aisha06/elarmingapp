@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class DownloadScreenView extends StatelessWidget {
   @override
@@ -16,17 +17,18 @@ class DownloadScreenView extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
-          padding: EdgeInsets.all(8.0),
-          itemCount: 5,
+          padding: EdgeInsets.only(left: 20, right: 20),
+          itemCount: 6,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(6.0),
               child: Container(
                 height: 85,
                 //width: 68,
                 //height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width / 2,
+                width: MediaQuery.of(context).size.width / 3,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset(
                       "assets/images/livepic.png",
@@ -38,79 +40,74 @@ class DownloadScreenView extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              Card(
-                                elevation: 8,
-                                child: Container(
-                                  padding: EdgeInsets.all(4.0),
-                                  color: Color(0xFF91E8B2),
-                                  child: Text(
-                                    "Machine learning Bootcamp",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                              Container(
+                                height: 20,
+                                margin:
+                                    EdgeInsets.only(left: 8, right: 5, top: 5),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(2),
+                                  color: Color(0xff91e8b2),
+                                ),
+                                child: Center(
+                                  child: Text("Machine Learning Bootcamp",
+                                      style: TextStyle(
+                                        fontSize: 8,
+                                        fontWeight: FontWeight.w600,
                                         color: Colors.black,
-                                        fontSize: 12),
-                                  ),
+                                      )),
                                 ),
                               ),
                               SizedBox(
-                                height: 4.0,
+                                height: 8,
                               ),
                               Text(
-                                "Kartik naik",
+                                "Krish Naik",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black,
+                                    fontSize: 10),
                               ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Color(0xFF91E8B2),
-                                    radius: 8.0,
-                                    child: Text(
-                                      "Rs",
-                                      style: TextStyle(
-                                          fontSize: 10.0,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black),
-                                    ),
-                                  ),
-                                  // SizedBox(height: 4.0),
-                                  Container(
-                                      margin: EdgeInsets.only(left: 4.0),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: Color(0xFF91E8B2),
+                                      radius: 7.0,
                                       child: Text(
-                                        "60000",
+                                        "Rs",
                                         style: TextStyle(
-                                            fontSize: 10.0,
-                                            fontWeight: FontWeight.w400,
+                                            fontSize: 8.0,
+                                            fontWeight: FontWeight.bold,
                                             color: Colors.black),
-                                      )),
-                                ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 3.0),
+                                    Container(
+                                        margin: EdgeInsets.only(right: 8.0),
+                                        child: Text(
+                                          "60000",
+                                          style: TextStyle(
+                                              fontSize: 10.0,
+                                              fontWeight: FontWeight.w400,
+                                              color: Colors.black),
+                                        )),
+                                  ],
+                                ),
                               ),
-                              // const SizedBox(
-                              //   width: 5.0,
-                              // ),
                             ],
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              IconButton(
-                                onPressed: () {},
-                                constraints: BoxConstraints(),
-                                padding: EdgeInsets.zero,
-                                icon: Image.asset("assets/images/download.png"),
-                                // color: Colors.red,
-                              ),
+                              Icon(Icons.download),
                               Container(
                                 margin: EdgeInsets.only(
-                                    left: 5.0,
-                                    right: 6,
+                                    left: 3.0,
+                                    right: 10,
                                     // bottom: 20.0,
-                                    top: 40.0),
+                                    top: 35.0),
                                 color: Colors.grey[500],
                                 child: Text("Live",
                                     style: TextStyle(

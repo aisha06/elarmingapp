@@ -1,6 +1,5 @@
 import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
-import 'package:elearningapp_demo/component/textfiledContainer.dart';
 import 'package:elearningapp_demo/views/changePasswordView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +11,8 @@ class OtpverifyView extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   OtpFieldController otpController = OtpFieldController();
 
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  //final TextEditingController _emailController = TextEditingController();
+  // final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

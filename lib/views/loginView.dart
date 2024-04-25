@@ -1,14 +1,10 @@
 // import 'dart:convert';
-import 'dart:convert';
-import 'package:elearningapp_demo/component/button.dart';
 import 'package:elearningapp_demo/component/text.dart';
 import 'package:elearningapp_demo/component/textfiledContainer.dart';
+import 'package:elearningapp_demo/views/BottomNavigationBar.dart';
 import 'package:elearningapp_demo/views/forgetView.dart';
-import 'package:elearningapp_demo/views/home_Screen.dart';
 import 'package:elearningapp_demo/views/signupView.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/response/response.dart';
-import 'package:http/http.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,28 +25,24 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController Password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   String message = '';
-  Future<void> loginUser(String, String password) async {
-    var http;
-    final response = await http.post(
-      'http://192.168.1.7:8080/rest/auth/login',
-      body: jsonEncode({'username': username, 'password': password}),
-      headers: {'Content-Type': 'application/json'},
-    );
+  // Future<void> loginUser(String, String password) async {
+  //   var http;
+  //   final response = await http.post(
+  //     'http://192.168.1.7:8080/rest/auth/login',
+  //     body: jsonEncode({'username': username, 'password': password}),
+  //     headers: {'Content-Type: application/json'},
+  //   );
 
-    if (response.statusCode == 200) {
-      // Successful login, handle the response accordingly
-      print('Login successful');
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => HomeScreen(
-                    accesstoken: 'HomeScreen',
-                  )));
-    } else {
-      // Handle errors, show error messages, etc.
-      print('Login failed: ${response.statusCode}');
-    }
-  }
+  //   if (response.statusCode == 200) {
+  //     // Successful login, handle the response accordingly
+  //     print('Login successful');
+  //     Navigator.push(
+  //         context, MaterialPageRoute(builder: (context) => MyNavigationBar()));
+  //   } else {
+  //     // Handle errors, show error messages, etc.
+  //     print('Login failed: ${response.statusCode}');
+  //   }
+  // }
 
   // Future<void> LoginScreen(
   //     String title, int id, String imgUrl, int quantity) async {
@@ -81,7 +73,6 @@ class _LoginScreenState extends State<LoginScreen> {
   //     throw Exception('Login Failed');
   //   }
   // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,14 +99,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 20.0, top: 80.0),
+                margin: const EdgeInsets.only(left: 26.0, top: 80.0),
                 child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Login",
                     style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w400,
                         color: Colors.black),
                   ),
                 ),
@@ -129,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextfiledConatiner(
                 keybordtype: TextInputType.emailAddress,
-                labeltext: '',
+                labeltext: 'Username:',
                 hinttext: 'Enter yourname',
                 Controllerctr: username,
                 valiDator: (value) {
@@ -152,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               TextfiledConatiner(
                 keybordtype: TextInputType.visiblePassword,
-                labeltext: 'Password',
+                labeltext: 'Password:',
                 hinttext: 'Enter your password',
                 Controllerctr: Password,
                 valiDator: (value) {
@@ -164,25 +155,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 onStateChanged: (value) {},
               ),
               const SizedBox(
-                height: 20.0,
+                height: 50.0,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF575756),
-                    borderRadius:
-                        BorderRadius.circular(10.0), // Set the border radius
-                    // You can add other decoration properties here, such as border, boxShadow, etc.
-                  ),
-                  width: double.infinity,
-                  height: 42, // Set the width according to your needs
-                  child: Button(
-                    text: 'Login',
-                    function: () {
-                      (username.text, Password.text);
-                    },
-                  ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyNavigationBar()),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Container(
+                      width: double.infinity,
+                      height: 42, // Set the height of the container
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF000000),
+                        borderRadius: BorderRadius.circular(10.0),
+                        // You can add other decoration properties here, such as border, boxShadow, etc.
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white, // Set the text color to white
+                          ),
+                        ),
+                      )),
                 ),
               ),
               const SizedBox(
@@ -202,15 +202,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 42, // Set the height of the container
                       decoration: BoxDecoration(
                         color: const Color(0xFF5BA084),
-                        borderRadius: BorderRadius.circular(
-                            10.0), // Set the border radius
+                        borderRadius: BorderRadius.circular(10.0),
                         // You can add other decoration properties here, such as border, boxShadow, etc.
                       ),
                       child: const Center(
                         child: Text(
                           "Register",
                           style: TextStyle(
-                            fontSize: 22.0,
+                            fontSize: 20.0,
                             color: Colors.white, // Set the text color to white
                           ),
                         ),
@@ -228,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                 },
                 child: const Text(
-                  "Forgot password",
+                  "Forgot Password",
                   style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.bold,

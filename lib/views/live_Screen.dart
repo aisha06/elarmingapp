@@ -54,7 +54,10 @@ class _LiveScreenState extends State<LiveScreen> {
               margin: const EdgeInsets.only(left: 20.0, right: 20.0),
               child: Text(
                 "Most popular course on DSA trusted by over 1,00,000+ students! Built with years of experience by industry experts the course gives you a complete package of video lectures, practice problems, quizzes, discussion forums, and contests. Start Today!",
-                style: TextStyle(fontSize: 16.0, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black),
               )),
           const SizedBox(
             height: 10,

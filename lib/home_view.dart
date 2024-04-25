@@ -1,24 +1,20 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:elearningapp_demo/views/Gridview_widget/gridview-builder.dart';
 import 'package:elearningapp_demo/views/affordableprogramView..dart';
-import 'package:elearningapp_demo/views/communityprogramView.dart';
 import 'package:elearningapp_demo/views/home_widget/home1.dart';
 import 'package:elearningapp_demo/views/liveprogramView.dart';
 import 'package:elearningapp_demo/views/notificationScreenView.dart';
 import 'package:elearningapp_demo/views/profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required String accesstoken});
+class HomeViewNew extends StatefulWidget {
+  const HomeViewNew({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-
-  fromJson(e) {}
+  State<HomeViewNew> createState() => _HomeViewNewState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  //final List<Map> myProducts = List.generate(100, (index) => {}).toList();
+class _HomeViewNewState extends State<HomeViewNew> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -73,24 +69,22 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          margin: EdgeInsets.all(20),
-          //height: double.infinity,
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        margin: EdgeInsets.all(20),
+        child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextFormFieldWedget(),
-              const SizedBox(height: 20),
               Container(
                 //margin: EdgeInsets.all(15),
                 margin: EdgeInsets.only(
                   top: height / 40,
                 ),
-                child: CarouselSlider.builder(
-                  itemCount: 1,
+                child: CarouselSlider(
                   options: CarouselOptions(
                     enlargeCenterPage: true,
                     height: height / 6,
@@ -100,134 +94,92 @@ class _HomeScreenState extends State<HomeScreen> {
                     aspectRatio: 5.0,
                     viewportFraction: 0.7,
                   ),
-                  itemBuilder: (context, i, id) {
-                    //for onTap to redirect to another screen
-                    return GestureDetector(
-                      child: Container(
-                        width: width / 1.7,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.transparent,
-                            )),
-                        //ClipRRect for image border radius
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            "assets/images/globe.png",
-                            height: 90,
-                            width: 150,
+                  items: [
+                  Container(
+                  width: 300, // Adjust width as needed
+                  height: 200, // Adjust height as needed
+                  decoration: BoxDecoration(
+                    color: Color(0xFF58605C), // Use the specified color
+                    borderRadius: BorderRadius.circular(8), // Use the specified radius
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'A Sale as big as your dreams in flutter',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
                           ),
                         ),
-                      ),
-                      onTap: () {},
-                    );
-                  },
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          'Lorem Ipsum is simply dummy text of the printing and typesetting industry,',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  ),
+                    Container(
+                        width: 600, // Adjust width as needed
+                        height: 200, // Adjust height as needed
+                        decoration: BoxDecoration(
+                          color: Color(0xFF5BA084), // Use the specified color
+                          borderRadius: BorderRadius.circular(8), // Use the specified radius
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                flex: 8,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      'A Sale as big as your dreams in flutter',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+
+                                    Text(
+                                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry,',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  "assets/images/globe.png",height: 55,width: 48,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                    ),
+                  ],
+
                 ),
               ),
-              /* Container(
-                height: height/8,
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height / 6,
-                    enlargeCenterPage: true,
-                    autoPlay: true,
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlayAnimationDuration: Duration(seconds: 2),
-                    aspectRatio: 5.0, // Ensure this value is appropriate for your design
-                    viewportFraction: 0.7,
-                  ),
-                  items: [
-                    Container(
-                      height: 50,
-                        width: 50,
-                        child: Image.asset("assets/images/globe.png",height: 70,width: 150,)),
-                   */
-              /* Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color(0xff5BA084),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Row(
-                        children: [
-                         */ /*
-                    */
-              /* Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "A Sale as big as\nyour dreams",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 9,
-                                ),
-                                Text(
-                                  "Lorem Ipsum is simply dummy text\nof the printing and typesetting\nindustry.",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),*/ /**/ /*
-                          //Spacer(),
-                          SizedBox(
-                              height: 100,
-                              width: 100,
-                              child: Image.asset("assets/images/globe.png")),
-                          //Spacer(),
-                        ],
-                      ),
-                    ),*/ /*
-                   */ /* Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff58605C),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "A Sale as big as\nyour dreams",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),*/ /*
-                  ],
-                ),
-              ),*/
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Container(
-                height: height / 6.9,
+                height: height / 6.8,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 4,
@@ -243,13 +195,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(4),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Image.asset(
                               "assets/images/classmates 1 (1).png",
-                              height: 35.0,
+                              height: 40.0,
                               color: Colors.white,
                             ),
                             SizedBox(height: height * 0.01),
@@ -257,14 +209,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               "Enrolled Students",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 10.2,
                                   fontWeight: FontWeight.w500),
                             ),
-                            //SizedBox(height: height * 0.01),
+                            SizedBox(height: height * 0.01),
                             Text("8000+",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 8.0,
+                                    fontSize: 12.0,
                                     fontWeight: FontWeight.w600))
                           ],
                         ),
@@ -285,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Live Program",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           color: Color(0xFF0000000),
                         ),
                       ),
@@ -324,11 +276,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              //1st Gridview builder
+              SizedBox(height: 10),
               GridViewPage(),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -337,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         "Affordable Programs",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           color: Color(0xFF0000000),
                         ),
                       ),
@@ -355,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  //Spacer(),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -379,66 +331,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              //2ns grideview builder
+              SizedBox(height: 10),
               GridViewPage(),
-              SizedBox(height: 15),
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Community Program ",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                          color: Color(0xFF0000000),
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "Get your program with live'Instructor lead'learning",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 10.0,
-                            color: Color(0xFF0000000),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CommunityprogramView()),
-                      );
-                    },
-                    child: Card(
-                      elevation: 10.0,
-                      child: Container(
-                          padding: EdgeInsets.all(5.0),
-                          color: Color(0xFF91E8B2),
-                          child: Text("View More",
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black,
-                              ))),
-                    ),
-                  ),
-                ],
-              ),
-              //3d grideview builder
-              SizedBox(height: 15),
-              // GridViewPage(),
-              GridViewPage(),
-              SizedBox(height: 15),
             ],
           ),
         ),

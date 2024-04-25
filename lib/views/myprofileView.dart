@@ -74,7 +74,7 @@ class MyprofileView extends StatelessWidget {
                         "Jyoti Prajapati",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 18.0,
+                          fontSize: 16.0,
                           color: Color(0xFF0000000),
                         ),
                       ),
@@ -85,7 +85,7 @@ class MyprofileView extends StatelessWidget {
                         "Enrollment No:12343334",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 12.0,
+                          fontSize: 10.0,
                           color: Color(0xFF0000000),
                         ),
                       ),
@@ -129,8 +129,8 @@ profile_list2(BuildContext buildContext) {
 
       return GestureDetector(
         onTap: () {
-          // Navigator.push(
-          //     context, MaterialPageRoute(builder: (context) => list[index]));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => list[index]));
         },
         child: ListTile(
           title: Text(
