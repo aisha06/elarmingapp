@@ -127,13 +127,14 @@ class _HomeScreenState extends State<HomeScreen> {
               // ),
               CarouselSlider(
                 options: CarouselOptions(
+                  height: 145,
                   enlargeCenterPage: true,
-                  height: height / 6,
                   autoPlay: true,
-                  autoPlayInterval: Duration(seconds: 3),
-                  reverse: false,
-                  aspectRatio: 5.0,
-                  viewportFraction: 0.7,
+                  aspectRatio: 10.0,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: false,
+                  autoPlayAnimationDuration: Duration(milliseconds: 900),
+                  viewportFraction: 1.0,
                 ),
                 items: [
                   Container(
@@ -217,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 20),
               Container(
-                height: height / 6.9,
+                height: height / 6.8,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 4,

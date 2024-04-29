@@ -46,7 +46,7 @@ class _LiveNewScreenState extends State<LiveNewScreen> {
                   "Machine learning Bootcamp",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 22.0,
+                      fontSize: 20.0,
                       color: Colors.black),
                 ),
                 const SizedBox(
@@ -55,7 +55,7 @@ class _LiveNewScreenState extends State<LiveNewScreen> {
                 Container(
                     child: Text(
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+                  style: TextStyle(fontSize: 14.0, color: Colors.black),
                 )),
                 const SizedBox(
                   height: 10,
@@ -146,27 +146,24 @@ class _LiveNewScreenState extends State<LiveNewScreen> {
                   height: 10,
                 ),
                 Center(
-                  child: Card(
-                    color: Color(0xFF91E8B2),
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PaymentView()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFF91E8B2),
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 60, vertical: 10),
-                            textStyle: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold)),
-                        child: Text(
-                          "Enroll Now",
-                          style: TextStyle(color: Colors.black),
-                        )),
-                  ),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PaymentView()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          primary: const Color(0xFF91E8B2),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 60, vertical: 10),
+                          textStyle: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                      child: Text(
+                        "Enroll Now",
+                        style: TextStyle(color: Colors.black),
+                      )),
                 ),
                 const SizedBox(
                   height: 10.0,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class DownloadScreenView extends StatelessWidget {
   @override
@@ -43,7 +42,7 @@ class DownloadScreenView extends StatelessWidget {
                               Container(
                                 height: 20,
                                 margin:
-                                    EdgeInsets.only(left: 8, right: 5, top: 5),
+                                    EdgeInsets.only(left: 41, right: 5, top: 5),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: Color(0xff91e8b2),

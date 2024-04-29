@@ -66,13 +66,21 @@ class GridViewPage extends StatelessWidget {
                                 );
                               },
                               child: Container(
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFD9D9D9),
+                                  border: Border.all(
+                                    width: 1,
+                                    color: const Color(0xFFD9D9D9),
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
                                 child: RatingBar.builder(
                                   initialRating: 0,
                                   minRating: 0,
                                   updateOnDrag: false,
                                   glow: false,
                                   itemCount: 1,
-                                  itemSize: 25,
+                                  itemSize: 23,
                                   allowHalfRating: false,
                                   itemBuilder: (context, _) => Icon(
                                     Icons.favorite,
@@ -83,6 +91,8 @@ class GridViewPage extends StatelessWidget {
                                   },
                                   glowColor: Colors.white,
                                 ),
+                                width: 22,
+                                height: 22,
                               ),
                             ),
                             SizedBox(
