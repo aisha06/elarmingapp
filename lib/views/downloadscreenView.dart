@@ -16,7 +16,7 @@ class DownloadScreenView extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFFDAFFF2),
         body: ListView.builder(
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: EdgeInsets.only(left: 20, right: 30),
           itemCount: 6,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
@@ -41,8 +41,8 @@ class DownloadScreenView extends StatelessWidget {
                             children: [
                               Container(
                                 height: 20,
-                                margin:
-                                    EdgeInsets.only(left: 41, right: 5, top: 5),
+                                margin: EdgeInsets.only(
+                                    left: 21, right: 15, top: 5),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: Color(0xff91e8b2),

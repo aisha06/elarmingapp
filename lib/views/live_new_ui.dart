@@ -14,27 +14,31 @@ class _LiveNewScreenState extends State<LiveNewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFDAFFF2),
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFDAFFF2),
+      ),
       body: Container(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 40,
-                ),
-                GestureDetector(
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
+                // SizedBox(
+                //   height: 40,
+                // ),
+                // GestureDetector(
+                //   child: Icon(
+                //     Icons.arrow_back,
+                //     size: 30,
+                //   ),
+                //   onTap: () {
+                //     Navigator.of(context).pop();
+                //   },
+                // ),
+                // const SizedBox(
+                //   height: 20.0,
+                // ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   child: Image.asset("assets/images/video_image.png"),
